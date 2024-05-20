@@ -5,17 +5,49 @@ from bokeh.plotting import ColumnDataSource, figure, output_notebook, show
 import pickle
 from scipy import stats
 import umap
+import json
+
+
+# Function to read the JSON file
+def read_json(file_path):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+        return json.loads(content)
+
+def correct_format(json):
+  embeddings_json = read_json('embeddings.json')
+  all_titles = []
+  all_arxivid = []
+  all_links = []
+  embeddings_all = []
+  for i in range(0,len(embeddings_json['embeddings'])):
+    title = embeddings_json['embeddings'][i]['title']
+    source = embeddings_json['embeddings'][i]['source']
+    link = embeddings_json['embeddings'][i]['link']
+    embedding = embeddings_json['embeddings'][i]['embedding']
+
+    all_titles.append(title)
+    all_arxivid.append(source)
+    all_links.append(link)
+    embeddings_all.append(embedding)
+
+  return all_titles, all_arxivid, all_links, embeddings_all
+
+
+
 
 st.title("Embedding explorer")
 st.markdown("Interpreting the UMAP plot")
 
-with open("document_embeddings_1.pkl", "rb") as f:
-    embeddings_data = pickle.load(f)
+# with open("document_embeddings_1.pkl", "rb") as f:
+#     embeddings_data = pickle.load(f)
 
-embeddings_all = embeddings_data["embeddings"]
-all_titles = embeddings_data["titles"]
-all_arxivid = embeddings_data["arxivid"]
-all_links = embeddings_data["links"]
+# embeddings_all = embeddings_data["embeddings"]
+# all_titles = embeddings_data["titles"]
+# all_arxivid = embeddings_data["arxivid"]
+# all_links = embeddings_data["links"]
+embeddings_json = read_json('embeddings.json')
+all_titles, all_arxivid, all_links, embeddings_all = correct_format(embeddings_json)
 
 umap_reducer = umap.UMAP(n_components=2, random_state=42)
 embedding = umap_reducer.fit_transform(embeddings_all)
