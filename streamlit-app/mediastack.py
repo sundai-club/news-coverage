@@ -51,7 +51,7 @@ def generate_article_json(query):
     json_output = json.dumps(formatted_articles, indent=4)
 
     # Save the JSON output to a file
-    with open('articles.json', 'w') as json_file:
+    with open('./documents/articles.json', 'w') as json_file:
         json_file.write(json_output)
 
 if __name__ == "__main__":
