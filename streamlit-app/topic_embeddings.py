@@ -54,8 +54,7 @@ def save_embeddings(metadata, embeddings, feature_names, output_file):
     with open(output_file, 'w') as file:
         json.dump({'embeddings': result, 'feature_names': feature_names.tolist()}, file)
 
-def main():
-    query = 'segment anything'
+def create_embeddings(query):
     directory = './documents/'
     
     #generate json data
@@ -72,4 +71,4 @@ def main():
     save_embeddings(metadata, embeddings, feature_names, output_file)
 
 if __name__ == "__main__":
-    main()
+    create_embeddings('LLM agents')
