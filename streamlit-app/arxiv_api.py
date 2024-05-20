@@ -20,28 +20,18 @@ def get_arxiv_articles(query, max_results=30):
             'type': "paper"
         }
         articles.append(article)
-    print(articles)
         
     return articles
 
-
-# Replace 'your topic' with the topic you are interested in
-topic = "ai agents"
-articles = get_arxiv_articles(topic)
-
-# Output the formatted articles as JSON
-json_output = json.dumps(articles, indent=4)
-print(json_output)
-
+def generate_arxiv_json(query):
+    articles = get_arxiv_articles(query)
+    
+    # Output the formatted articles as JSON
+    json_output = json.dumps(articles, indent=4)
+    
     # Save the JSON output to a file
-with open('papers.json', 'w') as json_file:
-    json_file.write(json_output)
+    with open('./documents/papers.json', 'w') as json_file:
+        json_file.write(json_output)
 
-# Print the articles
-for idx, article in enumerate(articles, 1):
-    print(f"Article {idx}:")
-    print(f"Title: {article['title']}")
-    print(f"Authors: {', '.join(article['authors'])}")
-    print(f"Published: {article['published']}")
-    print(f"URL: {article['url']}")
-    print(f"Summary: {article['summary']}\n")
+if __name__ == "__main__":
+    generate_arxiv_json('segment everything')
