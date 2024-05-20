@@ -25,21 +25,22 @@ def correct_format(json):
     title = embeddings_json['embeddings'][i]['title']
     source = embeddings_json['embeddings'][i]['source']
     link = embeddings_json['embeddings'][i]['link']
-    embedding = embeddings_json['embeddings'][i]['embedding']
+    embedding_i = embeddings_json['embeddings'][i]['embedding']
 
     all_titles.append(title)
     all_arxivid.append(source)
     all_links.append(link)
-    embeddings_all.append(embedding)
+    embeddings_all.append(embedding_i)
 
   return all_titles, all_arxivid, all_links, embeddings_all
 
+# READ EMBEDDINGS - NEW
+embeddings_json = read_json('embeddings.json')
+all_titles, all_arxivid, all_links, embeddings_all = correct_format(embeddings_json)
 
 
-
-st.title("Embedding explorer")
-st.markdown("Interpreting the UMAP plot")
-
+###############################################################
+# READ EMBEDDINGS - OLD (DEBUG)
 # with open("document_embeddings_1.pkl", "rb") as f:
 #     embeddings_data = pickle.load(f)
 
@@ -47,8 +48,34 @@ st.markdown("Interpreting the UMAP plot")
 # all_titles = embeddings_data["titles"]
 # all_arxivid = embeddings_data["arxivid"]
 # all_links = embeddings_data["links"]
-embeddings_json = read_json('embeddings.json')
-all_titles, all_arxivid, all_links, embeddings_all = correct_format(embeddings_json)
+
+# print("HELLO")
+# print(len(embeddings_all))
+# print(len(all_titles))
+# print(len(all_arxivid))
+# print(len(all_links))
+# print("FIRST ITEM IS")
+# print(embeddings_all[0][:5])
+# print(len(embeddings_all[0]))
+# print(all_titles[0])
+# print(all_arxivid[0])
+# print(all_links[0])
+
+# print("titels")
+# for i in range(0, len(all_titles)):
+#     print(all_titles[i])
+
+###############################################################
+
+
+
+
+
+
+st.title("Embedding explorer")
+st.markdown("Interpreting the UMAP plot")
+
+
 
 umap_reducer = umap.UMAP(n_components=2, random_state=42)
 embedding = umap_reducer.fit_transform(embeddings_all)
@@ -103,8 +130,8 @@ for i in range(len(all_titles)):
         phrase_flags[i] = 1
 
 # TODO: add a summarization to the HEXBIN items so that when hovering a bin can see a summary of the items within
-p.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1], size=size_value,
-         palette=np.flip(OrRd[8]), alpha=alpha_value)
+# p.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1], size=size_value,
+#          palette=np.flip(OrRd[8]), alpha=alpha_value)
 
 p.circle('x', 'y', size=3, source=source, alpha=0.3)
 st.bokeh_chart(p)
