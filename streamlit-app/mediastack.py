@@ -40,16 +40,19 @@ def print_articles(articles):
         print(f"URL: {article['url']}")
         print(f"Published At: {article['published_at']}")
         print('-' * 80)
-
-if __name__ == "__main__":
+        
+def generate_article_json(query):
     api_key = ''  # Replace with your actual API key
-    keywords = 'agents,ai'  # Example keywords
+    keywords = query  # Example keywords
     articles = get_articles(api_key, keywords)
     formatted_articles = format_articles(articles)
     
     # Output the formatted articles as JSON
     json_output = json.dumps(formatted_articles, indent=4)
 
-        # Save the JSON output to a file
-    with open('articles.json', 'w') as json_file:
+    # Save the JSON output to a file
+    with open('./documents/articles.json', 'w') as json_file:
         json_file.write(json_output)
+
+if __name__ == "__main__":
+    generate_article_json('segment everything')
