@@ -32,6 +32,3 @@ def generate_arxiv_json(query):
     # Save the JSON output to a file
     with open('./documents/papers.json', 'w') as json_file:
         json_file.write(json_output)
-
-if __name__ == "__main__":
-    generate_arxiv_json('segment everything')

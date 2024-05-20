@@ -1,360 +1,524 @@
 [
     {
-        "title": "How Far Are We From AGI",
+        "title": "Autonomous Robot for Disaster Mapping and Victim Localization",
         "authors": [
-            "Tao Feng",
-            "Chuanyang Jin",
-            "Jingyu Liu",
-            "Kunlun Zhu",
-            "Haoqin Tu",
-            "Zirui Cheng",
-            "Guanyu Lin",
-            "Jiaxuan You"
+            "Michael Potter",
+            "Rahil Bhowal",
+            "Richard Zhao",
+            "Anuj Patel",
+            "Jingming Cheng"
         ],
-        "text": "The evolution of artificial intelligence (AI) has profoundly impacted human\nsociety, driving significant advancements in multiple sectors. Yet, the\nescalating demands on AI have highlighted the limitations of AI's current\nofferings, catalyzing a movement towards Artificial General Intelligence (AGI).\nAGI, distinguished by its ability to execute diverse real-world tasks with\nefficiency and effectiveness comparable to human intelligence, reflects a\nparamount milestone in AI evolution. While existing works have summarized\nspecific recent advancements of AI, they lack a comprehensive discussion of\nAGI's definitions, goals, and developmental trajectories. Different from\nexisting survey papers, this paper delves into the pivotal questions of our\nproximity to AGI and the strategies necessary for its realization through\nextensive surveys, discussions, and original perspectives. We start by\narticulating the requisite capability frameworks for AGI, integrating the\ninternal, interface, and system dimensions. As the realization of AGI requires\nmore advanced capabilities and adherence to stringent constraints, we further\ndiscuss necessary AGI alignment technologies to harmonize these factors.\nNotably, we emphasize the importance of approaching AGI responsibly by first\ndefining the key levels of AGI progression, followed by the evaluation\nframework that situates the status-quo, and finally giving our roadmap of how\nto reach the pinnacle of AGI. Moreover, to give tangible insights into the\nubiquitous impact of the integration of AI, we outline existing challenges and\npotential pathways toward AGI in multiple domains. In sum, serving as a\npioneering exploration into the current state and future trajectory of AGI,\nthis paper aims to foster a collective comprehension and catalyze broader\npublic discussions among researchers and practitioners on AGI.",
-        "link": "http://arxiv.org/abs/2405.10313v1"
+        "text": "In response to the critical need for effective reconnaissance in disaster\nscenarios, this research article presents the design and implementation of a\ncomplete autonomous robot system using the Turtlebot3 with Robotic Operating\nSystem (ROS) Noetic. Upon deployment in closed, initially unknown environments,\nthe system aims to generate a comprehensive map and identify any present\n'victims' using AprilTags as stand-ins. We discuss our solution for search and\nrescue missions, while additionally exploring more advanced algorithms to\nimprove search and rescue functionalities. We introduce a Cubature Kalman\nFilter to help reduce the mean squared error [m] for AprilTag localization and\nan information-theoretic exploration algorithm to expedite exploration in\nunknown environments. Just like turtles, our system takes it slow and steady,\nbut when it's time to save the day, it moves at ninja-like speed! Despite\nDonatello's shell, he's no slowpoke - he zips through obstacles with the\nagility of a teenage mutant ninja turtle. So, hang on tight to your shells and\nget ready for a whirlwind of reconnaissance!\n  Full pipeline code https://github.com/rzhao5659/MRProject/tree/main\n  Exploration code https://github.com/rzhao5659/MRProject/tree/main",
+        "link": "http://arxiv.org/abs/2404.13767v1",
+        "type": "paper"
     },
     {
-        "title": "Societal Adaptation to Advanced AI",
+        "title": "Riemannian L-systems: Modeling growing forms in curved spaces",
         "authors": [
-            "Jamie Bernardi",
-            "Gabriel Mukobi",
-            "Hilary Greaves",
-            "Lennart Heim",
-            "Markus Anderljung"
+            "Christophe Godin",
+            "Fr\u00e9d\u00e9ric Boudon"
         ],
-        "text": "Existing strategies for managing risks from advanced AI systems often focus\non affecting what AI systems are developed and how they diffuse. However, this\napproach becomes less feasible as the number of developers of advanced AI\ngrows, and impedes beneficial use-cases as well as harmful ones. In response,\nwe urge a complementary approach: increasing societal adaptation to advanced\nAI, that is, reducing the expected negative impacts from a given level of\ndiffusion of a given AI capability. We introduce a conceptual framework which\nhelps identify adaptive interventions that avoid, defend against and remedy\npotentially harmful uses of AI systems, illustrated with examples in election\nmanipulation, cyberterrorism, and loss of control to AI decision-makers. We\ndiscuss a three-step cycle that society can implement to adapt to AI.\nIncreasing society's ability to implement this cycle builds its resilience to\nadvanced AI. We conclude with concrete recommendations for governments,\nindustry, and third-parties.",
-        "link": "http://arxiv.org/abs/2405.10295v1"
+        "text": "In the past 50 years, the formalism of L-systems has been successfully used\nand developed to model the growth of filamentous and branching biological\nforms. These simulations take place in classical 2-D or 3-D Euclidean spaces.\nHowever, various biological forms actually grow in curved, non-Euclidean,\nspaces. This is for example the case of vein networks growing within curved\nleaf blades, of unicellular filaments, such as pollen tubes, growing on curved\nsurfaces to fertilize distant ovules, of teeth patterns growing on folded\nepithelia of animals, of diffusion of chemical or mechanical signals at the\nsurface of plant or animal tissues, etc. To model these forms growing in curved\nspaces, we thus extended the formalism of L-systems to non-Euclidean spaces. In\na first step we show that this extension can be carried out by integrating\nconcepts of differential geometry in the notion of turtle geometry. We then\nillustrate how this extension can be applied to model and program the\ndevelopment of both mathematical and biological forms on curved surfaces\nembedded in our Euclidean space. We provide various examples applied to plant\ndevelopment. We finally show that this approach can be extended to more\nabstract spaces, called abstract Riemannian spaces, that are not embedded into\nany higher space, while being intrinsically curved. We suggest that this\nabstract extension can be used to provide a new approach for effective modeling\nof tropism phenomena and illustrate this idea on a few conceptual examples.",
+        "link": "http://arxiv.org/abs/2404.03270v1",
+        "type": "paper"
     },
     {
-        "title": "Fine-Tuning Large Vision-Language Models as Decision-Making Agents via Reinforcement Learning",
+        "title": "Can a rudderless species survive?",
         "authors": [
-            "Yuexiang Zhai",
-            "Hao Bai",
-            "Zipeng Lin",
-            "Jiayi Pan",
-            "Shengbang Tong",
-            "Yifei Zhou",
-            "Alane Suhr",
-            "Saining Xie",
-            "Yann LeCun",
-            "Yi Ma",
-            "Sergey Levine"
+            "Rinaldo B. Schinazi"
         ],
-        "text": "Large vision-language models (VLMs) fine-tuned on specialized visual\ninstruction-following data have exhibited impressive language reasoning\ncapabilities across various scenarios. However, this fine-tuning paradigm may\nnot be able to efficiently learn optimal decision-making agents in multi-step\ngoal-directed tasks from interactive environments. To address this challenge,\nwe propose an algorithmic framework that fine-tunes VLMs with reinforcement\nlearning (RL). Specifically, our framework provides a task description and then\nprompts the VLM to generate chain-of-thought (CoT) reasoning, enabling the VLM\nto efficiently explore intermediate reasoning steps that lead to the final\ntext-based action. Next, the open-ended text output is parsed into an\nexecutable action to interact with the environment to obtain goal-directed task\nrewards. Finally, our framework uses these task rewards to fine-tune the entire\nVLM with RL. Empirically, we demonstrate that our proposed framework enhances\nthe decision-making capabilities of VLM agents across various tasks, enabling\n7b models to outperform commercial models such as GPT4-V or Gemini.\nFurthermore, we find that CoT reasoning is a crucial component for performance\nimprovement, as removing the CoT reasoning results in a significant decrease in\nthe overall performance of our method.",
-        "link": "http://arxiv.org/abs/2405.10292v1"
+        "text": "Some species of salmon and sea turtle are famously good at finding their\nbirth place to reproduce after having travelled vast expanses of ocean. In\ncontrast, imagine now a species (maybe ancestral to the salmon or turtle) which\nhas to find its birth place to reproduce but has no navigation skills and\nrelies on chance alone. Would such an imaginary species survive? According to\nour (very simple) model it would survive if and only if the probability that a\ngiven individual find its birth place is strictly larger than 1/2.",
+        "link": "http://arxiv.org/abs/2403.13874v1",
+        "type": "paper"
     },
     {
-        "title": "Biasing & Debiasing based Approach Towards Fair Knowledge Transfer for Equitable Skin Analysis",
+        "title": "Perennial Semantic Data Terms of Use for Decentralized Web",
         "authors": [
-            "Anshul Pundhir",
-            "Balasubramanian Raman",
-            "Pravendra Singh"
+            "Rui Zhao",
+            "Jun Zhao"
         ],
-        "text": "Deep learning models, particularly Convolutional Neural Networks (CNNs), have\ndemonstrated exceptional performance in diagnosing skin diseases, often\noutperforming dermatologists. However, they have also unveiled biases linked to\nspecific demographic traits, notably concerning diverse skin tones or gender,\nprompting concerns regarding fairness and limiting their widespread deployment.\nResearchers are actively working to ensure fairness in AI-based solutions, but\nexisting methods incur an accuracy loss when striving for fairness. To solve\nthis issue, we propose a `two-biased teachers' (i.e., biased on different\nsensitive attributes) based approach to transfer fair knowledge into the\nstudent network. Our approach mitigates biases present in the student network\nwithout harming its predictive accuracy. In fact, in most cases, our approach\nimproves the accuracy of the baseline model. To achieve this goal, we developed\na weighted loss function comprising biasing and debiasing loss terms. We\nsurpassed available state-of-the-art approaches to attain fairness and also\nimproved the accuracy at the same time. The proposed approach has been\nevaluated and validated on two dermatology datasets using standard accuracy and\nfairness evaluation measures. We will make source code publicly available to\nfoster reproducibility and future research.",
-        "link": "http://arxiv.org/abs/2405.10256v1"
+        "text": "In today's digital landscape, the Web has become increasingly centralized,\nraising concerns about user privacy violations. Decentralized Web\narchitectures, such as Solid, offer a promising solution by empowering users\nwith better control over their data in their personal `Pods'. However, a\nsignificant challenge remains: users must navigate numerous applications to\ndecide which application can be trusted with access to their data Pods. This\noften involves reading lengthy and complex Terms of Use agreements, a process\nthat users often find daunting or simply ignore. This compromises user autonomy\nand impedes detection of data misuse. We propose a novel formal description of\nData Terms of Use (DToU), along with a DToU reasoner. Users and applications\nspecify their own parts of the DToU policy with local knowledge, covering\npermissions, requirements, prohibitions and obligations. Automated reasoning\nverifies compliance, and also derives policies for output data. This\nconstitutes a ``perennial'' DToU language, where the policy authoring only\noccurs once, and we can conduct ongoing automated checks across users,\napplications and activity cycles. Our solution is built on Turtle, Notation 3\nand RDF Surfaces, for the language and the reasoning engine. It ensures\nseamless integration with other semantic tools for enhanced interoperability.\nWe have successfully integrated this language into the Solid framework, and\nconducted performance benchmark. We believe this work demonstrates a\npracticality of a perennial DToU language and the potential of a paradigm shift\nto how users interact with data and applications in a decentralized Web,\noffering both improved privacy and usability.",
+        "link": "http://arxiv.org/abs/2403.07587v1",
+        "type": "paper"
     },
     {
-        "title": "When LLMs step into the 3D World: A Survey and Meta-Analysis of 3D Tasks via Multi-modal Large Language Models",
+        "title": "Turtles, Hats and Spectres: Aperiodic structures on a Rhombic tiling",
         "authors": [
-            "Xianzheng Ma",
-            "Yash Bhalgat",
-            "Brandon Smart",
-            "Shuai Chen",
-            "Xinghui Li",
-            "Jian Ding",
-            "Jindong Gu",
-            "Dave Zhenyu Chen",
-            "Songyou Peng",
-            "Jia-Wang Bian",
-            "Philip H Torr",
-            "Marc Pollefeys",
-            "Matthias Nie\u00dfner",
-            "Ian D Reid",
-            "Angel X. Chang",
-            "Iro Laina",
-            "Victor Adrian Prisacariu"
+            "James Smith"
         ],
-        "text": "As large language models (LLMs) evolve, their integration with 3D spatial\ndata (3D-LLMs) has seen rapid progress, offering unprecedented capabilities for\nunderstanding and interacting with physical spaces. This survey provides a\ncomprehensive overview of the methodologies enabling LLMs to process,\nunderstand, and generate 3D data. Highlighting the unique advantages of LLMs,\nsuch as in-context learning, step-by-step reasoning, open-vocabulary\ncapabilities, and extensive world knowledge, we underscore their potential to\nsignificantly advance spatial comprehension and interaction within embodied\nArtificial Intelligence (AI) systems. Our investigation spans various 3D data\nrepresentations, from point clouds to Neural Radiance Fields (NeRFs). It\nexamines their integration with LLMs for tasks such as 3D scene understanding,\ncaptioning, question-answering, and dialogue, as well as LLM-based agents for\nspatial reasoning, planning, and navigation. The paper also includes a brief\nreview of other methods that integrate 3D and language. The meta-analysis\npresented in this paper reveals significant progress yet underscores the\nnecessity for novel approaches to harness the full potential of 3D-LLMs. Hence,\nwith this paper, we aim to chart a course for future research that explores and\nexpands the capabilities of 3D-LLMs in understanding and interacting with the\ncomplex 3D world. To support this survey, we have established a project page\nwhere papers related to our topic are organized and listed:\nhttps://github.com/ActiveVisionLab/Awesome-LLM-3D.",
-        "link": "http://arxiv.org/abs/2405.10255v1"
+        "text": "These notes derive aperiodic monotiles (arXiv:2303.10798) from a set of\nrhombuses with matching rules. This dual construction is used to simplify the\nproof of aperiodicity by considering the tiling as a colouring game on a\nRhombille tiling. A simple recursive substitution system is then introduced to\nshow the existence of a non-periodic tiling without the need for computer-aided\nverification.\n  A new cut-and-project style construction linking the Turtle tiling with\n1-dimensional Fibonacci words provides a second proof of non-periodicity, and\nan alternative demonstration that the Turtle can tile the plane.\n  Deforming the Turtle into the Hat tile then provides a third proof for\nnon-periodicity by considering the effect on the lattice underlying the\nRhombille tiling.\n  Finally, attention turns to the Spectre tile. In collaboration with Erhard\nK\\\"unzel and Yoshiaki Araki, we present two new substitution rules for\ngenerating Spectre tilings. This pair of conjugate rules show that the\naperiodic monotile tilings can be considered as a 2-dimensional analog to\nSturmian words.",
+        "link": "http://arxiv.org/abs/2403.01911v1",
+        "type": "paper"
     },
     {
-        "title": "Co-Matching: Towards Human-Machine Collaborative Legal Case Matching",
+        "title": "Spiral wave dynamics in a neuronal network model",
         "authors": [
-            "Chen Huang",
-            "Xinwei Yang",
-            "Yang Deng",
-            "Wenqiang Lei",
-            "JianCheng Lv",
-            "Tat-Seng Chua"
+            "Diogo L. M. Souza",
+            "Fernando S. Borges",
+            "Enrique C. Gabrick",
+            "Lucas E. Bentivoglio",
+            "Paulo R. Protachevicz",
+            "Vagner dos Santos",
+            "Ricardo L. Viana",
+            "Ibere L. Caldas",
+            "Kelly C. Iarosz",
+            "Antonio M. Batista",
+            "J\u00fcrgen Kurths"
         ],
-        "text": "Recent efforts have aimed to improve AI machines in legal case matching by\nintegrating legal domain knowledge. However, successful legal case matching\nrequires the tacit knowledge of legal practitioners, which is difficult to\nverbalize and encode into machines. This emphasizes the crucial role of\ninvolving legal practitioners in high-stakes legal case matching. To address\nthis, we propose a collaborative matching framework called Co-Matching, which\nencourages both the machine and the legal practitioner to participate in the\nmatching process, integrating tacit knowledge. Unlike existing methods that\nrely solely on the machine, Co-Matching allows both the legal practitioner and\nthe machine to determine key sentences and then combine them probabilistically.\nCo-Matching introduces a method called ProtoEM to estimate human decision\nuncertainty, facilitating the probabilistic combination. Experimental results\ndemonstrate that Co-Matching consistently outperforms existing legal case\nmatching methods, delivering significant performance improvements over human-\nand machine-based matching in isolation (on average, +5.51% and +8.71%,\nrespectively). Further analysis shows that Co-Matching also ensures better\nhuman-machine collaboration effectiveness. Our study represents a pioneering\neffort in human-machine collaboration for the matching task, marking a\nmilestone for future collaborative matching studies.",
-        "link": "http://arxiv.org/abs/2405.10248v1"
+        "text": "Spiral waves are spatial-temporal patterns that can emerge in different\nsystems as heart tissues, chemical oscillators, ecological networks and the\nbrain. These waves have been identified in the neocortex of turtles, rats, and\nhumans, particularly during sleep-like states. Although their functions in\ncognitive activities remain until now poorly understood, these patterns are\nrelated to cortical activity modulation and contribute to cortical processing.\nIn this work, we construct a neuronal network layer based on the spatial\ndistribution of pyramidal neurons. Our main goal is to investigate how local\nconnectivity and coupling strength are associated with the emergence of spiral\nwaves. Therefore, we propose a trustworthy method capable of detecting\ndifferent wave patterns, based on local and global phase order parameters. As a\nresult, we find that the range of connection radius (R) plays a crucial role in\nthe appearance of spiral waves. For R < 20 {\\mu}m, only asynchronous activity\nis observed due to small number of connections. The coupling strength (gsyn )\ngreatly influences the pattern transitions for higher R, where spikes and\nbursts firing patterns can be observed in spiral and non-spiral waves. Finally,\nwe show that for some values of R and gsyn bistable states of wave patterns are\nobtained.",
+        "link": "http://arxiv.org/abs/2403.00022v1",
+        "type": "paper"
     },
     {
-        "title": "Novel Data Models for Inter-operable LCA Frameworks",
+        "title": "Recent progress in the physical principles of dynamic ground self-righting",
         "authors": [
-            "Kourosh Malek",
-            "Max Dreger",
-            "Zirui Tang",
-            "Qingshi Tu"
+            "Chen Li"
         ],
-        "text": "Life cycle assessment (LCA) plays a critical role in assessing the\nenvironmental impacts of a product, technology, or service throughout its\nentire life cycle. Nonetheless, many existing LCA tools and methods lack\nadequate metadata management, which can hinder their further development and\nwide adoption. In the example of LCA for clean energy technologies, metadata\nhelps monitor data and the environment that holds the integrity of the energy\nassets and sustainability of the materials sources across their entire value\nchains. Ontologizing metadata, i.e. a common vocabulary and language to connect\nmultiple data sources, as well as implementing AI-aware data management, can\nhave long-lasting, positive, and accelerating effects along with collecting and\nutilizing quality data from different sources and across the entire data\nlifecycle. The integration of ontologies in life cycle assessments has garnered\nsignificant attention in recent years. We synthesized the existing literature\non ontologies for LCAs, providing insights into this interdisciplinary field's\nevolution, current state, and future directions. We also proposed the framework\nfor a suitable data model and the workflow thereof to warrant the alignment\nwith existing ontologies, practical frameworks, and industry standards.",
-        "link": "http://arxiv.org/abs/2405.10235v1"
+        "text": "Animals and robots must be able to self-right on the ground after flipping\nover to survive or operate. Biology research has described various strategies\nand measured motor control patterns in many species. Robotics research has\ndesigned many mechanisms to enable ground self-righting. However, the physical\nprinciples governing ground self-righting transitions are relatively less\nknown, except limited understanding in turtles with rigid shell in two\ndimensions. Here I review recent progress which I have led in advancing this\nunderstanding using cockroaches as model organisms, by integrating biology\nexperiments, robotic modeling, and physics modeling.",
+        "link": "http://arxiv.org/abs/2402.16747v1",
+        "type": "paper"
     },
     {
-        "title": "A Design Trajectory Map of Human-AI Collaborative Reinforcement Learning Systems: Survey and Taxonomy",
+        "title": "On the Origin of the sudden Heliospheric Open Magnetic Flux Enhancement during the 2014 Pole Reversal",
         "authors": [
-            "Zhaoxing Li"
+            "Stephan G. Heinemann",
+            "Mathew J. Owens",
+            "Manuela Temmer",
+            "James A. Turtle",
+            "Charles N. Arge",
+            "Carl J. Henney",
+            "Jens Pomoell",
+            "Eleanna Asvestari",
+            "Jon A. Linker",
+            "Cooper Downs",
+            "Ronald M. Caplan",
+            "Stefan J. Hofmeister",
+            "Camilla Scolini",
+            "Rui F. Pinto",
+            "Maria S. Madjarska"
         ],
-        "text": "Driven by the algorithmic advancements in reinforcement learning and the\nincreasing number of implementations of human-AI collaboration, Collaborative\nReinforcement Learning (CRL) has been receiving growing attention. Despite this\nrecent upsurge, this area is still rarely systematically studied. In this\npaper, we provide an extensive survey, investigating CRL methods based on both\ninteractive reinforcement learning algorithms and human-AI collaborative\nframeworks that were proposed in the past decade. We elucidate and discuss via\nsynergistic analysis methods both the growth of the field and the\nstate-of-the-art; we conceptualise the existing frameworks from the\nperspectives of design patterns, collaborative levels, parties and\ncapabilities, and review interactive methods and algorithmic models.\nSpecifically, we create a new Human-AI CRL Design Trajectory Map, as a\nsystematic modelling tool for the selection of existing CRL frameworks, as well\nas a method of designing new CRL systems, and finally of improving future CRL\ndesigns. Furthermore, we elaborate generic Human-AI CRL challenges, providing\nthe research community with a guide towards novel research directions. The aim\nof this paper is to empower researchers with a systematic framework for the\ndesign of efficient and 'natural' human-AI collaborative methods, making it\npossible to work on maximised realisation of humans' and AI's potentials.",
-        "link": "http://arxiv.org/abs/2405.10214v1"
+        "text": "Coronal holes are recognized as the primary sources of heliospheric open\nmagnetic flux (OMF). However, a noticeable gap exists between in-situ measured\nOMF and that derived from remote sensing observations of the Sun. In this\nstudy, we investigate the OMF evolution and its connection to solar structures\nthroughout 2014, with special emphasis on the period from September to October,\nwhere a sudden and significant OMF increase was reported. By deriving the OMF\nevolution at 1au, modeling it at the source surface, and analyzing solar\nphotospheric data, we provide a comprehensive analysis of the observed\nphenomenon. First, we establish a strong correlation between the OMF increase\nand the solar magnetic field derived from a Potential Field Source Surface\n(PFSS) model ($cc_{\\mathrm{Pearson}}=0.94$). Moreover, we find a good\ncorrelation between the OMF and the open flux derived from solar coronal holes\n($cc_{\\mathrm{Pearson}}=0.88$), although the coronal holes only contain\n$14-32\\%$ of the Sun's total open flux. However, we note that while the OMF\nevolution correlates with coronal hole open flux, there is no correlation with\nthe coronal hole area evolution ($cc_{\\mathrm{Pearson}}=0.0$). The temporal\nincrease in OMF correlates with the vanishing remnant magnetic field at the\nsouthern pole, caused by poleward flux circulations from the decay of numerous\nactive regions months earlier. Additionally, our analysis suggests a potential\nlink between the OMF enhancement and the concurrent emergence of the largest\nactive region in solar cycle 24. In conclusion, our study provides insights\ninto the strong increase in OMF observed during September to October 2014.",
+        "link": "http://arxiv.org/abs/2402.12805v1",
+        "type": "paper"
     },
     {
-        "title": "GPT Store Mining and Analysis",
+        "title": "SeaTurtleID2022: A long-span dataset for reliable sea turtle re-identification",
         "authors": [
-            "Dongxun Su",
-            "Yanjie Zhao",
-            "Xinyi Hou",
-            "Shenao Wang",
-            "Haoyu Wang"
+            "Luk\u00e1\u0161 Adam",
+            "Vojt\u011bch \u010cerm\u00e1k",
+            "Kostas Papafitsoros",
+            "Luk\u00e1\u0161 Picek"
         ],
-        "text": "As a pivotal extension of the renowned ChatGPT, the GPT Store serves as a\ndynamic marketplace for various Generative Pre-trained Transformer (GPT)\nmodels, shaping the frontier of conversational AI. This paper presents an\nin-depth measurement study of the GPT Store, with a focus on the categorization\nof GPTs by topic, factors influencing GPT popularity, and the potential\nsecurity risks. Our investigation starts with assessing the categorization of\nGPTs in the GPT Store, analyzing how they are organized by topics, and\nevaluating the effectiveness of the classification system. We then examine the\nfactors that affect the popularity of specific GPTs, looking into user\npreferences, algorithmic influences, and market trends. Finally, the study\ndelves into the security risks of the GPT Store, identifying potential threats\nand evaluating the robustness of existing security measures. This study offers\na detailed overview of the GPT Store's current state, shedding light on its\noperational dynamics and user interaction patterns. Our findings aim to enhance\nunderstanding of the GPT ecosystem, providing valuable insights for future\nresearch, development, and policy-making in generative AI.",
-        "link": "http://arxiv.org/abs/2405.10210v1"
+        "text": "This paper introduces the first public large-scale, long-span dataset with\nsea turtle photographs captured in the wild -- SeaTurtleID2022\n(https://www.kaggle.com/datasets/wildlifedatasets/seaturtleid2022). The dataset\ncontains 8729 photographs of 438 unique individuals collected within 13 years,\nmaking it the longest-spanned dataset for animal re-identification. All\nphotographs include various annotations, e.g., identity, encounter timestamp,\nand body parts segmentation masks. Instead of standard \"random\" splits, the\ndataset allows for two realistic and ecologically motivated splits: (i) a\ntime-aware closed-set with training, validation, and test data from different\ndays/years, and (ii) a time-aware open-set with new unknown individuals in test\nand validation sets. We show that time-aware splits are essential for\nbenchmarking re-identification methods, as random splits lead to performance\noverestimation. Furthermore, a baseline instance segmentation and\nre-identification performance over various body parts is provided. Finally, an\nend-to-end system for sea turtle re-identification is proposed and evaluated.\nThe proposed system based on Hybrid Task Cascade for head instance segmentation\nand ArcFace-trained feature-extractor achieved an accuracy of 86.8%.",
+        "link": "http://arxiv.org/abs/2311.05524v2",
+        "type": "paper"
     },
     {
-        "title": "\"The Death of Wikipedia?\" -- Exploring the Impact of ChatGPT on Wikipedia Engagement",
+        "title": "Benchmarking the Abilities of Large Language Models for RDF Knowledge Graph Creation and Comprehension: How Well Do LLMs Speak Turtle?",
         "authors": [
-            "Neal Reeves",
-            "Wenjie Yin",
-            "Elena Simperl",
-            "Miriam Redi"
+            "Johannes Frey",
+            "Lars-Peter Meyer",
+            "Natanael Arndt",
+            "Felix Brei",
+            "Kirill Bulert"
         ],
-        "text": "Wikipedia is one of the most popular websites in the world, serving as a\nmajor source of information and learning resource for millions of users\nworldwide. While motivations for its usage vary, prior research suggests\nshallow information gathering -- looking up facts and information or answering\nquestions -- dominates over more in-depth usage. On the 22nd of November 2022,\nChatGPT was released to the public and has quickly become a popular source of\ninformation, serving as an effective question-answering and knowledge gathering\nresource. Early indications have suggested that it may be drawing users away\nfrom traditional question answering services such as Stack Overflow, raising\nthe question of how it may have impacted Wikipedia. In this paper, we explore\nWikipedia user metrics across four areas: page views, unique visitor numbers,\nedit counts and editor numbers within twelve language instances of Wikipedia.\nWe perform pairwise comparisons of these metrics before and after the release\nof ChatGPT and implement a panel regression model to observe and quantify\nlonger-term trends. We find no evidence of a fall in engagement across any of\nthe four metrics, instead observing that page views and visitor numbers\nincreased in the period following ChatGPT's launch. However, we observe a lower\nincrease in languages where ChatGPT was available than in languages where it\nwas not, which may suggest ChatGPT's availability limited growth in those\nlanguages. Our results contribute to the understanding of how emerging\ngenerative AI tools are disrupting the Web ecosystem.",
-        "link": "http://arxiv.org/abs/2405.10205v1"
+        "text": "Large Language Models (LLMs) are advancing at a rapid pace, with significant\nimprovements at natural language processing and coding tasks. Yet, their\nability to work with formal languages representing data, specifically within\nthe realm of knowledge graph engineering, remains under-investigated. To\nevaluate the proficiency of various LLMs, we created a set of five tasks that\nprobe their ability to parse, understand, analyze, and create knowledge graphs\nserialized in Turtle syntax. These tasks, each embodying distinct degrees of\ncomplexity and being able to scale with the size of the problem, have been\nintegrated into our automated evaluation system, the LLM-KG-Bench. The\nevaluation encompassed four commercially available LLMs - GPT-3.5, GPT-4,\nClaude 1.3, and Claude 2.0, as well as two freely accessible offline models,\nGPT4All Vicuna and GPT4All Falcon 13B. This analysis offers an in-depth\nunderstanding of the strengths and shortcomings of LLMs in relation to their\napplication within RDF knowledge graph engineering workflows utilizing Turtle\nrepresentation. While our findings show that the latest commercial models\noutperform their forerunners in terms of proficiency with the Turtle language,\nthey also reveal an apparent weakness. These models fall short when it comes to\nadhering strictly to the output formatting constraints, a crucial requirement\nin this context.",
+        "link": "http://arxiv.org/abs/2309.17122v1",
+        "type": "paper"
     },
     {
-        "title": "A Guide to Tracking Phylogenies in Parallel and Distributed Agent-based Evolution Models",
+        "title": "On the short term stability and tilting motion of a well-observed low-latitude solar coronal hole",
         "authors": [
-            "Matthew Andres Moreno",
-            "Anika Ranjan",
-            "Emily Dolson",
-            "Luis Zaman"
+            "Stephan G. Heinemann",
+            "Stefan J. Hofmeister",
+            "James A. Turtle",
+            "Jens Pomoell",
+            "Eleanna Asvestari",
+            "Alphonse C. Sterling",
+            "Andrea Diercke",
+            "Cooper Downs"
         ],
-        "text": "Computer simulations are an important tool for studying the mechanics of\nbiological evolution. In particular, in silico work with agent-based models\nprovides an opportunity to collect high-quality records of ancestry\nrelationships among simulated agents. Such phylogenies can provide insight into\nevolutionary dynamics within these simulations. Existing work generally tracks\nlineages directly, yielding an exact phylogenetic record of evolutionary\nhistory. However, direct tracking can be inefficient for large-scale,\nmany-processor evolutionary simulations. An alternate approach to extracting\nphylogenetic information from simulation that scales more favorably is post hoc\nestimation, akin to how bioinformaticians build phylogenies by assessing\ngenetic similarities between organisms. Recently introduced ``hereditary\nstratigraphy'' algorithms provide means for efficient inference of phylogenetic\nhistory from non-coding annotations on simulated organisms' genomes. A number\nof options exist in configuring hereditary stratigraphy methodology, but no\nwork has yet tested how they impact reconstruction quality. To address this\nquestion, we surveyed reconstruction accuracy under alternate configurations\nacross a matrix of evolutionary conditions varying in selection pressure,\nspatial structure, and ecological dynamics. We synthesize results from these\nexperiments to suggest a prescriptive system of best practices for work with\nhereditary stratigraphy, ultimately guiding researchers in choosing appropriate\ninstrumentation for large-scale simulation studies.",
-        "link": "http://arxiv.org/abs/2405.10183v1"
+        "text": "The understanding of the solar magnetic coronal structure is tightly linked\nto the shape of open field regions, specifically coronal holes. A dynamically\nevolving coronal hole coincides with the local restructuring of open to closed\nmagnetic field, which leads to changes in the interplanetary solar wind\nstructure. By investigating the dynamic evolution of a fast-tilting coronal\nhole, we strive to uncover clues about what processes may drive its\nmorphological changes, which are clearly visible in EUV filtergrams. Using\ncombined 193A and 195A EUV observations by AIA/SDO and EUVI/STEREO_A, in\nconjunction with line-of-sight magnetograms taken by HMI/SDO, we track and\nanalyze a coronal hole over 12 days to derive changes in morphology, area and\nmagnetic field. We complement this analysis by potential field source surface\nmodeling to compute the open field structure of the coronal hole. We find that\nthe coronal hole exhibits an apparent tilting motion over time that cannot\nsolely be explained by solar differential rotation. It tilts at a mean rate of\n~3.2{\\deg}/day that accelerates up to ~5.4{\\deg}/day. At the beginning of May,\nthe area of the coronal hole decreases by more than a factor of three over four\ndays (from ~13 * 10^9 km^2 to ~4 * 10^9 km^2), but its open flux remains\nconstant (~2 * 10^20 Mx). Further, the observed evolution is not reproduced by\nmodeling that assumes the coronal magnetic field to be potential. In this\nstudy, we present a solar coronal hole that tilts at a rate that has yet to be\nreported in literature. The rate exceeds the effect of the coronal hole being\nadvected by either photospheric or coronal differential rotation. Based on the\nanalysis we find it likely that this is due to morphological changes in the\ncoronal hole boundary caused by ongoing interchange reconnection and the\ninteraction with a newly emerging ephemeral region in its vicinity.",
+        "link": "http://arxiv.org/abs/2309.11100v1",
+        "type": "paper"
     },
     {
-        "title": "Speaker Verification in Agent-Generated Conversations",
+        "title": "Kolam Simulation using Angles at Lattice Points",
         "authors": [
-            "Yizhe Yang",
-            "Heyan Huang",
-            "Palakorn Achananuparp",
-            "Jing Jiang",
-            "Ee-Peng Lim"
+            "Tulasi Bharathi",
+            "Shailaja D Sharma",
+            "Nithin Nagaraj"
         ],
-        "text": "The recent success of large language models (LLMs) has attracted widespread\ninterest to develop role-playing conversational agents personalized to the\ncharacteristics and styles of different speakers to enhance their abilities to\nperform both general and special purpose dialogue tasks. However, the ability\nto personalize the generated utterances to speakers, whether conducted by human\nor LLM, has not been well studied. To bridge this gap, our study introduces a\nnovel evaluation challenge: speaker verification in agent-generated\nconversations, which aimed to verify whether two sets of utterances originate\nfrom the same speaker. To this end, we assemble a large dataset collection\nencompassing thousands of speakers and their utterances. We also develop and\nevaluate speaker verification models under experiment setups. We further\nutilize the speaker verification models to evaluate the personalization\nabilities of LLM-based role-playing models. Comprehensive experiments suggest\nthat the current role-playing models fail in accurately mimicking speakers,\nprimarily due to their inherent linguistic characteristics.",
-        "link": "http://arxiv.org/abs/2405.10150v1"
+        "text": "Kolam is a ritual art form practised by people in South India and consists of\nrule-bound geometric patterns of dots and lines. Single loop Kolams are\nmathematical closed loop patterns drawn over a grid of dots and conforming to\ncertain heuristics. In this work, we propose a novel encoding scheme where we\nmap the angular movements of Kolam at lattice points into sequences containing\n$4$ distinct symbols. This is then used to simulate single loop Kolam procedure\nvia turtle moves in accordance with the desired angular direction at specific\npoints. We thus obtain sequential codes for Kolams, unique up to cyclic\npermutations. We specify the requirements for the algorithm and indicate the\ngeneral methodology. We demonstrate a sample of Kolams using our algorithm with\na software implementation in Python.",
+        "link": "http://arxiv.org/abs/2307.02144v1",
+        "type": "paper"
     },
     {
-        "title": "Towards Consistent and Explainable Motion Prediction using Heterogeneous Graph Attention",
+        "title": "Physically Realizable Natural-Looking Clothing Textures Evade Person Detectors via 3D Modeling",
         "authors": [
-            "Tobias Demmler",
-            "Andreas Tamke",
-            "Thao Dang",
-            "Karsten Haug",
-            "Lars Mikelsons"
-        ],
-        "text": "In autonomous driving, accurately interpreting the movements of other road\nusers and leveraging this knowledge to forecast future trajectories is crucial.\nThis is typically achieved through the integration of map data and tracked\ntrajectories of various agents. Numerous methodologies combine this information\ninto a singular embedding for each agent, which is then utilized to predict\nfuture behavior. However, these approaches have a notable drawback in that they\nmay lose exact location information during the encoding process. The encoding\nstill includes general map information. However, the generation of valid and\nconsistent trajectories is not guaranteed. This can cause the predicted\ntrajectories to stray from the actual lanes. This paper introduces a new\nrefinement module designed to project the predicted trajectories back onto the\nactual map, rectifying these discrepancies and leading towards more consistent\npredictions. This versatile module can be readily incorporated into a wide\nrange of architectures. Additionally, we propose a novel scene encoder that\nhandles all relations between agents and their environment in a single unified\nheterogeneous graph attention network. By analyzing the attention values on the\ndifferent edges in this graph, we can gain unique insights into the neural\nnetwork's inner workings leading towards a more explainable prediction.",
-        "link": "http://arxiv.org/abs/2405.10134v1"
-    },
-    {
-        "title": "StyloAI: Distinguishing AI-Generated Content with Stylometric Analysis",
-        "authors": [
-            "Chidimma Opara"
-        ],
-        "text": "The emergence of large language models (LLMs) capable of generating realistic\ntexts and images has sparked ethical concerns across various sectors. In\nresponse, researchers in academia and industry are actively exploring methods\nto distinguish AI-generated content from human-authored material. However, a\ncrucial question remains: What are the unique characteristics of AI-generated\ntext? Addressing this gap, this study proposes StyloAI, a data-driven model\nthat uses 31 stylometric features to identify AI-generated texts by applying a\nRandom Forest classifier on two multi-domain datasets. StyloAI achieves\naccuracy rates of 81% and 98% on the test set of the AuTextification dataset\nand the Education dataset, respectively. This approach surpasses the\nperformance of existing state-of-the-art models and provides valuable insights\ninto the differences between AI-generated and human-authored texts.",
-        "link": "http://arxiv.org/abs/2405.10129v1"
-    },
-    {
-        "title": "Red Teaming Language Models for Contradictory Dialogues",
-        "authors": [
-            "Xiaofei Wen",
-            "Bangzheng Li",
-            "Tenghao Huang",
-            "Muhao Chen"
-        ],
-        "text": "Most language models currently available are prone to self-contradiction\nduring dialogues. To mitigate this issue, this study explores a novel\ncontradictory dialogue processing task that aims to detect and modify\ncontradictory statements in a conversation. This task is inspired by research\non context faithfulness and dialogue comprehension, which have demonstrated\nthat the detection and understanding of contradictions often necessitate\ndetailed explanations. We develop a dataset comprising contradictory dialogues,\nin which one side of the conversation contradicts itself. Each dialogue is\naccompanied by an explanatory label that highlights the location and details of\nthe contradiction. With this dataset, we present a Red Teaming framework for\ncontradictory dialogue processing. The framework detects and attempts to\nexplain the dialogue, then modifies the existing contradictory content using\nthe explanation. Our experiments demonstrate that the framework improves the\nability to detect contradictory dialogues and provides valid explanations.\nAdditionally, it showcases distinct capabilities for modifying such dialogues.\nOur study highlights the importance of the logical inconsistency problem in\nconversational AI.",
-        "link": "http://arxiv.org/abs/2405.10128v1"
-    },
-    {
-        "title": "When Large Language Model Meets Optimization",
-        "authors": [
-            "Sen Huang",
-            "Kaixiang Yang",
-            "Sheng Qi",
-            "Rui Wang"
-        ],
-        "text": "Optimization algorithms and large language models (LLMs) enhance\ndecision-making in dynamic environments by integrating artificial intelligence\nwith traditional techniques. LLMs, with extensive domain knowledge, facilitate\nintelligent modeling and strategic decision-making in optimization, while\noptimization algorithms refine LLM architectures and output quality. This\nsynergy offers novel approaches for advancing general AI, addressing both the\ncomputational challenges of complex problems and the application of LLMs in\npractical scenarios. This review outlines the progress and potential of\ncombining LLMs with optimization algorithms, providing insights for future\nresearch directions.",
-        "link": "http://arxiv.org/abs/2405.10098v1"
-    },
-    {
-        "title": "Optimizing Search and Rescue UAV Connectivity in Challenging Terrain through Multi Q-Learning",
-        "authors": [
-            "Mohammed M. H. Qazzaz",
-            "Syed A. R. Zaidi",
-            "Desmond C. McLernon",
-            "Abdelaziz Salama",
-            "Aubida A. Al-Hameed"
-        ],
-        "text": "Using Unmanned Aerial Vehicles (UAVs) in Search and rescue operations (SAR)\nto navigate challenging terrain while maintaining reliable communication with\nthe cellular network is a promising approach. This paper suggests a novel\ntechnique employing a reinforcement learning multi Q-learning algorithm to\noptimize UAV connectivity in such scenarios. We introduce a Strategic Planning\nAgent for efficient path planning and collision awareness and a Real-time\nAdaptive Agent to maintain optimal connection with the cellular base station.\nThe agents trained in a simulated environment using multi Q-learning,\nencouraging them to learn from experience and adjust their decision-making to\ndiverse terrain complexities and communication scenarios. Evaluation results\nreveal the significance of the approach, highlighting successful navigation in\nenvironments with varying obstacle densities and the ability to perform optimal\nconnectivity using different frequency bands. This work paves the way for\nenhanced UAV autonomy and enhanced communication reliability in search and\nrescue operations.",
-        "link": "http://arxiv.org/abs/2405.10042v1"
-    },
-    {
-        "title": "Silicon nitride integrated photonics from visible to mid-infrared spectra",
-        "authors": [
-            "Kirill A. Buzaverov",
-            "Aleksandr S. Baburin",
-            "Evgeny V. Sergeev",
-            "Sergey S. Avdeev",
-            "Evgeniy S. Lotkov",
-            "Sergey V. Bukatin",
-            "Ilya A. Stepanov",
-            "Aleksey B. Kramarenko",
-            "Ali Sh. Amiraslanov",
-            "Danil V. Kushnev",
-            "Ilya A. Ryzhikov",
-            "Ilya A. Rodionov"
-        ],
-        "text": "Recently, silicon nitride (Si3N4) photonic integrated circuits (PICs) are of\na great interest due to their extremely low waveguides losses. The number of\nSi3N4 integrated photonics platform applications is constantly growing\nincluding the Internet of Things (IoT), artificial intelligence (AI), light\ndetection and ranging (LiDAR) devices, hybrid neuromorphic and quantum\ncomputing. Their heterogeneous integration with a III-V platform leads to a new\nadvanced large scale PICs with thousands of elements. Here, we review key\ntrends in Si3N4 integrated circuits technology and fill an information gap in\nthe field of state-of-the-art photonic devices operating from visible to\nmid-infrared spectra. A comprehensive overview of Si3N4 integrared circtuis\nmicrofabrication process details (deposition, lithography, etching, etc.) is\nintroduced. Finally, we point out the limits and challenges of silicon nitride\nphotonics performance in an ultrawide range providing routes and prospects for\ntheir future scaling and optimization.",
-        "link": "http://arxiv.org/abs/2405.10038v1"
-    },
-    {
-        "title": "Solving the enigma: Deriving optimal explanations of deep networks",
-        "authors": [
-            "Michail Mamalakis",
-            "Antonios Mamalakis",
-            "Ingrid Agartz",
-            "Lynn Egeland M\u00f8rch-Johnsen",
-            "Graham Murray",
-            "John Suckling",
-            "Pietro Lio"
-        ],
-        "text": "The accelerated progress of artificial intelligence (AI) has popularized deep\nlearning models across domains, yet their inherent opacity poses challenges,\nnotably in critical fields like healthcare, medicine and the geosciences.\nExplainable AI (XAI) has emerged to shed light on these \"black box\" models,\nhelping decipher their decision making process. Nevertheless, different XAI\nmethods yield highly different explanations. This inter-method variability\nincreases uncertainty and lowers trust in deep networks' predictions. In this\nstudy, for the first time, we propose a novel framework designed to enhance the\nexplainability of deep networks, by maximizing both the accuracy and the\ncomprehensibility of the explanations. Our framework integrates various\nexplanations from established XAI methods and employs a non-linear \"explanation\noptimizer\" to construct a unique and optimal explanation. Through experiments\non multi-class and binary classification tasks in 2D object and 3D neuroscience\nimaging, we validate the efficacy of our approach. Our explanation optimizer\nachieved superior faithfulness scores, averaging 155% and 63% higher than the\nbest performing XAI method in the 3D and 2D applications, respectively.\nAdditionally, our approach yielded lower complexity, increasing\ncomprehensibility. Our results suggest that optimal explanations based on\nspecific criteria are derivable and address the issue of inter-method\nvariability in the current XAI literature.",
-        "link": "http://arxiv.org/abs/2405.10008v1"
-    },
-    {
-        "title": "Semantic Communication via Rate Distortion Perception Bottleneck",
-        "authors": [
-            "Zihe Zhao",
-            "Chunyue Wang"
-        ],
-        "text": "With the advancement of Artificial Intelligence (AI) technology,\nnext-generation wireless communication network is facing unprecedented\nchallenge. Semantic communication has become a novel solution to address such\nchallenges, with enhancing the efficiency of bandwidth utilization by\ntransmitting meaningful information and filtering out superfluous data.\nUnfortunately, recent studies have shown that classical Shannon information\ntheory primarily focuses on the bit-level distortion, which cannot adequately\naddress the perceptual quality issues of data reconstruction at the receiver\nend. In this work, we consider the impact of semantic-level distortion on\nsemantic communication. We develop an image inference network based on the\nInformation Bottleneck (IB) framework and concurrently establish an image\nreconstruction network. This network is designed to achieve joint optimization\nof perception and bit-level distortion, as well as image inference, associated\nwith compressing information. To maintain consistency with the principles of IB\nfor handling high-dimensional data, we employ variational approximation methods\nto simplify the optimization problem. Finally, we confirm the existence of the\nrate distortion perception tradeoff within IB framework through experimental\nanalysis conducted on the MNIST dataset.",
-        "link": "http://arxiv.org/abs/2405.09995v1"
-    },
-    {
-        "title": "Pedestrian evacuations with imitation of cooperative behavior",
-        "authors": [
-            "Amir Zablotsky",
-            "Marcelo N Kuperman",
-            "Sebasti\u00e1n Bouzat"
-        ],
-        "text": "We analyze the dynamics of room evacuation for mixed populations that include\nboth competitive and cooperative individuals through numerical simulations\nusing the social force model. Cooperative agents represent well-trained\nindividuals who know how to behave in order to reduce risks within high-density\ncrowds. We consider that competitive agents can imitate cooperative behavior\nwhen they are in close proximity to cooperators. We study the effects of the\nimitation of cooperative behavior on the duration and safety of evacuations,\nanalyzing evacuation time and other quantities of interest for varying\nparameters such as the proportions of mixing, the aspect ratio of the room, and\nthe parameters characterizing individual behaviors. Our main findings reveal\nthat the addition of a relatively small number of cooperative agents into a\ncrowd can reduce evacuation time and the density near the exit door, making the\nevacuation faster and safer despite an increase in the total number of agents.\nIn particular, for long spaces such as corridors, a small number of added\ncooperative agents can significantly facilitate the evacuation process. We\ncompare our results with those of systems without imitation and also study the\ngeneral role of cooperation, providing further analysis for homogeneous\npopulations. Our main conclusions emphasize the potential relevance of training\npeople how to behave in high-density crowds",
-        "link": "http://arxiv.org/abs/2405.09978v1"
-    },
-    {
-        "title": "Mitigating Text Toxicity with Counterfactual Generation",
-        "authors": [
-            "Milan Bhan",
-            "Jean-Noel Vittaut",
-            "Nina Achache",
-            "Victor Legrand",
-            "Nicolas Chesneau",
-            "Annabelle Blangero",
-            "Juliette Murris",
-            "Marie-Jeanne Lesot"
-        ],
-        "text": "Toxicity mitigation consists in rephrasing text in order to remove offensive\nor harmful meaning. Neural natural language processing (NLP) models have been\nwidely used to target and mitigate textual toxicity. However, existing methods\nfail to detoxify text while preserving the initial non-toxic meaning at the\nsame time. In this work, we propose to apply counterfactual generation methods\nfrom the eXplainable AI (XAI) field to target and mitigate textual toxicity. In\nparticular, we perform text detoxification by applying local feature importance\nand counterfactual generation methods to a toxicity classifier distinguishing\nbetween toxic and non-toxic texts. We carry out text detoxification through\ncounterfactual generation on three datasets and compare our approach to three\ncompetitors. Automatic and human evaluations show that recently developed NLP\ncounterfactual generators can mitigate toxicity accurately while better\npreserving the meaning of the initial text as compared to classical\ndetoxification methods. Finally, we take a step back from using automated\ndetoxification tools, and discuss how to manage the polysemous nature of\ntoxicity and the risk of malicious use of detoxification tools. This work is\nthe first to bridge the gap between counterfactual generation and text\ndetoxification and paves the way towards more practical application of XAI\nmethods.",
-        "link": "http://arxiv.org/abs/2405.09948v1"
-    },
-    {
-        "title": "DEBATE: Devil's Advocate-Based Assessment and Text Evaluation",
-        "authors": [
-            "Alex Kim",
-            "Keonwoo Kim",
-            "Sangwon Yoon"
-        ],
-        "text": "As natural language generation (NLG) models have become prevalent,\nsystematically assessing the quality of machine-generated texts has become\nincreasingly important. Recent studies introduce LLM-based evaluators that\noperate as reference-free metrics, demonstrating their capability to adeptly\nhandle novel tasks. However, these models generally rely on a single-agent\napproach, which, we argue, introduces an inherent limit to their performance.\nThis is because there exist biases in LLM agent's responses, including\npreferences for certain text structure or content. In this work, we propose\nDEBATE, an NLG evaluation framework based on multi-agent scoring system\naugmented with a concept of Devil's Advocate. Within the framework, one agent\nis instructed to criticize other agents' arguments, potentially resolving the\nbias in LLM agent's answers. DEBATE substantially outperforms the previous\nstate-of-the-art methods in two meta-evaluation benchmarks in NLG evaluation,\nSummEval and TopicalChat. We also show that the extensiveness of debates among\nagents and the persona of an agent can influence the performance of evaluators.",
-        "link": "http://arxiv.org/abs/2405.09935v1"
-    },
-    {
-        "title": "Stock Market Dynamics Through Deep Learning Context",
-        "authors": [
-            "Amirhossein Aminimehr",
-            "Amin Aminimehr",
-            "Hamid Moradi Kamali",
-            "Sauleh Eetemadi",
-            "Saeid Hoseinzade"
-        ],
-        "text": "Studies conducted on financial market prediction lack a comprehensive feature\nset that can carry a broad range of contributing factors; therefore, leading to\nimprecise results. Furthermore, while cooperating with the most recent\ninnovations in explainable AI, studies have not provided an illustrative\ntext of market-driving factors using this powerful tool. Therefore, in this\nstudy, we propose a novel feature matrix that holds a broad range of features\nincluding Twitter content and market historical data to perform a binary\nclassification task of one step ahead prediction. The utilization of our\nproposed feature matrix not only leads to improved prediction accuracy when\ncompared to existing feature representations, but also its combination with\nexplainable AI allows us to introduce a fresh analysis approach regarding the\nimportance of the market-driving factors included. Thanks to the Lime\ninterpretation technique, our interpretation study shows that the volume of\ntweets is the most important factor included in our feature matrix that drives\nthe market's movements.",
-        "link": "http://arxiv.org/abs/2405.09932v1"
-    },
-    {
-        "title": "Infrared Adversarial Car Stickers",
-        "authors": [
-            "Xiaopei Zhu",
-            "Yuqiu Liu",
             "Zhanhao Hu",
-            "Jianmin Li",
+            "Wenda Chu",
+            "Xiaopei Zhu",
+            "Hui Zhang",
+            "Bo Zhang",
             "Xiaolin Hu"
         ],
-        "text": "Infrared physical adversarial examples are of great significance for studying\nthe security of infrared AI systems that are widely used in our lives such as\nautonomous driving. Previous infrared physical attacks mainly focused on 2D\ninfrared pedestrian detection which may not fully manifest its destructiveness\nto AI systems. In this work, we propose a physical attack method against\ninfrared detectors based on 3D modeling, which is applied to a real car. The\ngoal is to design a set of infrared adversarial stickers to make cars invisible\nto infrared detectors at various viewing angles, distances, and scenes. We\nbuild a 3D infrared car model with real infrared characteristics and propose an\ninfrared adversarial pattern generation method based on 3D mesh shadow. We\npropose a 3D control points-based mesh smoothing algorithm and use a set of\nsmoothness loss functions to enhance the smoothness of adversarial meshes and\nfacilitate the sticker implementation. Besides, We designed the aluminum\nstickers and conducted physical experiments on two real Mercedes-Benz A200L\ncars. Our adversarial stickers hid the cars from Faster RCNN, an object\ndetector, at various viewing angles, distances, and scenes. The attack success\nrate (ASR) was 91.49% for real cars. In comparison, the ASRs of random stickers\nand no sticker were only 6.21% and 0.66%, respectively. In addition, the ASRs\nof the designed stickers against six unseen object detectors such as YOLOv3 and\nDeformable DETR were between 73.35%-95.80%, showing good transferability of the\nattack performance across detectors.",
-        "link": "http://arxiv.org/abs/2405.09924v1"
+        "text": "Recent works have proposed to craft adversarial clothes for evading person\ndetectors, while they are either only effective at limited viewing angles or\nvery conspicuous to humans. We aim to craft adversarial texture for clothes\nbased on 3D modeling, an idea that has been used to craft rigid adversarial\nobjects such as a 3D-printed turtle. Unlike rigid objects, humans and clothes\nare non-rigid, leading to difficulties in physical realization. In order to\ncraft natural-looking adversarial clothes that can evade person detectors at\nmultiple viewing angles, we propose adversarial camouflage textures (AdvCaT)\nthat resemble one kind of the typical textures of daily clothes, camouflage\ntextures. We leverage the Voronoi diagram and Gumbel-softmax trick to\nparameterize the camouflage textures and optimize the parameters via 3D\nmodeling. Moreover, we propose an efficient augmentation pipeline on 3D meshes\ncombining topologically plausible projection (TopoProj) and Thin Plate Spline\n(TPS) to narrow the gap between digital and real-world objects. We printed the\ndeveloped 3D texture pieces on fabric materials and tailored them into T-shirts\nand trousers. Experiments show high attack success rates of these clothes\nagainst multiple detectors.",
+        "link": "http://arxiv.org/abs/2307.01778v1",
+        "type": "paper"
     },
     {
-        "title": "\"Hunt Takes Hare\": Theming Games Through Game-Word Vector Translation",
+        "title": "Trees and Turtles: Modular Abstractions for State Machine Replication Protocols",
         "authors": [
-            "Rabii Youn\u00e8s",
-            "Cook Michael"
+            "Natalie Neamtu",
+            "Haobin Ni",
+            "Robbert van Renesse"
         ],
-        "text": "A game's theme is an important part of its design -- it conveys narrative\ninformation, rhetorical messages, helps the player intuit strategies, aids in\ntutorialisation and more. Thematic elements of games are notoriously difficult\nfor AI systems to understand and manipulate, however, and often rely on large\namounts of hand-written interpretations and knowledge. In this paper we present\na technique which connects game embeddings, a recent method for modelling game\ndynamics from log data, and word embeddings, which models semantic information\nabout language. We explain two different approaches for using game embeddings\nin this way, and show evidence that game embeddings enhance the linguistic\ntranslations of game concepts from one theme to another, opening up exciting\nnew possibilities for reasoning about the thematic elements of games in the\nfuture.",
-        "link": "http://arxiv.org/abs/2405.09893v1"
+        "text": "We present two abstractions for designing modular state machine replication\n(SMR) protocols: trees and turtles. A tree captures the set of possible state\nmachine histories, while a turtle represents a subprotocol that tries to find\nagreement in this tree. We showcase the applicability of these abstractions by\nconstructing crash-tolerant SMR protocols out of abstract tree turtles and\nproviding examples of tree turtle implementations. Tree turtles can also be\nextended to be made Byzantine fault-tolerant (BFT). The modularity of tree\nturtles allows a generic approach for adding a leader for liveness. We expect\nthat these abstractions will simplify reasoning and formal verification of SMR\nprotocols as well as facilitate innovation in protocol designs.",
+        "link": "http://arxiv.org/abs/2304.07850v2",
+        "type": "paper"
     },
     {
-        "title": "IGOT: Information Gain Optimized Tokenizer on Domain Adaptive Pretraining",
+        "title": "Super-performance: sampling, planning, and ecological information",
         "authors": [
-            "Dawei Feng",
-            "Yihai Zhang",
-            "Zhixuan Xu"
+            "Bradly Alicea"
         ],
-        "text": "Pretrained Large Language Models (LLM) such as ChatGPT, Claude, etc. have\ndemonstrated strong capabilities in various fields of natural language\ngeneration. However, there are still many problems when using LLM in\nspecialized domain-specific fields. When using generative AI to process\ndownstream tasks, a common approach is to add new knowledge (e.g., private\ndomain knowledge, cutting-edge information) to a pretrained model through\ncontinued training or fine-tuning. However, whether there is a universal\nparadigm for domain adaptation training is still an open question. In this\narticle, we proposed Information Gain Optimized Tokenizer (IGOT), which\nanalyzes the special token set of downstream tasks, constructs a new subset\nusing heuristic function $\\phi$ with the special token and its information\ngain, to build new domain-specific tokenizer, and continues pretraining on the\ndownstream task data. We explored the many positive effects of this method's\ncustomized tokenizer on domain-adaptive pretraining and verified this method\ncan perform better than the ordinary method of just collecting data and\nfine-tuning. Based on our experiment, the continued pretraining process of IGOT\nwith LLaMA-7B achieved 11.9\\% token saving, 12.2\\% training time saving, and\n5.8\\% maximum GPU VRAM usage saving, combined with the T5 model, we can even\nreach a 31.5\\% of training time saving, making porting general generative AI to\nspecific domains more effective than before. In domain-specific tasks,\nsupervised $IGOT_\\tau$ shows great performance on reducing both the convergence\nradius and convergence point during keep pretraining.",
-        "link": "http://arxiv.org/abs/2405.09857v1"
+        "text": "The connection between active perception and the limits of performance\nprovide a path to understanding naturalistic behavior. We can take a\ncomparative cognitive modeling perspective to understand the limits of this\nperformance and the existence of superperformance. We will discuss two\ncategories that are hypothesized to originate in terms of coevolutionary\nrelationships and evolutionary trade offs: supersamplers and superplanners.\nSupersamplers take snapshots of their sensory world at a very high sampling\nrate. Examples include flies (vision) and frogs (audition) with ecological\nspecializations. Superplanners internally store information to evaluate and act\nupon multiple features of spatiotemporal environments. Slow lorises and turtles\nprovide examples of superplanning capabilities. The Gibsonian Information (GI)\nparadigm is used to evaluate sensory sampling and planning with respect to\ndirect perception and its role in capturing environmental information content.\nBy contrast, superplanners utilize internal models of the environment to\ncompensate for normal rates of sensory sampling, and this relationship often\nexists as a sampling/planning tradeoff. Supersamplers and superplanners can\nexist in adversarial relationships, or longer-term as coevolutionary\nrelationships. Moreover, the tradeoff between sampling and planning capacity\ncan break down, providing relativistic regimes. We can apply the principles of\nsuperperformance to human augmentation technologies.",
+        "link": "http://arxiv.org/abs/2304.01350v2",
+        "type": "paper"
     },
     {
-        "title": "Organizational Selection of Innovation",
+        "title": "An aperiodic monotile",
         "authors": [
-            "Lucas B\u00f6ttcher",
-            "Ronald Klingebiel"
+            "David Smith",
+            "Joseph Samuel Myers",
+            "Craig S. Kaplan",
+            "Chaim Goodman-Strauss"
         ],
-        "text": "Budgetary constraints force organizations to pursue only a subset of possible\ninnovation projects. Identifying which subset is most promising is an\nerror-prone exercise, and involving multiple decision makers may be prudent.\nThis raises the question of how to most effectively aggregate their collective\nnous. Our model of organizational portfolio selection provides some first\nanswers. We show that portfolio performance can vary widely. Delegating\nevaluation makes sense when organizations employ the relevant experts and can\nassign projects to them. In most other settings, aggregating the impressions of\nmultiple agents leads to better performance than delegation. In particular,\nletting agents rank projects often outperforms alternative aggregation rules --\nincluding averaging agents' project scores as well as counting their approval\nvotes -- especially when organizations have tight budgets and can select only a\nfew project alternatives out of many.",
-        "link": "http://arxiv.org/abs/2405.09843v1"
+        "text": "A longstanding open problem asks for an aperiodic monotile, also known as an\n\"einstein\": a shape that admits tilings of the plane, but never periodic\ntilings. We answer this problem for topological disk tiles by exhibiting a\ncontinuum of combinatorially equivalent aperiodic polygons. We first show that\na representative example, the \"hat\" polykite, can form clusters called\n\"metatiles\", for which substitution rules can be defined. Because the metatiles\nadmit tilings of the plane, so too does the hat. We then prove that generic\nmembers of our continuum of polygons are aperiodic, through a new kind of\ngeometric incommensurability argument. Separately, we give a combinatorial,\ncomputer-assisted proof that the hat must form hierarchical -- and hence\naperiodic -- tilings.",
+        "link": "http://arxiv.org/abs/2303.10798v2",
+        "type": "paper"
     },
     {
-        "title": "Nearly Minimax Optimal Regret for Multinomial Logistic Bandit",
+        "title": "SeaTurtleID2022: A long-span dataset for reliable sea turtle re-identification",
         "authors": [
-            "Joongkyu Lee",
-            "Min-hwan Oh"
+            "Luk\u00e1\u0161 Adam",
+            "Vojt\u011bch \u010cerm\u00e1k",
+            "Kostas Papafitsoros",
+            "Luk\u00e1\u0161 Picek"
         ],
-        "text": "In this paper, we investigate the contextual multinomial logit (MNL) bandit\nproblem in which a learning agent sequentially selects an assortment based on\ncontextual information, and user feedback follows an MNL choice model. There\nhas been a significant discrepancy between lower and upper regret bounds,\nparticularly regarding the feature dimension $d$ and the maximum assortment\nsize $K$. Additionally, the variation in reward structures between these bounds\ncomplicates the quest for optimality. Under uniform rewards, where all items\nhave the same expected reward, we establish a regret lower bound of\n$\\Omega(d\\sqrt{\\smash[b]{T/K}})$ and propose a constant-time algorithm,\nOFU-MNL+, that achieves a matching upper bound of\n$\\tilde{\\mathcal{O}}(d\\sqrt{\\smash[b]{T/K}})$. Under non-uniform rewards, we\nprove a lower bound of $\\Omega(d\\sqrt{T})$ and an upper bound of\n$\\tilde{\\mathcal{O}}(d\\sqrt{T})$, also achievable by OFU-MNL+. Our empirical\nstudies support these theoretical findings. To the best of our knowledge, this\nis the first work in the MNL contextual bandit literature to prove minimax\noptimality -- for either uniform or non-uniform reward setting -- and to\npropose a computationally efficient algorithm that achieves this optimality up\nto logarithmic factors.",
-        "link": "http://arxiv.org/abs/2405.09831v1"
+        "text": "This paper introduces the first public large-scale, long-span dataset with\nsea turtle photographs captured in the wild --\n\\href{https://www.kaggle.com/datasets/wildlifedatasets/seaturtleid2022}{SeaTurtleID2022}.\nThe dataset contains 8729 photographs of 438 unique individuals collected\nwithin 13 years, making it the longest-spanned dataset for animal\nre-identification. All photographs include various annotations, e.g., identity,\nencounter timestamp, and body parts segmentation masks. Instead of standard\n\"random\" splits, the dataset allows for two realistic and ecologically\nmotivated splits: (i) a \\textit{time-aware closed-set} with training,\nvalidation, and test data from different days/years, and (ii) a\n\\textit{time-aware open-set} with new unknown individuals in test and\nvalidation sets. We show that time-aware splits are essential for benchmarking\nre-identification methods, as random splits lead to performance overestimation.\nFurthermore, a baseline instance segmentation and re-identification performance\nover various body parts is provided. Finally, an end-to-end system for sea\nturtle re-identification is proposed and evaluated. The proposed system based\non Hybrid Task Cascade for head instance segmentation and ArcFace-trained\nfeature-extractor achieved an accuracy of 86.8\\%.",
+        "link": "http://arxiv.org/abs/2211.10307v4",
+        "type": "paper"
     },
     {
-        "title": "Human-AI Safety: A Descendant of Generative AI and Control Systems Safety",
+        "title": "Adapting the LodView RDF Browser for Navigation over the Multilingual Linguistic Linked Open Data Cloud",
         "authors": [
-            "Andrea Bajcsy",
-            "Jaime F. Fisac"
+            "Alexander Kirillovich",
+            "Konstantin Nikolaev"
         ],
-        "text": "Generative artificial intelligence (AI) is interacting with people at an\nunprecedented scale, offering new avenues for immense positive impact, but also\nraising widespread concerns around the potential for individual and societal\nharm. Today, the predominant paradigm for human-AI safety focuses on\nfine-tuning the generative model's outputs to better agree with human-provided\nexamples or feedback. In reality, however, the consequences of an AI model's\noutputs cannot be determined in an isolated context: they are tightly entangled\nwith the responses and behavior of human users over time. In this position\npaper, we argue that meaningful safety assurances for these AI technologies can\nonly be achieved by reasoning about how the feedback loop formed by the AI's\noutputs and human behavior may drive the interaction towards different\noutcomes. To this end, we envision a high-value window of opportunity to bridge\nthe rapidly growing capabilities of generative AI and the dynamical safety\nframeworks from control theory, laying a new foundation for human-centered AI\nsafety in the coming decades.",
-        "link": "http://arxiv.org/abs/2405.09794v1"
+        "text": "The paper is dedicated to the use of LodView for navigation over the\nmultilingual Linguistic Linked Open Data cloud. First, we define the class of\nPubby-like tools, that LodView belongs to, and clarify the relation of this\nclass to the classes of URI dereferenciation tools, RDF browsers and LOD\nvisualization tools. Second, we reveal several limitations of LodView that\nimpede its use for the designated purpose, and propose improvements to be made\nfor fixing these limitations. These improvements are: 1) resolution of Cyrillic\nURIs; 2) decoding Cyrillic URIs in Turtle representations of resources; 3)\nsupport of Cyrillic literals; 4) user-friendly URLs for RDF representations of\nresources; 5) support of hash URIs; 6) expanding nested resources; 7) support\nof RDF collections; 8) pagination of resource property values; and 9) support\nof $\\LaTeX$ math notation. Third, we partially implement several of the\nproposed improvements.",
+        "link": "http://arxiv.org/abs/2208.13295v3",
+        "type": "paper"
+    },
+    {
+        "title": "Modelling the Turtle Python library in CSP",
+        "authors": [
+            "Dara MacConville",
+            "Marie Farrell",
+            "Matt Luckcuck",
+            "Rosemary Monahan"
+        ],
+        "text": "Software verification is an important tool in establishing the reliability of\ncritical systems. One potential area of application is in the field of\nrobotics, as robots take on more tasks in both day-to-day areas and highly\nspecialised domains. Robots are usually given a plan to follow, if there are\nerrors in this plan the robot will not perform reliably. The capability to\ncheck plans for errors in advance could prevent this. Python is a popular\nprogramming language in the robotics domain, through the use of the Robot\nOperating System (ROS) and various other libraries. Python's Turtle package\nprovides a mobile agent, which we formally model here using Communicating\nSequential Processes (CSP). Our interactive toolchain CSP2Turtle with CSP model\nand Python components, enables Turtle plans to be verified in CSP before being\nexecuted in Python. This means that certain classes of errors can be avoided,\nand provides a starting point for more detailed verification of Turtle programs\nand more complex robotic systems. We illustrate our approach with examples of\nrobot navigation and obstacle avoidance in a 2D grid-world.",
+        "link": "http://arxiv.org/abs/2207.09706v1",
+        "type": "paper"
+    },
+    {
+        "title": "SnapperGPS: Open Hardware for Energy-Efficient, Low-Cost Wildlife Location Tracking with Snapshot GNSS",
+        "authors": [
+            "Jonas Beuchert",
+            "Amanda Matthes",
+            "Alex Rogers"
+        ],
+        "text": "Location tracking with global navigation satellite systems (GNSS), such as\nthe GPS, is used in many applications, including the tracking of wild animals\nfor research. Snapshot GNSS is a technique that only requires milliseconds of\nsatellite signals to infer the position of a receiver. This is ideal for\nlow-power applications such as animal tracking. However, there are few existing\nsnapshot systems, none of which is open source. To address this, we developed\nSnapperGPS, a fully open-source, low-cost, and low-power location tracking\nsystem designed for wildlife tracking. SnapperGPS comprises three parts, all of\nwhich are open-source: (i) a small, low-cost, and low-power receiver; (ii) a\nweb application to configure the receiver via USB; and (iii) a cloud-based\nplatform for processing recorded data. This paper presents the hardware side of\nthis project. The total component cost of the receiver is under $30, making it\nfeasible for field work with restricted budgets and low recovery rates. The\nreceiver records very short and low-resolution samples resulting in\nparticularly low power consumption, outperforming existing systems. It can run\nfor more than a year on a 40 mAh battery. We evaluated SnapperGPS in controlled\nstatic and dynamic tests in a semi-urban environment where it achieved median\nerrors of 12 m. Additionally, SnapperGPS has already been deployed for two\nwildlife tracking studies on sea turtles and sea birds.",
+        "link": "http://arxiv.org/abs/2207.06310v3",
+        "type": "paper"
+    },
+    {
+        "title": "DDPG based on multi-scale strokes for financial time series trading strategy",
+        "authors": [
+            "Jun-Cheng Chen",
+            "Cong-Xiao Chen",
+            "Li-Juan Duan",
+            "Zhi Cai"
+        ],
+        "text": "With the development of artificial intelligence,more and more financial\npractitioners apply deep reinforcement learning to financial trading\nstrategies.However,It is difficult to extract accurate features due to the\ncharacteristics of considerable noise,highly non-stationary,and non-linearity\nof single-scale time series,which makes it hard to obtain high returns.In this\npaper,we extract a multi-scale feature matrix on multiple time scales of\nfinancial time series,according to the classic financial theory-Chan Theory,and\nput forward to an approach of multi-scale stroke deep deterministic policy\ngradient reinforcement learning model(MSSDDPG)to search for the optimal trading\nstrategy.We carried out experiments on the datasets of the Dow Jones,S&P 500 of\nU.S. stocks, and China's CSI 300,SSE Composite,evaluate the performance of our\napproach compared with turtle trading strategy, Deep\nQ-learning(DQN)reinforcement learning strategy,and deep deterministic policy\ngradient (DDPG) reinforcement learning strategy.The result shows that our\napproach gets the best performance in China CSI 300,SSE Composite,and get an\noutstanding result in Dow Jones,S&P 500 of U.S.",
+        "link": "http://arxiv.org/abs/2207.10071v1",
+        "type": "paper"
+    },
+    {
+        "title": "Sonar Point Cloud Processing to Identify Sea Turtles by Pattern Analysis",
+        "authors": [
+            "Dror Kipnis",
+            "Yaniv Levy",
+            "Roee Diamant"
+        ],
+        "text": "Abundant in coastal areas, sea turtles are affected by high-intensity\nacoustic anthropogenic sounds. In this paper, we offer a pattern analysis-based\ndetection approach to serve as a warning system for the existence of nearby sea\nturtles. We focus on the challenge of overcoming the low signal-to-clutter\nratio (SCR) caused by reverberations. Assuming that, due to low SCR, target\nreflections within the point cloud are received in groups, our detector\nsearches for patterns through clustering to identify possible 'blobs' in the\npoint cloud of reflections, and to classify them as either clutter or a target.\nOur unsupervised clustering is based on geometrical and spectral constraints\nover the blob's member relations. In turn, the classification of identified\nblobs as either a target or clutter is based on features extracted from the\nreflection pattern. To this end, assuming reflections from a sea turtle are\nstable but include spectral diversity due to distortions within the turtles\nbody, we quantify the stability of the blob's members and their spectral\nentropy. We test our detector in both modeled simulations, and at sea, for the\ndetection of sea turtles released after rehabilitation. The results show\nrobustness to highly-fluctuating target intensity and ability to detect at low\nSCR.",
+        "link": "http://arxiv.org/abs/2205.09361v1",
+        "type": "paper"
+    },
+    {
+        "title": "Turtle Score -- Similarity Based Developer Analyzer",
+        "authors": [
+            "Sanjjushri Varshini",
+            "Ponshriharini V",
+            "Santhosh Kannan",
+            "Snekha Suresh",
+            "Harshavardhan Ramesh",
+            "Rohith Mahadevan",
+            "Raja CSP Raman"
+        ],
+        "text": "In day-to-day life, a highly demanding task for IT companies is to find the\nright candidates who fit the companies' culture. This research aims to\ncomprehend, analyze and automatically produce convincing outcomes to find a\ncandidate who perfectly fits right in the company. Data is examined and\ncollected for each employee who works in the IT domain focusing on their\nperformance measure. This is done based on various different categories which\nbring versatility and a wide view of focus. To this data, learner analysis is\ndone using machine learning algorithms to obtain learner similarity and\ndeveloper similarity in order to recruit people with identical working\npatterns. It's been proven that the efficiency and capability of a particular\nworker go higher when working with a person of a similar personality. Therefore\nthis will serve as a useful tool for recruiters who aim to recruit people with\nhigh productivity. This is to say that the model designed will render the best\noutcome possible with high accuracy and an immaculate recommendation score.",
+        "link": "http://arxiv.org/abs/2205.04876v1",
+        "type": "paper"
+    },
+    {
+        "title": "Design of an Optimal Testbed for Tracking of Tagged Marine Megafauna",
+        "authors": [
+            "Talmon Alexandri",
+            "Roee Diamant"
+        ],
+        "text": "Underwater acoustic technologies are a key component for exploring the\nbehavior of marine megafauna such as sea turtles, sharks, and seals. The\nanimals are marked with acoustic devices (tags) that periodically emit signals\nencoding the device's ID along with sensor data such as depth, temperature, or\nthe dominant acceleration axis - data that is collected by a network of\ndeployed receivers. In this work, we aim to optimize the locations of receivers\nfor best tracking of acoustically tagged marine megafauna. The outcomes of such\ntracking allows the evaluation of the animals' motion patterns, their hours of\nactivity, and their social interactions. In particular, we focus on how to\ndetermine the receivers' deployment positions to maximize the coverage area in\nwhich the tagged animals can be tracked. For example, an overly-condensed\ndeployment may not allow accurate tracking, whereas a sparse one, may lead to a\nsmall coverage area due to too few detections. We formalize the question of\nwhere to best deploy the receivers as a non-convex constraint optimization\nproblem that takes into account the local environment and the specifications of\nthe tags, and offer a sub-optimal, low-complexity solution that can be applied\nto large testbeds. Numerical investigation for three stimulated sea\nenvironments shows that our proposed method is able to increase the\nlocalization coverage area by 30%, and results from a test case experiment\ndemonstrate similar performance in a real sea environment. We share the\nimplementation of our work to help researchers set up their own acoustic\nobservatory.",
+        "link": "http://arxiv.org/abs/2204.04155v1",
+        "type": "paper"
+    },
+    {
+        "title": "Constraining Type Ia supernova explosions and early flux excesses with the Zwicky Transient Factory",
+        "authors": [
+            "M. Deckers",
+            "K. Maguire",
+            "M. R. Magee",
+            "G. Dimitriadis",
+            "M. Smith",
+            "A. Sainz de Murieta",
+            "A. A. Miller",
+            "A. Goobar",
+            "J. Nordin",
+            "M. Rigault",
+            "E. Bellm",
+            "M. W. Coughlin",
+            "R. R. Laher",
+            "D. Shupe",
+            "M. J. Graham",
+            "M. M. Kasliwal",
+            "R. Walters"
+        ],
+        "text": "In the new era of time-domain surveys Type Ia supernovae are being caught\nsooner after explosion, which has exposed significant variation in their early\nlight curves. Two driving factors for early time evolution are the distribution\nof nickel in the ejecta and the presence of flux excesses of various causes. We\nperform an analysis of the largest young SN Ia sample to date. We compare 115\nSN Ia light curves from the Zwicky Transient Facility to the turtls model grid\ncontaining light curves of Chandrasekhar-mass explosions with a range of nickel\nmasses, nickel distributions and explosion energies. We find that the majority\nof our observed light curves are well reproduced by Chandrasekhar-mass\nexplosion models with a preference for highly extended nickel distributions. We\nidentify six SNe Ia with an early-time flux excess in our g- and r-band data\n(four `blue' and two `red' flux excesses). We find an intrinsic rate of 18+/-11\nper cent of early flux excesses in SNe Ia at z < 0.07, based on three detected\nflux excesses out of 30 (10 per cent) observed SNe Ia with a simulated\nefficiency of 57 per cent. This is comparable to rates of flux excesses in the\nliterature but also accounts for detection efficiencies. Two of these events\nare mostly consistent with CSM interaction, while the other four have longer\nlifetimes in agreement with companion interaction and nickel-clump models. We\nfind a higher frequency of flux excesses in 91T/99aa-like events (44+/-13 per\ncent).",
+        "link": "http://arxiv.org/abs/2202.12914v1",
+        "type": "paper"
+    },
+    {
+        "title": "Figuring and Drawing: A Visual Approach to Principled Programming",
+        "authors": [
+            "Elpida Keravnou-Papailiou"
+        ],
+        "text": "A standing challenge in undergraduate Computer Science curricula is the\nteaching and learning of computer programming. Through this paper which is an\nessay about programming, we aim to contribute to the plethora of existing\npedagogies, approaches and philosophies, by discussing a specific feature of\nour approach in teaching principled programming to undergraduate students, in\ntheir first semester of studies, namely the utilization of pictures, both\ntext-based and raster-based graphics. Although the given course has evolved\nsubstantially over the thirty years of its delivery regarding the programming\nlanguages (Miranda, C, C++, Java) and paradigms (functional, imperative,\nobject-oriented, combination of procedural and object-oriented) used, the\ndiscussed visual feature has been maintained and steadily strengthened.\n  We list abstraction, problem decomposition and synthesis, information hiding,\nreusability, modularity and extensibility as key principles of problem solving\nand algorithmic thinking. These principles are closely aligned with the\nadvocated computational thinking techniques of problem decomposition, pattern\nrecognition, pattern generalization and algorithm design. We aim for our\nstudents to familiarize themselves with all the above principles through\npractical problem solving. Our ongoing inquiry has been whether the problem\ndomain of pictures is contributing valuably towards this aim. Moreover, an\nadded-value is that students get a glimpse of computational complexity in a\nvisual, empirical way.\n  The presented work is not related to visual programming, since the students\nwrite their programs textually and not graphically; it's the output of their\nprograms which is in visual form. Our approach though is loosely related to the\nclassical paradigm of turtle graphics. However, our focus is Computer Science\nmajors, who should be able to design and build turtles and other objects and\nnot just use them. Indeed, the programming principles course helps them to do\nboth and also to appreciate the multitude of algorithmic ways for producing the\nsame visual output. Currently the given programming principles are approached\nboth from a procedural, process-based and an object-oriented, concept-based\nperspective and the course uses the Java language. Through the presented\nexample problems, we aim to show the appropriateness of the visual domain of\npictures for supporting the learning of principled programming. The problem\ndomain of pictures is abundantly rich with potential examples to draw from.\nMoreover, as reported in the literature, female students may show higher\ninterest towards visual problem domains in programming classes, in relation to\nother problem domains. We plan to investigate this conjecture in the context of\nour broader aim to encourage more females to follow university studies in\ncomputer science; in this paper only a cursory finding is presented, that bears\nsome relation to what is reported in the literature.",
+        "link": "http://arxiv.org/abs/2202.09229v1",
+        "type": "paper"
+    },
+    {
+        "title": "MinT: A Fast Lightweight Envelope/Monte-Carlo Beam Optics Code for the Proton Beamlines of the Paul Scherrer Institute",
+        "authors": [
+            "C. Baumgarten"
+        ],
+        "text": "We report about the methods used in, and the performance of, the new fast and\nlight-weight linear beam transport program MinT. MinT provides, beyond the\nusual linear ion optics, methods to compute the effects of beam degradation,\nmultiple scattering and beam collimation. This is specifically important in\nfacilities where the ion beam passes matter, for instance in proton therapy\nbeamlines with an energy degrader as in the Proscan facility at PSI, but also\nfor modelling the beam traversing the Muon- and Pion-production targets of the\nPaul Scherrer Institut's high intensity proton accelerator (HIPA). MinT is\nintended to be useful as a support tool for the HIPA and Proscan control rooms.\nThis requires to have useful results within a few seconds. Hence simplicity and\nspeed of calculation is favoured against higher accuracy. MinT has been\ndesigned not only to replace the FORTRAN 77 codes TRANSPORT and TURTLE, but to\ncombine and extent their capabilities. MinT is a byte-code-compiler which\ntranslates an input language, described by syntactic rules. This allows for\ncontrol structures like ``if-then-else'' or ``while''-loops, thus providing a\nhigh flexibility and readability.",
+        "link": "http://arxiv.org/abs/2202.07245v2",
+        "type": "paper"
+    },
+    {
+        "title": "Diversifying the Genomic Data Science Research Community",
+        "authors": [
+            "The Genomic Data Science Community Network",
+            "Rosa Alcazar",
+            "Maria Alvarez",
+            "Rachel Arnold",
+            "Mentewab Ayalew",
+            "Lyle G. Best",
+            "Michael C. Campbell",
+            "Kamal Chowdhury",
+            "Katherine E. L. Cox",
+            "Christina Daulton",
+            "Youping Deng",
+            "Carla Easter",
+            "Karla Fuller",
+            "Shazia Tabassum Hakim",
+            "Ava M. Hoffman",
+            "Natalie Kucher",
+            "Andrew Lee",
+            "Joslynn Lee",
+            "Jeffrey T. Leek",
+            "Robert Meller",
+            "Loyda B. M\u00e9ndez",
+            "Miguel P. M\u00e9ndez-Gonz\u00e1lez",
+            "Stephen Mosher",
+            "Michele Nishiguchi",
+            "Siddharth Pratap",
+            "Tiffany Rolle",
+            "Sourav Roy",
+            "Rachel Saidi",
+            "Michael C. Schatz",
+            "Shurjo Sen",
+            "James Sniezek",
+            "Edu Suarez Martinez",
+            "Frederick Tan",
+            "Jennifer Vessio",
+            "Karriem Watson",
+            "Wendy Westbroek",
+            "Joseph Wilcox",
+            "Xianfa Xie"
+        ],
+        "text": "Over the last 20 years, there has been an explosion of genomic data collected\nfor disease association, functional analyses, and other large-scale\ndiscoveries. At the same time, there have been revolutions in cloud computing\nthat enable computational and data science research, while making data\naccessible to anyone with a web browser and an internet connection. However,\nstudents at institutions with limited resources have received relatively little\nexposure to curricula or professional development opportunities that lead to\ncareers in genomic data science. To broaden participation in genomics research,\nthe scientific community needs to support students, faculty, and administrators\nat Underserved Institutions (UIs) including Community Colleges, Historically\nBlack Colleges and Universities, Hispanic-Serving Institutions, and Tribal\nColleges and Universities in taking advantage of these tools in local\neducational and research programs. We have formed the Genomic Data Science\nCommunity Network (http://www.gdscn.org/) to identify opportunities and support\nbroadening access to cloud-enabled genomic data science. Here, we provide a\nsummary of the priorities for faculty members at UIs, as well as\nadministrators, funders, and R1 researchers to consider as we create a more\ndiverse genomic data science community.",
+        "link": "http://arxiv.org/abs/2201.08443v2",
+        "type": "paper"
+    },
+    {
+        "title": "Science goals and new mission concepts for future exploration of Titan's atmosphere geology and habitability: Titan POlar Scout/orbitEr and In situ lake lander and DrONe explorer (POSEIDON)",
+        "authors": [
+            "S\u00e9bastien Rodriguez",
+            "Sandrine Vinatier",
+            "Daniel Cordier",
+            "Gabriel Tobie",
+            "Richard K. Achterberg",
+            "Carrie M. Anderson",
+            "Sarah V. Badman",
+            "Jason W. Barnes",
+            "Erika L. Barth",
+            "Bruno B\u00e9zard",
+            "Nathalie Carrasco",
+            "Benjamin Charnay",
+            "Roger N. Clark",
+            "Patrice Coll",
+            "Thomas Cornet",
+            "Athena Coustenis",
+            "Isabelle Couturier-Tamburelli",
+            "Michel Dobrijevic",
+            "F. Michael Flasar",
+            "Remco de Kok",
+            "Caroline Freissinet",
+            "Marina Galand",
+            "Thomas Gautier",
+            "Wolf D. Geppert",
+            "Caitlin A. Griffith",
+            "Murthy S. Gudipati",
+            "Lina Z. Hadid",
+            "Alexander G. Hayes",
+            "Amanda R. Hendrix",
+            "Ralf Jauman",
+            "Donald E. Jennings",
+            "Antoine Jolly",
+            "Klara Kalousova",
+            "Tommi T. Koskinen",
+            "Panayotis Lavvas",
+            "S\u00e9bastien Lebonnois",
+            "Jean-Pierre Lebreton",
+            "Alice Le Gall",
+            "Emmanuel Lellouch",
+            "St\u00e9phane Le Mou\u00e9lic",
+            "Rosaly M. C. Lopes",
+            "Juan M. Lora",
+            "Ralph D. Lorenz",
+            "Antoine Lucas",
+            "Shannon MacKenzie",
+            "Michael J. Malaska",
+            "Kathleen Mandt",
+            "Marco Mastrogiuseppe",
+            "Claire E. Newman",
+            "Conor A. Nixon",
+            "Jani Radebaugh",
+            "Scot C. Rafkin",
+            "Pascal Rannou",
+            "Ella M. Sciamma-O-Brien",
+            "Jason M. Soderblom",
+            "Anezina Solomonidou",
+            "Christophe Sotin",
+            "Katrin Stephan",
+            "Darrell Strobel",
+            "Cyril Szopa",
+            "Nicholas A. Teanby",
+            "Elizabeth P. Turtle",
+            "V\u00e9ronique Vuitton",
+            "Robert A. West"
+        ],
+        "text": "In response to ESA Voyage 2050 announcement of opportunity, we propose an\nambitious L-class mission to explore one of the most exciting bodies in the\nSolar System, Saturn largest moon Titan. Titan, a \"world with two oceans\", is\nan organic-rich body with interior-surface-atmosphere interactions that are\ncomparable in complexity to the Earth. Titan is also one of the few places in\nthe Solar System with habitability potential. Titan remarkable nature was only\npartly revealed by the Cassini-Huygens mission and still holds mysteries\nrequiring a complete exploration using a variety of vehicles and instruments.\nThe proposed mission concept POSEIDON (Titan POlar Scout/orbitEr and In situ\nlake lander DrONe explorer) would perform joint orbital and in situ\ninvestigations of Titan. It is designed to build on and exceed the scope and\nscientific/technological accomplishments of Cassini-Huygens, exploring Titan in\nways that were not previously possible, in particular through full close-up and\nin situ coverage over long periods of time. In the proposed mission\narchitecture, POSEIDON consists of two major elements: a spacecraft with a\nlarge set of instruments that would orbit Titan, preferably in a\nlow-eccentricity polar orbit, and a suite of in situ investigation components,\ni.e. a lake lander, a \"heavy\" drone (possibly amphibious) and/or a fleet of\nmini-drones, dedicated to the exploration of the polar regions. The ideal\narrival time at Titan would be slightly before the next northern Spring equinox\n(2039), as equinoxes are the most active periods to monitor still largely\nunknown atmospheric and surface seasonal changes. The exploration of Titan\nnorthern latitudes with an orbiter and in situ element(s) would be highly\ncomplementary with the upcoming NASA New Frontiers Dragonfly mission that will\nprovide in situ exploration of Titan equatorial regions in the mid-2030s.",
+        "link": "http://arxiv.org/abs/2110.10466v1",
+        "type": "paper"
+    },
+    {
+        "title": "Characterization of Muon and Electron Beams in the Paul Scherrer Institute PiM1 Channel for the MUSE Experiment",
+        "authors": [
+            "E. Cline",
+            "W. Lin",
+            "P. Roy",
+            "P. E. Reimer",
+            "K. E. Mesick",
+            "A. Akmal",
+            "A. Alie",
+            "H. Atac",
+            "A. Atencio",
+            "C. Ayerbe Gayoso",
+            "N. Benmouna",
+            "F. Benmokhtar",
+            "J. C. Bernauer",
+            "W. J. Briscoe",
+            "J. Campbell",
+            "D. Cohen",
+            "E. O. Cohen",
+            "C. Collicott",
+            "K. Deiters",
+            "S. Dogra",
+            "E. Downie",
+            "I. P. Fernando",
+            "A. Flannery",
+            "T. Gautam",
+            "D. Ghosal",
+            "R. Gilman",
+            "A. Golossanov",
+            "B. F. Halter",
+            "J. Hirschman",
+            "Y. Ilieva",
+            "M. Kim",
+            "M. Kohl",
+            "B. Krusche",
+            "I. Lavrukhin",
+            "L. Li",
+            "B. Liang-Gilman",
+            "A. Liyanage",
+            "W. Lorenzon",
+            "P. Mohanmurthy",
+            "R. Mokal",
+            "P. Moran",
+            "S. J. Nazeer",
+            "P. Or",
+            "T. Patel",
+            "E. Piasetzky",
+            "T. Rauber",
+            "R. S. Raymond",
+            "D. Reggiani",
+            "H. Reid",
+            "G. Ron",
+            "E. Rooney",
+            "T. Rostomyan",
+            "M. Schwarz",
+            "A. Sneath",
+            "P. G. Solazzo",
+            "N. Sparveris",
+            "N. Steinberg",
+            "S. Strauch",
+            "V. Sulkosky",
+            "N. Wuerfel"
+        ],
+        "text": "The MUon Scattering Experiment, MUSE, at the Paul Scherrer Institute,\nSwitzerland, investigates the proton charge radius puzzle, lepton universality,\nand two-photon exchange, via simultaneous measurements of elastic muon-proton\nand electron-proton scattering. The experiment uses the PiM1 secondary beam\nchannel, which was designed for high precision pion scattering measurements. We\nreview the properties of the beam line established for pions. We discuss the\nproduction processes that generate the electron and muon beams, and the\nsimulations of these processes. Simulations of the $\\pi$/$\\mu$/$e$ beams\nthrough the channel using TURTLE and G4beamline are compared. The G4beamline\nsimulation is then compared to several experimental measurements of the\nchannel, including the momentum dispersion at the IFP and target, the shape of\nthe beam spot at the target, and timing measurements that allow the beam\nmomenta to be determined. We conclude that the PiM1 channel can be used for\nhigh precision $\\pi$, $\\mu$, and $e$ scattering.",
+        "link": "http://arxiv.org/abs/2109.09508v1",
+        "type": "paper"
     }
 ]

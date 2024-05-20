@@ -8,6 +8,8 @@ from scipy import stats
 import umap
 import json
 
+from topic_embeddings import create_embeddings
+
 
 # Function to read the JSON file
 def read_json(file_path):
@@ -34,7 +36,7 @@ def correct_format(json):
 
   return all_titles, all_arxivid, all_links, embeddings_all
 
-# READ EMBEDDINGS - NEW
+# READ DEFAULT EMBEDDINGS - NEW
 embeddings_json = read_json('embeddings.json')
 all_titles, all_arxivid, all_links, embeddings_all = correct_format(embeddings_json)
 
@@ -77,10 +79,6 @@ st.markdown("Interpreting the UMAP plot")
 
 
 
-umap_reducer = umap.UMAP(n_components=2, random_state=42)
-embedding = umap_reducer.fit_transform(embeddings_all)
-
-
 def density_estimation(m1, m2, xmin=0, ymin=0, xmax=15, ymax=15):
     X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
     positions = np.vstack([X.ravel(), Y.ravel()])
@@ -95,10 +93,27 @@ st.sidebar.markdown(
 st.sidebar.markdown(
     '`Note`: (i) if you enter a query that is not in the corpus of abstracts, it will return an error. just enter a different query in that case. (ii) there are some empty tooltips when you hover, these correspond to the underlying hexbins, and can be ignored.')
 
-st.sidebar.text_input("Search query", key="phrase", value="bee")
+search_query =  st.sidebar.text_input("Search query", key="phrase", value="bee")
 
 alpha_value = st.sidebar.slider("Pick the hexbin opacity", 0.0, 1.0, 0.81)
 size_value = st.sidebar.slider("Pick the hexbin gridsize", 0.5, 5.0, 1.0)
+
+
+# create embeddings based on user request
+# create_embeddings(search_query)
+if st.sidebar.button("Search"):
+    create_embeddings(search_query)
+    embeddings_json = read_json('embeddings.json')
+    all_titles, all_arxivid, all_links, embeddings_all = correct_format(embeddings_json)
+
+
+
+
+
+
+umap_reducer = umap.UMAP(n_components=2, random_state=42)
+embedding = umap_reducer.fit_transform(embeddings_all)
+
 
 phrase = st.session_state.phrase
 

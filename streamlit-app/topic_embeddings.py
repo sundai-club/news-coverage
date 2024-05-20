@@ -71,4 +71,4 @@ def create_embeddings(query):
     save_embeddings(metadata, embeddings, feature_names, output_file)
 
 if __name__ == "__main__":
-    create_embeddings('LLM agents')
+    create_embeddings('beekeeping')

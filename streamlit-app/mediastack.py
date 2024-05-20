@@ -1,8 +1,14 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
 
 def get_articles(api_key, keywords, languages='en', sort='published_desc', limit=25):
-    url = 'http://api.mediastack.com/v1/news?access_key=' + api_key + "&keywords=ai agents&sort=published_desc"
+    url = 'http://api.mediastack.com/v1/news?access_key=' + api_key + "&keywords="+keywords+"&sort=published_desc"
     params = {
         'keywords': keywords,
         'languages': languages,
@@ -42,7 +48,7 @@ def print_articles(articles):
         print('-' * 80)
         
 def generate_article_json(query):
-    api_key = ''  # Replace with your actual API key
+    api_key = os.getenv('MEDIASTACK_API_KEY')
     keywords = query  # Example keywords
     articles = get_articles(api_key, keywords)
     formatted_articles = format_articles(articles)
@@ -53,6 +59,3 @@ def generate_article_json(query):
     # Save the JSON output to a file
     with open('./documents/articles.json', 'w') as json_file:
         json_file.write(json_output)
-
-if __name__ == "__main__":
-    generate_article_json('segment everything')
