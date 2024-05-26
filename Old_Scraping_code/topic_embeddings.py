@@ -63,7 +63,7 @@ def create_embeddings(query):
 
     
     #create embeddings
-    output_file = '../streamlit-app/embeddings.json'
+    output_file = '../streamlit-app/embeddings_1.json'
     articles = read_json_files(directory)
     texts, metadata = process_articles(articles)
     embeddings, feature_names = generate_tfidf_embeddings(texts)
