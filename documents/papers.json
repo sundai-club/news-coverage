@@ -1,0 +1,360 @@
+[
+    {
+        "title": "How Far Are We From AGI",
+        "authors": [
+            "Tao Feng",
+            "Chuanyang Jin",
+            "Jingyu Liu",
+            "Kunlun Zhu",
+            "Haoqin Tu",
+            "Zirui Cheng",
+            "Guanyu Lin",
+            "Jiaxuan You"
+        ],
+        "text": "The evolution of artificial intelligence (AI) has profoundly impacted human\nsociety, driving significant advancements in multiple sectors. Yet, the\nescalating demands on AI have highlighted the limitations of AI's current\nofferings, catalyzing a movement towards Artificial General Intelligence (AGI).\nAGI, distinguished by its ability to execute diverse real-world tasks with\nefficiency and effectiveness comparable to human intelligence, reflects a\nparamount milestone in AI evolution. While existing works have summarized\nspecific recent advancements of AI, they lack a comprehensive discussion of\nAGI's definitions, goals, and developmental trajectories. Different from\nexisting survey papers, this paper delves into the pivotal questions of our\nproximity to AGI and the strategies necessary for its realization through\nextensive surveys, discussions, and original perspectives. We start by\narticulating the requisite capability frameworks for AGI, integrating the\ninternal, interface, and system dimensions. As the realization of AGI requires\nmore advanced capabilities and adherence to stringent constraints, we further\ndiscuss necessary AGI alignment technologies to harmonize these factors.\nNotably, we emphasize the importance of approaching AGI responsibly by first\ndefining the key levels of AGI progression, followed by the evaluation\nframework that situates the status-quo, and finally giving our roadmap of how\nto reach the pinnacle of AGI. Moreover, to give tangible insights into the\nubiquitous impact of the integration of AI, we outline existing challenges and\npotential pathways toward AGI in multiple domains. In sum, serving as a\npioneering exploration into the current state and future trajectory of AGI,\nthis paper aims to foster a collective comprehension and catalyze broader\npublic discussions among researchers and practitioners on AGI.",
+        "link": "http://arxiv.org/abs/2405.10313v1"
+    },
+    {
+        "title": "Societal Adaptation to Advanced AI",
+        "authors": [
+            "Jamie Bernardi",
+            "Gabriel Mukobi",
+            "Hilary Greaves",
+            "Lennart Heim",
+            "Markus Anderljung"
+        ],
+        "text": "Existing strategies for managing risks from advanced AI systems often focus\non affecting what AI systems are developed and how they diffuse. However, this\napproach becomes less feasible as the number of developers of advanced AI\ngrows, and impedes beneficial use-cases as well as harmful ones. In response,\nwe urge a complementary approach: increasing societal adaptation to advanced\nAI, that is, reducing the expected negative impacts from a given level of\ndiffusion of a given AI capability. We introduce a conceptual framework which\nhelps identify adaptive interventions that avoid, defend against and remedy\npotentially harmful uses of AI systems, illustrated with examples in election\nmanipulation, cyberterrorism, and loss of control to AI decision-makers. We\ndiscuss a three-step cycle that society can implement to adapt to AI.\nIncreasing society's ability to implement this cycle builds its resilience to\nadvanced AI. We conclude with concrete recommendations for governments,\nindustry, and third-parties.",
+        "link": "http://arxiv.org/abs/2405.10295v1"
+    },
+    {
+        "title": "Fine-Tuning Large Vision-Language Models as Decision-Making Agents via Reinforcement Learning",
+        "authors": [
+            "Yuexiang Zhai",
+            "Hao Bai",
+            "Zipeng Lin",
+            "Jiayi Pan",
+            "Shengbang Tong",
+            "Yifei Zhou",
+            "Alane Suhr",
+            "Saining Xie",
+            "Yann LeCun",
+            "Yi Ma",
+            "Sergey Levine"
+        ],
+        "text": "Large vision-language models (VLMs) fine-tuned on specialized visual\ninstruction-following data have exhibited impressive language reasoning\ncapabilities across various scenarios. However, this fine-tuning paradigm may\nnot be able to efficiently learn optimal decision-making agents in multi-step\ngoal-directed tasks from interactive environments. To address this challenge,\nwe propose an algorithmic framework that fine-tunes VLMs with reinforcement\nlearning (RL). Specifically, our framework provides a task description and then\nprompts the VLM to generate chain-of-thought (CoT) reasoning, enabling the VLM\nto efficiently explore intermediate reasoning steps that lead to the final\ntext-based action. Next, the open-ended text output is parsed into an\nexecutable action to interact with the environment to obtain goal-directed task\nrewards. Finally, our framework uses these task rewards to fine-tune the entire\nVLM with RL. Empirically, we demonstrate that our proposed framework enhances\nthe decision-making capabilities of VLM agents across various tasks, enabling\n7b models to outperform commercial models such as GPT4-V or Gemini.\nFurthermore, we find that CoT reasoning is a crucial component for performance\nimprovement, as removing the CoT reasoning results in a significant decrease in\nthe overall performance of our method.",
+        "link": "http://arxiv.org/abs/2405.10292v1"
+    },
+    {
+        "title": "Biasing & Debiasing based Approach Towards Fair Knowledge Transfer for Equitable Skin Analysis",
+        "authors": [
+            "Anshul Pundhir",
+            "Balasubramanian Raman",
+            "Pravendra Singh"
+        ],
+        "text": "Deep learning models, particularly Convolutional Neural Networks (CNNs), have\ndemonstrated exceptional performance in diagnosing skin diseases, often\noutperforming dermatologists. However, they have also unveiled biases linked to\nspecific demographic traits, notably concerning diverse skin tones or gender,\nprompting concerns regarding fairness and limiting their widespread deployment.\nResearchers are actively working to ensure fairness in AI-based solutions, but\nexisting methods incur an accuracy loss when striving for fairness. To solve\nthis issue, we propose a `two-biased teachers' (i.e., biased on different\nsensitive attributes) based approach to transfer fair knowledge into the\nstudent network. Our approach mitigates biases present in the student network\nwithout harming its predictive accuracy. In fact, in most cases, our approach\nimproves the accuracy of the baseline model. To achieve this goal, we developed\na weighted loss function comprising biasing and debiasing loss terms. We\nsurpassed available state-of-the-art approaches to attain fairness and also\nimproved the accuracy at the same time. The proposed approach has been\nevaluated and validated on two dermatology datasets using standard accuracy and\nfairness evaluation measures. We will make source code publicly available to\nfoster reproducibility and future research.",
+        "link": "http://arxiv.org/abs/2405.10256v1"
+    },
+    {
+        "title": "When LLMs step into the 3D World: A Survey and Meta-Analysis of 3D Tasks via Multi-modal Large Language Models",
+        "authors": [
+            "Xianzheng Ma",
+            "Yash Bhalgat",
+            "Brandon Smart",
+            "Shuai Chen",
+            "Xinghui Li",
+            "Jian Ding",
+            "Jindong Gu",
+            "Dave Zhenyu Chen",
+            "Songyou Peng",
+            "Jia-Wang Bian",
+            "Philip H Torr",
+            "Marc Pollefeys",
+            "Matthias Nie\u00dfner",
+            "Ian D Reid",
+            "Angel X. Chang",
+            "Iro Laina",
+            "Victor Adrian Prisacariu"
+        ],
+        "text": "As large language models (LLMs) evolve, their integration with 3D spatial\ndata (3D-LLMs) has seen rapid progress, offering unprecedented capabilities for\nunderstanding and interacting with physical spaces. This survey provides a\ncomprehensive overview of the methodologies enabling LLMs to process,\nunderstand, and generate 3D data. Highlighting the unique advantages of LLMs,\nsuch as in-context learning, step-by-step reasoning, open-vocabulary\ncapabilities, and extensive world knowledge, we underscore their potential to\nsignificantly advance spatial comprehension and interaction within embodied\nArtificial Intelligence (AI) systems. Our investigation spans various 3D data\nrepresentations, from point clouds to Neural Radiance Fields (NeRFs). It\nexamines their integration with LLMs for tasks such as 3D scene understanding,\ncaptioning, question-answering, and dialogue, as well as LLM-based agents for\nspatial reasoning, planning, and navigation. The paper also includes a brief\nreview of other methods that integrate 3D and language. The meta-analysis\npresented in this paper reveals significant progress yet underscores the\nnecessity for novel approaches to harness the full potential of 3D-LLMs. Hence,\nwith this paper, we aim to chart a course for future research that explores and\nexpands the capabilities of 3D-LLMs in understanding and interacting with the\ncomplex 3D world. To support this survey, we have established a project page\nwhere papers related to our topic are organized and listed:\nhttps://github.com/ActiveVisionLab/Awesome-LLM-3D.",
+        "link": "http://arxiv.org/abs/2405.10255v1"
+    },
+    {
+        "title": "Co-Matching: Towards Human-Machine Collaborative Legal Case Matching",
+        "authors": [
+            "Chen Huang",
+            "Xinwei Yang",
+            "Yang Deng",
+            "Wenqiang Lei",
+            "JianCheng Lv",
+            "Tat-Seng Chua"
+        ],
+        "text": "Recent efforts have aimed to improve AI machines in legal case matching by\nintegrating legal domain knowledge. However, successful legal case matching\nrequires the tacit knowledge of legal practitioners, which is difficult to\nverbalize and encode into machines. This emphasizes the crucial role of\ninvolving legal practitioners in high-stakes legal case matching. To address\nthis, we propose a collaborative matching framework called Co-Matching, which\nencourages both the machine and the legal practitioner to participate in the\nmatching process, integrating tacit knowledge. Unlike existing methods that\nrely solely on the machine, Co-Matching allows both the legal practitioner and\nthe machine to determine key sentences and then combine them probabilistically.\nCo-Matching introduces a method called ProtoEM to estimate human decision\nuncertainty, facilitating the probabilistic combination. Experimental results\ndemonstrate that Co-Matching consistently outperforms existing legal case\nmatching methods, delivering significant performance improvements over human-\nand machine-based matching in isolation (on average, +5.51% and +8.71%,\nrespectively). Further analysis shows that Co-Matching also ensures better\nhuman-machine collaboration effectiveness. Our study represents a pioneering\neffort in human-machine collaboration for the matching task, marking a\nmilestone for future collaborative matching studies.",
+        "link": "http://arxiv.org/abs/2405.10248v1"
+    },
+    {
+        "title": "Novel Data Models for Inter-operable LCA Frameworks",
+        "authors": [
+            "Kourosh Malek",
+            "Max Dreger",
+            "Zirui Tang",
+            "Qingshi Tu"
+        ],
+        "text": "Life cycle assessment (LCA) plays a critical role in assessing the\nenvironmental impacts of a product, technology, or service throughout its\nentire life cycle. Nonetheless, many existing LCA tools and methods lack\nadequate metadata management, which can hinder their further development and\nwide adoption. In the example of LCA for clean energy technologies, metadata\nhelps monitor data and the environment that holds the integrity of the energy\nassets and sustainability of the materials sources across their entire value\nchains. Ontologizing metadata, i.e. a common vocabulary and language to connect\nmultiple data sources, as well as implementing AI-aware data management, can\nhave long-lasting, positive, and accelerating effects along with collecting and\nutilizing quality data from different sources and across the entire data\nlifecycle. The integration of ontologies in life cycle assessments has garnered\nsignificant attention in recent years. We synthesized the existing literature\non ontologies for LCAs, providing insights into this interdisciplinary field's\nevolution, current state, and future directions. We also proposed the framework\nfor a suitable data model and the workflow thereof to warrant the alignment\nwith existing ontologies, practical frameworks, and industry standards.",
+        "link": "http://arxiv.org/abs/2405.10235v1"
+    },
+    {
+        "title": "A Design Trajectory Map of Human-AI Collaborative Reinforcement Learning Systems: Survey and Taxonomy",
+        "authors": [
+            "Zhaoxing Li"
+        ],
+        "text": "Driven by the algorithmic advancements in reinforcement learning and the\nincreasing number of implementations of human-AI collaboration, Collaborative\nReinforcement Learning (CRL) has been receiving growing attention. Despite this\nrecent upsurge, this area is still rarely systematically studied. In this\npaper, we provide an extensive survey, investigating CRL methods based on both\ninteractive reinforcement learning algorithms and human-AI collaborative\nframeworks that were proposed in the past decade. We elucidate and discuss via\nsynergistic analysis methods both the growth of the field and the\nstate-of-the-art; we conceptualise the existing frameworks from the\nperspectives of design patterns, collaborative levels, parties and\ncapabilities, and review interactive methods and algorithmic models.\nSpecifically, we create a new Human-AI CRL Design Trajectory Map, as a\nsystematic modelling tool for the selection of existing CRL frameworks, as well\nas a method of designing new CRL systems, and finally of improving future CRL\ndesigns. Furthermore, we elaborate generic Human-AI CRL challenges, providing\nthe research community with a guide towards novel research directions. The aim\nof this paper is to empower researchers with a systematic framework for the\ndesign of efficient and 'natural' human-AI collaborative methods, making it\npossible to work on maximised realisation of humans' and AI's potentials.",
+        "link": "http://arxiv.org/abs/2405.10214v1"
+    },
+    {
+        "title": "GPT Store Mining and Analysis",
+        "authors": [
+            "Dongxun Su",
+            "Yanjie Zhao",
+            "Xinyi Hou",
+            "Shenao Wang",
+            "Haoyu Wang"
+        ],
+        "text": "As a pivotal extension of the renowned ChatGPT, the GPT Store serves as a\ndynamic marketplace for various Generative Pre-trained Transformer (GPT)\nmodels, shaping the frontier of conversational AI. This paper presents an\nin-depth measurement study of the GPT Store, with a focus on the categorization\nof GPTs by topic, factors influencing GPT popularity, and the potential\nsecurity risks. Our investigation starts with assessing the categorization of\nGPTs in the GPT Store, analyzing how they are organized by topics, and\nevaluating the effectiveness of the classification system. We then examine the\nfactors that affect the popularity of specific GPTs, looking into user\npreferences, algorithmic influences, and market trends. Finally, the study\ndelves into the security risks of the GPT Store, identifying potential threats\nand evaluating the robustness of existing security measures. This study offers\na detailed overview of the GPT Store's current state, shedding light on its\noperational dynamics and user interaction patterns. Our findings aim to enhance\nunderstanding of the GPT ecosystem, providing valuable insights for future\nresearch, development, and policy-making in generative AI.",
+        "link": "http://arxiv.org/abs/2405.10210v1"
+    },
+    {
+        "title": "\"The Death of Wikipedia?\" -- Exploring the Impact of ChatGPT on Wikipedia Engagement",
+        "authors": [
+            "Neal Reeves",
+            "Wenjie Yin",
+            "Elena Simperl",
+            "Miriam Redi"
+        ],
+        "text": "Wikipedia is one of the most popular websites in the world, serving as a\nmajor source of information and learning resource for millions of users\nworldwide. While motivations for its usage vary, prior research suggests\nshallow information gathering -- looking up facts and information or answering\nquestions -- dominates over more in-depth usage. On the 22nd of November 2022,\nChatGPT was released to the public and has quickly become a popular source of\ninformation, serving as an effective question-answering and knowledge gathering\nresource. Early indications have suggested that it may be drawing users away\nfrom traditional question answering services such as Stack Overflow, raising\nthe question of how it may have impacted Wikipedia. In this paper, we explore\nWikipedia user metrics across four areas: page views, unique visitor numbers,\nedit counts and editor numbers within twelve language instances of Wikipedia.\nWe perform pairwise comparisons of these metrics before and after the release\nof ChatGPT and implement a panel regression model to observe and quantify\nlonger-term trends. We find no evidence of a fall in engagement across any of\nthe four metrics, instead observing that page views and visitor numbers\nincreased in the period following ChatGPT's launch. However, we observe a lower\nincrease in languages where ChatGPT was available than in languages where it\nwas not, which may suggest ChatGPT's availability limited growth in those\nlanguages. Our results contribute to the understanding of how emerging\ngenerative AI tools are disrupting the Web ecosystem.",
+        "link": "http://arxiv.org/abs/2405.10205v1"
+    },
+    {
+        "title": "A Guide to Tracking Phylogenies in Parallel and Distributed Agent-based Evolution Models",
+        "authors": [
+            "Matthew Andres Moreno",
+            "Anika Ranjan",
+            "Emily Dolson",
+            "Luis Zaman"
+        ],
+        "text": "Computer simulations are an important tool for studying the mechanics of\nbiological evolution. In particular, in silico work with agent-based models\nprovides an opportunity to collect high-quality records of ancestry\nrelationships among simulated agents. Such phylogenies can provide insight into\nevolutionary dynamics within these simulations. Existing work generally tracks\nlineages directly, yielding an exact phylogenetic record of evolutionary\nhistory. However, direct tracking can be inefficient for large-scale,\nmany-processor evolutionary simulations. An alternate approach to extracting\nphylogenetic information from simulation that scales more favorably is post hoc\nestimation, akin to how bioinformaticians build phylogenies by assessing\ngenetic similarities between organisms. Recently introduced ``hereditary\nstratigraphy'' algorithms provide means for efficient inference of phylogenetic\nhistory from non-coding annotations on simulated organisms' genomes. A number\nof options exist in configuring hereditary stratigraphy methodology, but no\nwork has yet tested how they impact reconstruction quality. To address this\nquestion, we surveyed reconstruction accuracy under alternate configurations\nacross a matrix of evolutionary conditions varying in selection pressure,\nspatial structure, and ecological dynamics. We synthesize results from these\nexperiments to suggest a prescriptive system of best practices for work with\nhereditary stratigraphy, ultimately guiding researchers in choosing appropriate\ninstrumentation for large-scale simulation studies.",
+        "link": "http://arxiv.org/abs/2405.10183v1"
+    },
+    {
+        "title": "Speaker Verification in Agent-Generated Conversations",
+        "authors": [
+            "Yizhe Yang",
+            "Heyan Huang",
+            "Palakorn Achananuparp",
+            "Jing Jiang",
+            "Ee-Peng Lim"
+        ],
+        "text": "The recent success of large language models (LLMs) has attracted widespread\ninterest to develop role-playing conversational agents personalized to the\ncharacteristics and styles of different speakers to enhance their abilities to\nperform both general and special purpose dialogue tasks. However, the ability\nto personalize the generated utterances to speakers, whether conducted by human\nor LLM, has not been well studied. To bridge this gap, our study introduces a\nnovel evaluation challenge: speaker verification in agent-generated\nconversations, which aimed to verify whether two sets of utterances originate\nfrom the same speaker. To this end, we assemble a large dataset collection\nencompassing thousands of speakers and their utterances. We also develop and\nevaluate speaker verification models under experiment setups. We further\nutilize the speaker verification models to evaluate the personalization\nabilities of LLM-based role-playing models. Comprehensive experiments suggest\nthat the current role-playing models fail in accurately mimicking speakers,\nprimarily due to their inherent linguistic characteristics.",
+        "link": "http://arxiv.org/abs/2405.10150v1"
+    },
+    {
+        "title": "Towards Consistent and Explainable Motion Prediction using Heterogeneous Graph Attention",
+        "authors": [
+            "Tobias Demmler",
+            "Andreas Tamke",
+            "Thao Dang",
+            "Karsten Haug",
+            "Lars Mikelsons"
+        ],
+        "text": "In autonomous driving, accurately interpreting the movements of other road\nusers and leveraging this knowledge to forecast future trajectories is crucial.\nThis is typically achieved through the integration of map data and tracked\ntrajectories of various agents. Numerous methodologies combine this information\ninto a singular embedding for each agent, which is then utilized to predict\nfuture behavior. However, these approaches have a notable drawback in that they\nmay lose exact location information during the encoding process. The encoding\nstill includes general map information. However, the generation of valid and\nconsistent trajectories is not guaranteed. This can cause the predicted\ntrajectories to stray from the actual lanes. This paper introduces a new\nrefinement module designed to project the predicted trajectories back onto the\nactual map, rectifying these discrepancies and leading towards more consistent\npredictions. This versatile module can be readily incorporated into a wide\nrange of architectures. Additionally, we propose a novel scene encoder that\nhandles all relations between agents and their environment in a single unified\nheterogeneous graph attention network. By analyzing the attention values on the\ndifferent edges in this graph, we can gain unique insights into the neural\nnetwork's inner workings leading towards a more explainable prediction.",
+        "link": "http://arxiv.org/abs/2405.10134v1"
+    },
+    {
+        "title": "StyloAI: Distinguishing AI-Generated Content with Stylometric Analysis",
+        "authors": [
+            "Chidimma Opara"
+        ],
+        "text": "The emergence of large language models (LLMs) capable of generating realistic\ntexts and images has sparked ethical concerns across various sectors. In\nresponse, researchers in academia and industry are actively exploring methods\nto distinguish AI-generated content from human-authored material. However, a\ncrucial question remains: What are the unique characteristics of AI-generated\ntext? Addressing this gap, this study proposes StyloAI, a data-driven model\nthat uses 31 stylometric features to identify AI-generated texts by applying a\nRandom Forest classifier on two multi-domain datasets. StyloAI achieves\naccuracy rates of 81% and 98% on the test set of the AuTextification dataset\nand the Education dataset, respectively. This approach surpasses the\nperformance of existing state-of-the-art models and provides valuable insights\ninto the differences between AI-generated and human-authored texts.",
+        "link": "http://arxiv.org/abs/2405.10129v1"
+    },
+    {
+        "title": "Red Teaming Language Models for Contradictory Dialogues",
+        "authors": [
+            "Xiaofei Wen",
+            "Bangzheng Li",
+            "Tenghao Huang",
+            "Muhao Chen"
+        ],
+        "text": "Most language models currently available are prone to self-contradiction\nduring dialogues. To mitigate this issue, this study explores a novel\ncontradictory dialogue processing task that aims to detect and modify\ncontradictory statements in a conversation. This task is inspired by research\non context faithfulness and dialogue comprehension, which have demonstrated\nthat the detection and understanding of contradictions often necessitate\ndetailed explanations. We develop a dataset comprising contradictory dialogues,\nin which one side of the conversation contradicts itself. Each dialogue is\naccompanied by an explanatory label that highlights the location and details of\nthe contradiction. With this dataset, we present a Red Teaming framework for\ncontradictory dialogue processing. The framework detects and attempts to\nexplain the dialogue, then modifies the existing contradictory content using\nthe explanation. Our experiments demonstrate that the framework improves the\nability to detect contradictory dialogues and provides valid explanations.\nAdditionally, it showcases distinct capabilities for modifying such dialogues.\nOur study highlights the importance of the logical inconsistency problem in\nconversational AI.",
+        "link": "http://arxiv.org/abs/2405.10128v1"
+    },
+    {
+        "title": "When Large Language Model Meets Optimization",
+        "authors": [
+            "Sen Huang",
+            "Kaixiang Yang",
+            "Sheng Qi",
+            "Rui Wang"
+        ],
+        "text": "Optimization algorithms and large language models (LLMs) enhance\ndecision-making in dynamic environments by integrating artificial intelligence\nwith traditional techniques. LLMs, with extensive domain knowledge, facilitate\nintelligent modeling and strategic decision-making in optimization, while\noptimization algorithms refine LLM architectures and output quality. This\nsynergy offers novel approaches for advancing general AI, addressing both the\ncomputational challenges of complex problems and the application of LLMs in\npractical scenarios. This review outlines the progress and potential of\ncombining LLMs with optimization algorithms, providing insights for future\nresearch directions.",
+        "link": "http://arxiv.org/abs/2405.10098v1"
+    },
+    {
+        "title": "Optimizing Search and Rescue UAV Connectivity in Challenging Terrain through Multi Q-Learning",
+        "authors": [
+            "Mohammed M. H. Qazzaz",
+            "Syed A. R. Zaidi",
+            "Desmond C. McLernon",
+            "Abdelaziz Salama",
+            "Aubida A. Al-Hameed"
+        ],
+        "text": "Using Unmanned Aerial Vehicles (UAVs) in Search and rescue operations (SAR)\nto navigate challenging terrain while maintaining reliable communication with\nthe cellular network is a promising approach. This paper suggests a novel\ntechnique employing a reinforcement learning multi Q-learning algorithm to\noptimize UAV connectivity in such scenarios. We introduce a Strategic Planning\nAgent for efficient path planning and collision awareness and a Real-time\nAdaptive Agent to maintain optimal connection with the cellular base station.\nThe agents trained in a simulated environment using multi Q-learning,\nencouraging them to learn from experience and adjust their decision-making to\ndiverse terrain complexities and communication scenarios. Evaluation results\nreveal the significance of the approach, highlighting successful navigation in\nenvironments with varying obstacle densities and the ability to perform optimal\nconnectivity using different frequency bands. This work paves the way for\nenhanced UAV autonomy and enhanced communication reliability in search and\nrescue operations.",
+        "link": "http://arxiv.org/abs/2405.10042v1"
+    },
+    {
+        "title": "Silicon nitride integrated photonics from visible to mid-infrared spectra",
+        "authors": [
+            "Kirill A. Buzaverov",
+            "Aleksandr S. Baburin",
+            "Evgeny V. Sergeev",
+            "Sergey S. Avdeev",
+            "Evgeniy S. Lotkov",
+            "Sergey V. Bukatin",
+            "Ilya A. Stepanov",
+            "Aleksey B. Kramarenko",
+            "Ali Sh. Amiraslanov",
+            "Danil V. Kushnev",
+            "Ilya A. Ryzhikov",
+            "Ilya A. Rodionov"
+        ],
+        "text": "Recently, silicon nitride (Si3N4) photonic integrated circuits (PICs) are of\na great interest due to their extremely low waveguides losses. The number of\nSi3N4 integrated photonics platform applications is constantly growing\nincluding the Internet of Things (IoT), artificial intelligence (AI), light\ndetection and ranging (LiDAR) devices, hybrid neuromorphic and quantum\ncomputing. Their heterogeneous integration with a III-V platform leads to a new\nadvanced large scale PICs with thousands of elements. Here, we review key\ntrends in Si3N4 integrated circuits technology and fill an information gap in\nthe field of state-of-the-art photonic devices operating from visible to\nmid-infrared spectra. A comprehensive overview of Si3N4 integrared circtuis\nmicrofabrication process details (deposition, lithography, etching, etc.) is\nintroduced. Finally, we point out the limits and challenges of silicon nitride\nphotonics performance in an ultrawide range providing routes and prospects for\ntheir future scaling and optimization.",
+        "link": "http://arxiv.org/abs/2405.10038v1"
+    },
+    {
+        "title": "Solving the enigma: Deriving optimal explanations of deep networks",
+        "authors": [
+            "Michail Mamalakis",
+            "Antonios Mamalakis",
+            "Ingrid Agartz",
+            "Lynn Egeland M\u00f8rch-Johnsen",
+            "Graham Murray",
+            "John Suckling",
+            "Pietro Lio"
+        ],
+        "text": "The accelerated progress of artificial intelligence (AI) has popularized deep\nlearning models across domains, yet their inherent opacity poses challenges,\nnotably in critical fields like healthcare, medicine and the geosciences.\nExplainable AI (XAI) has emerged to shed light on these \"black box\" models,\nhelping decipher their decision making process. Nevertheless, different XAI\nmethods yield highly different explanations. This inter-method variability\nincreases uncertainty and lowers trust in deep networks' predictions. In this\nstudy, for the first time, we propose a novel framework designed to enhance the\nexplainability of deep networks, by maximizing both the accuracy and the\ncomprehensibility of the explanations. Our framework integrates various\nexplanations from established XAI methods and employs a non-linear \"explanation\noptimizer\" to construct a unique and optimal explanation. Through experiments\non multi-class and binary classification tasks in 2D object and 3D neuroscience\nimaging, we validate the efficacy of our approach. Our explanation optimizer\nachieved superior faithfulness scores, averaging 155% and 63% higher than the\nbest performing XAI method in the 3D and 2D applications, respectively.\nAdditionally, our approach yielded lower complexity, increasing\ncomprehensibility. Our results suggest that optimal explanations based on\nspecific criteria are derivable and address the issue of inter-method\nvariability in the current XAI literature.",
+        "link": "http://arxiv.org/abs/2405.10008v1"
+    },
+    {
+        "title": "Semantic Communication via Rate Distortion Perception Bottleneck",
+        "authors": [
+            "Zihe Zhao",
+            "Chunyue Wang"
+        ],
+        "text": "With the advancement of Artificial Intelligence (AI) technology,\nnext-generation wireless communication network is facing unprecedented\nchallenge. Semantic communication has become a novel solution to address such\nchallenges, with enhancing the efficiency of bandwidth utilization by\ntransmitting meaningful information and filtering out superfluous data.\nUnfortunately, recent studies have shown that classical Shannon information\ntheory primarily focuses on the bit-level distortion, which cannot adequately\naddress the perceptual quality issues of data reconstruction at the receiver\nend. In this work, we consider the impact of semantic-level distortion on\nsemantic communication. We develop an image inference network based on the\nInformation Bottleneck (IB) framework and concurrently establish an image\nreconstruction network. This network is designed to achieve joint optimization\nof perception and bit-level distortion, as well as image inference, associated\nwith compressing information. To maintain consistency with the principles of IB\nfor handling high-dimensional data, we employ variational approximation methods\nto simplify the optimization problem. Finally, we confirm the existence of the\nrate distortion perception tradeoff within IB framework through experimental\nanalysis conducted on the MNIST dataset.",
+        "link": "http://arxiv.org/abs/2405.09995v1"
+    },
+    {
+        "title": "Pedestrian evacuations with imitation of cooperative behavior",
+        "authors": [
+            "Amir Zablotsky",
+            "Marcelo N Kuperman",
+            "Sebasti\u00e1n Bouzat"
+        ],
+        "text": "We analyze the dynamics of room evacuation for mixed populations that include\nboth competitive and cooperative individuals through numerical simulations\nusing the social force model. Cooperative agents represent well-trained\nindividuals who know how to behave in order to reduce risks within high-density\ncrowds. We consider that competitive agents can imitate cooperative behavior\nwhen they are in close proximity to cooperators. We study the effects of the\nimitation of cooperative behavior on the duration and safety of evacuations,\nanalyzing evacuation time and other quantities of interest for varying\nparameters such as the proportions of mixing, the aspect ratio of the room, and\nthe parameters characterizing individual behaviors. Our main findings reveal\nthat the addition of a relatively small number of cooperative agents into a\ncrowd can reduce evacuation time and the density near the exit door, making the\nevacuation faster and safer despite an increase in the total number of agents.\nIn particular, for long spaces such as corridors, a small number of added\ncooperative agents can significantly facilitate the evacuation process. We\ncompare our results with those of systems without imitation and also study the\ngeneral role of cooperation, providing further analysis for homogeneous\npopulations. Our main conclusions emphasize the potential relevance of training\npeople how to behave in high-density crowds",
+        "link": "http://arxiv.org/abs/2405.09978v1"
+    },
+    {
+        "title": "Mitigating Text Toxicity with Counterfactual Generation",
+        "authors": [
+            "Milan Bhan",
+            "Jean-Noel Vittaut",
+            "Nina Achache",
+            "Victor Legrand",
+            "Nicolas Chesneau",
+            "Annabelle Blangero",
+            "Juliette Murris",
+            "Marie-Jeanne Lesot"
+        ],
+        "text": "Toxicity mitigation consists in rephrasing text in order to remove offensive\nor harmful meaning. Neural natural language processing (NLP) models have been\nwidely used to target and mitigate textual toxicity. However, existing methods\nfail to detoxify text while preserving the initial non-toxic meaning at the\nsame time. In this work, we propose to apply counterfactual generation methods\nfrom the eXplainable AI (XAI) field to target and mitigate textual toxicity. In\nparticular, we perform text detoxification by applying local feature importance\nand counterfactual generation methods to a toxicity classifier distinguishing\nbetween toxic and non-toxic texts. We carry out text detoxification through\ncounterfactual generation on three datasets and compare our approach to three\ncompetitors. Automatic and human evaluations show that recently developed NLP\ncounterfactual generators can mitigate toxicity accurately while better\npreserving the meaning of the initial text as compared to classical\ndetoxification methods. Finally, we take a step back from using automated\ndetoxification tools, and discuss how to manage the polysemous nature of\ntoxicity and the risk of malicious use of detoxification tools. This work is\nthe first to bridge the gap between counterfactual generation and text\ndetoxification and paves the way towards more practical application of XAI\nmethods.",
+        "link": "http://arxiv.org/abs/2405.09948v1"
+    },
+    {
+        "title": "DEBATE: Devil's Advocate-Based Assessment and Text Evaluation",
+        "authors": [
+            "Alex Kim",
+            "Keonwoo Kim",
+            "Sangwon Yoon"
+        ],
+        "text": "As natural language generation (NLG) models have become prevalent,\nsystematically assessing the quality of machine-generated texts has become\nincreasingly important. Recent studies introduce LLM-based evaluators that\noperate as reference-free metrics, demonstrating their capability to adeptly\nhandle novel tasks. However, these models generally rely on a single-agent\napproach, which, we argue, introduces an inherent limit to their performance.\nThis is because there exist biases in LLM agent's responses, including\npreferences for certain text structure or content. In this work, we propose\nDEBATE, an NLG evaluation framework based on multi-agent scoring system\naugmented with a concept of Devil's Advocate. Within the framework, one agent\nis instructed to criticize other agents' arguments, potentially resolving the\nbias in LLM agent's answers. DEBATE substantially outperforms the previous\nstate-of-the-art methods in two meta-evaluation benchmarks in NLG evaluation,\nSummEval and TopicalChat. We also show that the extensiveness of debates among\nagents and the persona of an agent can influence the performance of evaluators.",
+        "link": "http://arxiv.org/abs/2405.09935v1"
+    },
+    {
+        "title": "Stock Market Dynamics Through Deep Learning Context",
+        "authors": [
+            "Amirhossein Aminimehr",
+            "Amin Aminimehr",
+            "Hamid Moradi Kamali",
+            "Sauleh Eetemadi",
+            "Saeid Hoseinzade"
+        ],
+        "text": "Studies conducted on financial market prediction lack a comprehensive feature\nset that can carry a broad range of contributing factors; therefore, leading to\nimprecise results. Furthermore, while cooperating with the most recent\ninnovations in explainable AI, studies have not provided an illustrative\ntext of market-driving factors using this powerful tool. Therefore, in this\nstudy, we propose a novel feature matrix that holds a broad range of features\nincluding Twitter content and market historical data to perform a binary\nclassification task of one step ahead prediction. The utilization of our\nproposed feature matrix not only leads to improved prediction accuracy when\ncompared to existing feature representations, but also its combination with\nexplainable AI allows us to introduce a fresh analysis approach regarding the\nimportance of the market-driving factors included. Thanks to the Lime\ninterpretation technique, our interpretation study shows that the volume of\ntweets is the most important factor included in our feature matrix that drives\nthe market's movements.",
+        "link": "http://arxiv.org/abs/2405.09932v1"
+    },
+    {
+        "title": "Infrared Adversarial Car Stickers",
+        "authors": [
+            "Xiaopei Zhu",
+            "Yuqiu Liu",
+            "Zhanhao Hu",
+            "Jianmin Li",
+            "Xiaolin Hu"
+        ],
+        "text": "Infrared physical adversarial examples are of great significance for studying\nthe security of infrared AI systems that are widely used in our lives such as\nautonomous driving. Previous infrared physical attacks mainly focused on 2D\ninfrared pedestrian detection which may not fully manifest its destructiveness\nto AI systems. In this work, we propose a physical attack method against\ninfrared detectors based on 3D modeling, which is applied to a real car. The\ngoal is to design a set of infrared adversarial stickers to make cars invisible\nto infrared detectors at various viewing angles, distances, and scenes. We\nbuild a 3D infrared car model with real infrared characteristics and propose an\ninfrared adversarial pattern generation method based on 3D mesh shadow. We\npropose a 3D control points-based mesh smoothing algorithm and use a set of\nsmoothness loss functions to enhance the smoothness of adversarial meshes and\nfacilitate the sticker implementation. Besides, We designed the aluminum\nstickers and conducted physical experiments on two real Mercedes-Benz A200L\ncars. Our adversarial stickers hid the cars from Faster RCNN, an object\ndetector, at various viewing angles, distances, and scenes. The attack success\nrate (ASR) was 91.49% for real cars. In comparison, the ASRs of random stickers\nand no sticker were only 6.21% and 0.66%, respectively. In addition, the ASRs\nof the designed stickers against six unseen object detectors such as YOLOv3 and\nDeformable DETR were between 73.35%-95.80%, showing good transferability of the\nattack performance across detectors.",
+        "link": "http://arxiv.org/abs/2405.09924v1"
+    },
+    {
+        "title": "\"Hunt Takes Hare\": Theming Games Through Game-Word Vector Translation",
+        "authors": [
+            "Rabii Youn\u00e8s",
+            "Cook Michael"
+        ],
+        "text": "A game's theme is an important part of its design -- it conveys narrative\ninformation, rhetorical messages, helps the player intuit strategies, aids in\ntutorialisation and more. Thematic elements of games are notoriously difficult\nfor AI systems to understand and manipulate, however, and often rely on large\namounts of hand-written interpretations and knowledge. In this paper we present\na technique which connects game embeddings, a recent method for modelling game\ndynamics from log data, and word embeddings, which models semantic information\nabout language. We explain two different approaches for using game embeddings\nin this way, and show evidence that game embeddings enhance the linguistic\ntranslations of game concepts from one theme to another, opening up exciting\nnew possibilities for reasoning about the thematic elements of games in the\nfuture.",
+        "link": "http://arxiv.org/abs/2405.09893v1"
+    },
+    {
+        "title": "IGOT: Information Gain Optimized Tokenizer on Domain Adaptive Pretraining",
+        "authors": [
+            "Dawei Feng",
+            "Yihai Zhang",
+            "Zhixuan Xu"
+        ],
+        "text": "Pretrained Large Language Models (LLM) such as ChatGPT, Claude, etc. have\ndemonstrated strong capabilities in various fields of natural language\ngeneration. However, there are still many problems when using LLM in\nspecialized domain-specific fields. When using generative AI to process\ndownstream tasks, a common approach is to add new knowledge (e.g., private\ndomain knowledge, cutting-edge information) to a pretrained model through\ncontinued training or fine-tuning. However, whether there is a universal\nparadigm for domain adaptation training is still an open question. In this\narticle, we proposed Information Gain Optimized Tokenizer (IGOT), which\nanalyzes the special token set of downstream tasks, constructs a new subset\nusing heuristic function $\\phi$ with the special token and its information\ngain, to build new domain-specific tokenizer, and continues pretraining on the\ndownstream task data. We explored the many positive effects of this method's\ncustomized tokenizer on domain-adaptive pretraining and verified this method\ncan perform better than the ordinary method of just collecting data and\nfine-tuning. Based on our experiment, the continued pretraining process of IGOT\nwith LLaMA-7B achieved 11.9\\% token saving, 12.2\\% training time saving, and\n5.8\\% maximum GPU VRAM usage saving, combined with the T5 model, we can even\nreach a 31.5\\% of training time saving, making porting general generative AI to\nspecific domains more effective than before. In domain-specific tasks,\nsupervised $IGOT_\\tau$ shows great performance on reducing both the convergence\nradius and convergence point during keep pretraining.",
+        "link": "http://arxiv.org/abs/2405.09857v1"
+    },
+    {
+        "title": "Organizational Selection of Innovation",
+        "authors": [
+            "Lucas B\u00f6ttcher",
+            "Ronald Klingebiel"
+        ],
+        "text": "Budgetary constraints force organizations to pursue only a subset of possible\ninnovation projects. Identifying which subset is most promising is an\nerror-prone exercise, and involving multiple decision makers may be prudent.\nThis raises the question of how to most effectively aggregate their collective\nnous. Our model of organizational portfolio selection provides some first\nanswers. We show that portfolio performance can vary widely. Delegating\nevaluation makes sense when organizations employ the relevant experts and can\nassign projects to them. In most other settings, aggregating the impressions of\nmultiple agents leads to better performance than delegation. In particular,\nletting agents rank projects often outperforms alternative aggregation rules --\nincluding averaging agents' project scores as well as counting their approval\nvotes -- especially when organizations have tight budgets and can select only a\nfew project alternatives out of many.",
+        "link": "http://arxiv.org/abs/2405.09843v1"
+    },
+    {
+        "title": "Nearly Minimax Optimal Regret for Multinomial Logistic Bandit",
+        "authors": [
+            "Joongkyu Lee",
+            "Min-hwan Oh"
+        ],
+        "text": "In this paper, we investigate the contextual multinomial logit (MNL) bandit\nproblem in which a learning agent sequentially selects an assortment based on\ncontextual information, and user feedback follows an MNL choice model. There\nhas been a significant discrepancy between lower and upper regret bounds,\nparticularly regarding the feature dimension $d$ and the maximum assortment\nsize $K$. Additionally, the variation in reward structures between these bounds\ncomplicates the quest for optimality. Under uniform rewards, where all items\nhave the same expected reward, we establish a regret lower bound of\n$\\Omega(d\\sqrt{\\smash[b]{T/K}})$ and propose a constant-time algorithm,\nOFU-MNL+, that achieves a matching upper bound of\n$\\tilde{\\mathcal{O}}(d\\sqrt{\\smash[b]{T/K}})$. Under non-uniform rewards, we\nprove a lower bound of $\\Omega(d\\sqrt{T})$ and an upper bound of\n$\\tilde{\\mathcal{O}}(d\\sqrt{T})$, also achievable by OFU-MNL+. Our empirical\nstudies support these theoretical findings. To the best of our knowledge, this\nis the first work in the MNL contextual bandit literature to prove minimax\noptimality -- for either uniform or non-uniform reward setting -- and to\npropose a computationally efficient algorithm that achieves this optimality up\nto logarithmic factors.",
+        "link": "http://arxiv.org/abs/2405.09831v1"
+    },
+    {
+        "title": "Human-AI Safety: A Descendant of Generative AI and Control Systems Safety",
+        "authors": [
+            "Andrea Bajcsy",
+            "Jaime F. Fisac"
+        ],
+        "text": "Generative artificial intelligence (AI) is interacting with people at an\nunprecedented scale, offering new avenues for immense positive impact, but also\nraising widespread concerns around the potential for individual and societal\nharm. Today, the predominant paradigm for human-AI safety focuses on\nfine-tuning the generative model's outputs to better agree with human-provided\nexamples or feedback. In reality, however, the consequences of an AI model's\noutputs cannot be determined in an isolated context: they are tightly entangled\nwith the responses and behavior of human users over time. In this position\npaper, we argue that meaningful safety assurances for these AI technologies can\nonly be achieved by reasoning about how the feedback loop formed by the AI's\noutputs and human behavior may drive the interaction towards different\noutcomes. To this end, we envision a high-value window of opportunity to bridge\nthe rapidly growing capabilities of generative AI and the dynamical safety\nframeworks from control theory, laying a new foundation for human-centered AI\nsafety in the coming decades.",
+        "link": "http://arxiv.org/abs/2405.09794v1"
+    }
+]
