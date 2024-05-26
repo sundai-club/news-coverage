@@ -59,6 +59,7 @@ with st.sidebar:
 
     st.markdown(button_html, unsafe_allow_html=True)
 
+    st.markdown('#')
     st.markdown(
         'Query items containing specific phrases in the dataset and show it as a heatmap. Enter the phrase of interest, then change the size and opacity of the heatmap as desired to find the high-density regions. Hover over blue points to see the details of individual papers.')
     st.markdown(
@@ -66,7 +67,7 @@ with st.sidebar:
 
     search_query = st.text_input("Search query", key="phrase", value="bee")
 
-    alpha_value = st.slider("Pick the hexbin opacity", 0.0, 1.0, 0.81)
+    alpha_value = st.slider("Pick the hexbin opacity", 0.0, 1.0, 0.5)
     size_value = st.slider("Pick the hexbin gridsize", 0.5, 5.0, 1.0)
 
 
@@ -101,15 +102,14 @@ def get_embeddings_from_file():
         link=all_links,
     ))
 
-    return sources_df, all_titles
+    return sources_df, all_titles, final_2d_embeddings
 
 
-sources_df, all_titles = get_embeddings_from_file()
+sources_df, all_titles, final_2d_embeddings = get_embeddings_from_file()
 source = ColumnDataSource(sources_df)
 
 TOOLTIPS = """
 <div style="width:300px;">
-ID: $index <br>
 ($x, $y) <br>
 @title <br>
 Click to open @link <br> <br>
@@ -130,10 +130,14 @@ p.add_tools(TapTool())
 # TODO: change this with actual semantic search - the embedding distance basically
 phrase_flags = np.zeros((len(all_titles),))
 
-phrase_flags = np.zeros((len(all_titles),))
 for i in range(len(all_titles)):
     if phrase.lower() in all_titles[i].lower():
         phrase_flags[i] = 1
+
+# TODO: create a hexbin manually with the needed description and number of points...
+
+p.hexbin(final_2d_embeddings[:, 0], final_2d_embeddings[:, 1], size=0.5,
+         palette=np.flip(OrRd[9]), alpha=alpha_value)
 
 # TODO: add a summarization to the HEXBIN items so that when hovering a bin can see a summary of the items within
 # p.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1], size=size_value,
@@ -153,13 +157,13 @@ for source_type, color in type_to_color.items():
 
 st.bokeh_chart(p)
 
-fig = plt.figure(figsize=(10.5, 9 * 0.8328))
-# plt.scatter(embedding[0:, 0], embedding[0:, 1], s=2, alpha=0.1)
+# fig = plt.figure(figsize=(10.5, 9 * 0.8328))
+
 # plt.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1],
 #            gridsize=int(10 * size_value), cmap='viridis', alpha=alpha_value, extent=(-1, 16, 1.5, 16), mincnt=1)
 # plt.title("UMAP localization of heatmap keyword: " + phrase)
-plt.axis([0, 15, 2.5, 15])
+# plt.axis([0, 15, 2.5, 15])
 # clbr = plt.colorbar()
 # clbr.set_label('# papers')
-plt.axis('off')
-st.pyplot(fig)
+# plt.axis('off')
+# st.pyplot(fig)
