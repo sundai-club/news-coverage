@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 from bokeh.plotting import ColumnDataSource, figure, output_notebook, show
+from bokeh.models import TapTool, CustomJS
 from bokeh.palettes import OrRd
 import pickle
 from scipy import stats
@@ -110,12 +111,25 @@ TOOLTIPS = """
 ID: $index
 ($x, $y)
 @title <br>
-@link <br> <br>
+Click to open @link <br> <br>
 </div>
 """
 
 p = figure(width=700, height=583, tooltips=TOOLTIPS, x_range=(0, 15), y_range=(2.5, 15),
            title="UMAP projection of embeddings for the given embeddings")
+
+# Add TapTool to enable clicking on dots
+taptool = p.select(type=TapTool)
+p.add_tools(TapTool())
+
+# Add JavaScript callback to open link on click
+p.js_on_event('tap', CustomJS(args=dict(source=source), code="""
+    var indices = source.selected.indices;
+    if (indices.length > 0) {
+        var link = source.data['link'][indices[0]];
+        window.open(link);
+    }
+"""))
 
 # TODO: change this with actual semantic search - the embedding distance basically
 phrase_flags = np.zeros((len(all_titles),))
