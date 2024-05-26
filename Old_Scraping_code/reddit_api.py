@@ -53,7 +53,7 @@ def save_posts_to_json(data, filename):
 
 def generate_reddit_json(query, limit=25):
     posts = search_reddit_posts(query, limit)
-    save_posts_to_json(posts, './documents/reddit.json')
+    save_posts_to_json(posts, '../streamlit-app/documents/reddit.json')
 
 if __name__ == "__main__":
     # subreddit_name = 'learnpython'  # Example subreddit

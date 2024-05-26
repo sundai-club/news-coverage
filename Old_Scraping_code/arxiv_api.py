@@ -30,5 +30,5 @@ def generate_arxiv_json(query):
     json_output = json.dumps(articles, indent=4)
     
     # Save the JSON output to a file
-    with open('./documents/papers.json', 'w') as json_file:
+    with open('../streamlit-app/documents/papers.json', 'w') as json_file:
         json_file.write(json_output)

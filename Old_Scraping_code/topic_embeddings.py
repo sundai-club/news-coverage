@@ -1,10 +1,9 @@
 import os
 import json
 from sklearn.feature_extraction.text import TfidfVectorizer
-import numpy as np
-from reddit_api import generate_reddit_json
-from mediastack import generate_article_json
-from arxiv_api import generate_arxiv_json
+from Old_Scraping_code.reddit_api import generate_reddit_json
+from Old_Scraping_code.mediastack import generate_article_json
+from Old_Scraping_code.arxiv_api import generate_arxiv_json
 
 
 def read_json_files(directory):
@@ -64,7 +63,7 @@ def create_embeddings(query):
 
     
     #create embeddings
-    output_file = './embeddings.json'
+    output_file = '../streamlit-app/embeddings.json'
     articles = read_json_files(directory)
     texts, metadata = process_articles(articles)
     embeddings, feature_names = generate_tfidf_embeddings(texts)

@@ -8,8 +8,6 @@ from scipy import stats
 import umap
 import json
 
-from topic_embeddings import create_embeddings
-
 
 # Function to read the JSON file
 def read_json(file_path):
@@ -17,66 +15,35 @@ def read_json(file_path):
         content = f.read()
         return json.loads(content)
 
+
 def correct_format(json):
-  embeddings_json = read_json('embeddings.json')
-  all_titles = []
-  all_arxivid = []
-  all_links = []
-  embeddings_all = []
-  for i in range(0,len(embeddings_json['embeddings'])):
-    title = embeddings_json['embeddings'][i]['title']
-    source = embeddings_json['embeddings'][i]['source']
-    link = embeddings_json['embeddings'][i]['link']
-    embedding_i = embeddings_json['embeddings'][i]['embedding']
+    embeddings_json = read_json('embeddings.json')
+    all_titles = []
+    all_arxivid = []
+    all_links = []
+    embeddings_all = []
 
-    all_titles.append(title)
-    all_arxivid.append(source)
-    all_links.append(link)
-    embeddings_all.append(embedding_i)
+    for i in range(0, len(embeddings_json['embeddings'])):
+        title = embeddings_json['embeddings'][i]['title']
+        source = embeddings_json['embeddings'][i]['source']
 
-  return all_titles, all_arxivid, all_links, embeddings_all
+        link = embeddings_json['embeddings'][i]['link']
+        embedding_i = embeddings_json['embeddings'][i]['embedding']
+
+        all_titles.append(title)
+        all_arxivid.append(source)
+        all_links.append(link)
+        embeddings_all.append(embedding_i)
+
+    return all_titles, all_arxivid, all_links, embeddings_all
+
 
 # READ DEFAULT EMBEDDINGS - NEW
 embeddings_json = read_json('embeddings.json')
 all_titles, all_arxivid, all_links, embeddings_all = correct_format(embeddings_json)
 
-
-###############################################################
-# READ EMBEDDINGS - OLD (DEBUG)
-# with open("document_embeddings_1.pkl", "rb") as f:
-#     embeddings_data = pickle.load(f)
-
-# embeddings_all = embeddings_data["embeddings"]
-# all_titles = embeddings_data["titles"]
-# all_arxivid = embeddings_data["arxivid"]
-# all_links = embeddings_data["links"]
-
-# print("HELLO")
-# print(len(embeddings_all))
-# print(len(all_titles))
-# print(len(all_arxivid))
-# print(len(all_links))
-# print("FIRST ITEM IS")
-# print(embeddings_all[0][:5])
-# print(len(embeddings_all[0]))
-# print(all_titles[0])
-# print(all_arxivid[0])
-# print(all_links[0])
-
-# print("titels")
-# for i in range(0, len(all_titles)):
-#     print(all_titles[i])
-
-###############################################################
-
-
-
-
-
-
 st.title("Embedding explorer")
 st.markdown("Interpreting the UMAP plot")
-
 
 
 def density_estimation(m1, m2, xmin=0, ymin=0, xmax=15, ymax=15):
@@ -88,32 +55,46 @@ def density_estimation(m1, m2, xmin=0, ymin=0, xmax=15, ymax=15):
     return X, Y, Z
 
 
-st.sidebar.markdown(
-    'Query items containing specific phrases in the dataset and show it as a heatmap. Enter the phrase of interest, then change the size and opacity of the heatmap as desired to find the high-density regions. Hover over blue points to see the details of individual papers.')
-st.sidebar.markdown(
-    '`Note`: (i) if you enter a query that is not in the corpus of abstracts, it will return an error. just enter a different query in that case. (ii) there are some empty tooltips when you hover, these correspond to the underlying hexbins, and can be ignored.')
+with st.sidebar:
+    button_html = """
+            <style>
+                .btn-custom {
+                    color: white; 
+                    background-color: #D97884; 
+                    border: none; 
+                    padding: 10px 20px; 
+                    font-size: 16px;
+                    border-radius: 8px; /* Rounded edges */
+                    transition: all 0.3s; /* Smooth transition for hover effects */
+                }
 
-search_query =  st.sidebar.text_input("Search query", key="phrase", value="bee")
+                .btn-custom:hover {
+                    background-color: #5779ff; /* Change background on hover */
+                    color: black; /* Change text color on hover */
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add shadow on hover */
+                }
+            </style>
+            <form action="https://sundai.club" target="_blank">
+                <button type="submit" class="btn-custom">
+                    <i class="fa fa-rocket"></i> Visit SundAI.club
+                </button>
+            </form>
+            """
 
-alpha_value = st.sidebar.slider("Pick the hexbin opacity", 0.0, 1.0, 0.81)
-size_value = st.sidebar.slider("Pick the hexbin gridsize", 0.5, 5.0, 1.0)
+    st.markdown(button_html, unsafe_allow_html=True)
 
+    st.markdown(
+        'Query items containing specific phrases in the dataset and show it as a heatmap. Enter the phrase of interest, then change the size and opacity of the heatmap as desired to find the high-density regions. Hover over blue points to see the details of individual papers.')
+    st.markdown(
+        '`Note`: (i) if you enter a query that is not in the corpus of abstracts, it will return an error. just enter a different query in that case. (ii) there are some empty tooltips when you hover, these correspond to the underlying hexbins, and can be ignored.')
 
-# create embeddings based on user request
-# create_embeddings(search_query)
-if st.sidebar.button("Search"):
-    create_embeddings(search_query)
-    embeddings_json = read_json('embeddings.json')
-    all_titles, all_arxivid, all_links, embeddings_all = correct_format(embeddings_json)
+    search_query = st.text_input("Search query", key="phrase", value="bee")
 
-
-
-
-
+    alpha_value = st.slider("Pick the hexbin opacity", 0.0, 1.0, 0.81)
+    size_value = st.slider("Pick the hexbin gridsize", 0.5, 5.0, 1.0)
 
 umap_reducer = umap.UMAP(n_components=2, random_state=42)
 embedding = umap_reducer.fit_transform(embeddings_all)
-
 
 phrase = st.session_state.phrase
 
@@ -154,7 +135,7 @@ st.bokeh_chart(p)
 fig = plt.figure(figsize=(10.5, 9 * 0.8328))
 plt.scatter(embedding[0:, 0], embedding[0:, 1], s=2, alpha=0.1)
 plt.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1],
-           gridsize=int(10*size_value), cmap='viridis', alpha=alpha_value, extent=(-1, 16, 1.5, 16), mincnt=1)
+           gridsize=int(10 * size_value), cmap='viridis', alpha=alpha_value, extent=(-1, 16, 1.5, 16), mincnt=1)
 # plt.title("UMAP localization of heatmap keyword: " + phrase)
 plt.axis([0, 15, 2.5, 15])
 # clbr = plt.colorbar()
