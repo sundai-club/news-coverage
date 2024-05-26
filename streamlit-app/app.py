@@ -17,32 +17,6 @@ def read_json(file_path):
         return json.loads(content)
 
 
-def correct_format(json):
-    embeddings_json = read_json('embeddings.json')
-    all_titles = []
-    all_arxivid = []
-    all_links = []
-    embeddings_all = []
-
-    for i in range(0, len(embeddings_json['embeddings'])):
-        title = embeddings_json['embeddings'][i]['title']
-        source = embeddings_json['embeddings'][i]['source']
-
-        link = embeddings_json['embeddings'][i]['link']
-        embedding_i = embeddings_json['embeddings'][i]['embedding']
-
-        all_titles.append(title)
-        all_arxivid.append(source)
-        all_links.append(link)
-        embeddings_all.append(embedding_i)
-
-    return all_titles, all_arxivid, all_links, embeddings_all
-
-
-# READ DEFAULT EMBEDDINGS - NEW
-embeddings_json = read_json('embeddings.json')
-all_titles, all_arxivid, all_links, embeddings_all = correct_format(embeddings_json)
-
 st.title("Embedding explorer")
 st.markdown("Interpreting the UMAP plot")
 
@@ -94,26 +68,71 @@ with st.sidebar:
     alpha_value = st.slider("Pick the hexbin opacity", 0.0, 1.0, 0.81)
     size_value = st.slider("Pick the hexbin gridsize", 0.5, 5.0, 1.0)
 
-umap_reducer = umap.UMAP(n_components=2, random_state=42)
-embedding = umap_reducer.fit_transform(embeddings_all)
 
-phrase = st.session_state.phrase
+def get_embeddings_from_file(file_path='embeddings_1.json'):
+    embeddings_json = read_json(file_path)
+    all_titles = []
+    all_arxivid = []
+    all_links = []
+    embeddings_all = []
 
-source = ColumnDataSource(data=dict(
-    x=embedding[0:, 0],
-    y=embedding[0:, 1],
-    title=all_titles,
-    link=all_links,
-))
+    for i in range(0, len(embeddings_json['embeddings'])):
+        title = embeddings_json['embeddings'][i]['title']
+        source = embeddings_json['embeddings'][i]['source']
+
+        link = embeddings_json['embeddings'][i]['link']
+        embedding_i = embeddings_json['embeddings'][i]['embedding']
+
+        all_titles.append(title)
+        all_arxivid.append(source)
+        all_links.append(link)
+        embeddings_all.append(embedding_i)
+
+    # todo: Just a hack for testing coloring for differnet JSON files
+    if file_path == 'embeddings_1.json':
+        all_titles = all_titles[:40]
+        all_arxivid = all_arxivid[:40]
+        all_links = all_links[:40]
+        embeddings_all = embeddings_all[:40]
+    else:
+        all_titles = all_titles[40:]
+        all_arxivid = all_arxivid[40:]
+        all_links = all_links[40:]
+        embeddings_all = embeddings_all[40:]
+
+    umap_reducer = umap.UMAP(n_components=2, random_state=42)
+    embedding = umap_reducer.fit_transform(embeddings_all)
+
+    source = ColumnDataSource(data=dict(
+        x=embedding[0:, 0],
+        y=embedding[0:, 1],
+        title=all_titles,
+        data_source=all_arxivid,
+        link=all_links,
+    ))
+
+    return source, all_titles
+
+
+all_titles = []
+
+# todo: this is a hack, replace with 4 actual embedding files.
+source_1, titles_1 = get_embeddings_from_file('embeddings_1.json')
+all_titles += titles_1
+
+source_2, titles_2 = get_embeddings_from_file('embeddings_2.json')
+all_titles += titles_2
 
 TOOLTIPS = """
 <div style="width:300px;">
-ID: $index
-($x, $y)
+ID: $index <br>
+($x, $y) <br>
 @title <br>
 Click to open @link <br> <br>
 </div>
 """
+
+phrase = st.session_state.phrase
 
 p = figure(width=700, height=583, tooltips=TOOLTIPS, x_range=(0, 15), y_range=(2.5, 15),
            title="UMAP projection of embeddings for the given embeddings")
@@ -143,13 +162,16 @@ for i in range(len(all_titles)):
 # p.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1], size=size_value,
 #          palette=np.flip(OrRd[8]), alpha=alpha_value)
 
-p.circle('x', 'y', size=3, source=source, alpha=0.3)
+
+p.circle('x', 'y', size=3, source=source_1, alpha=0.3, color='blue')
+p.circle('x', 'y', size=3, source=source_2, alpha=0.3, color='red')
+
 st.bokeh_chart(p)
 
 fig = plt.figure(figsize=(10.5, 9 * 0.8328))
-plt.scatter(embedding[0:, 0], embedding[0:, 1], s=2, alpha=0.1)
-plt.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1],
-           gridsize=int(10 * size_value), cmap='viridis', alpha=alpha_value, extent=(-1, 16, 1.5, 16), mincnt=1)
+# plt.scatter(embedding[0:, 0], embedding[0:, 1], s=2, alpha=0.1)
+# plt.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1],
+#            gridsize=int(10 * size_value), cmap='viridis', alpha=alpha_value, extent=(-1, 16, 1.5, 16), mincnt=1)
 # plt.title("UMAP localization of heatmap keyword: " + phrase)
 plt.axis([0, 15, 2.5, 15])
 # clbr = plt.colorbar()
