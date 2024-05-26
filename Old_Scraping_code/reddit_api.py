@@ -36,7 +36,7 @@ def search_reddit_posts(query, limit=10):
             # 'created_utc': post.created_utc,
             # 'score': post.score,
             'text': '\n Comment: '.join(comments),
-            'source': 'Reddit',
+            'type': 'reddit',
             'link': post.url,
             # 'num_comments': post.num_comments,
             # 'subreddit': str(post.subreddit),
