@@ -1,3 +1,4 @@
+import pandas as pd
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
@@ -69,8 +70,9 @@ with st.sidebar:
     size_value = st.slider("Pick the hexbin gridsize", 0.5, 5.0, 1.0)
 
 
-def get_embeddings_from_file(file_path='embeddings_1.json'):
-    embeddings_json = read_json(file_path)
+def get_embeddings_from_file():
+    embeddings_json = read_json("embeddings.json")
+
     all_titles = []
     all_arxivid = []
     all_links = []
@@ -78,8 +80,7 @@ def get_embeddings_from_file(file_path='embeddings_1.json'):
 
     for i in range(0, len(embeddings_json['embeddings'])):
         title = embeddings_json['embeddings'][i]['title']
-        source = embeddings_json['embeddings'][i]['source']
-
+        source = embeddings_json['embeddings'][i]['type']
         link = embeddings_json['embeddings'][i]['link']
         embedding_i = embeddings_json['embeddings'][i]['embedding']
 
@@ -88,40 +89,23 @@ def get_embeddings_from_file(file_path='embeddings_1.json'):
         all_links.append(link)
         embeddings_all.append(embedding_i)
 
-    # todo: Just a hack for testing coloring for differnet JSON files
-    if file_path == 'embeddings_1.json':
-        all_titles = all_titles[:40]
-        all_arxivid = all_arxivid[:40]
-        all_links = all_links[:40]
-        embeddings_all = embeddings_all[:40]
-    else:
-        all_titles = all_titles[40:]
-        all_arxivid = all_arxivid[40:]
-        all_links = all_links[40:]
-        embeddings_all = embeddings_all[40:]
-
+    # TODO: make sure the UMAP is ran on all the embeddings at the end
     umap_reducer = umap.UMAP(n_components=2, random_state=42)
-    embedding = umap_reducer.fit_transform(embeddings_all)
+    final_2d_embeddings = umap_reducer.fit_transform(embeddings_all)
 
-    source = ColumnDataSource(data=dict(
-        x=embedding[0:, 0],
-        y=embedding[0:, 1],
+    sources_df = pd.DataFrame.from_dict(data=dict(
+        x=final_2d_embeddings[0:, 0],
+        y=final_2d_embeddings[0:, 1],
         title=all_titles,
         data_source=all_arxivid,
         link=all_links,
     ))
 
-    return source, all_titles
+    return sources_df, all_titles
 
 
-all_titles = []
-
-# todo: this is a hack, replace with 4 actual embedding files.
-source_1, titles_1 = get_embeddings_from_file('embeddings_1.json')
-all_titles += titles_1
-
-source_2, titles_2 = get_embeddings_from_file('embeddings_2.json')
-all_titles += titles_2
+sources_df, all_titles = get_embeddings_from_file()
+source = ColumnDataSource(sources_df)
 
 TOOLTIPS = """
 <div style="width:300px;">
@@ -139,16 +123,9 @@ p = figure(width=700, height=583, tooltips=TOOLTIPS, x_range=(0, 15), y_range=(2
 
 # Add TapTool to enable clicking on dots
 taptool = p.select(type=TapTool)
-p.add_tools(TapTool())
 
 # Add JavaScript callback to open link on click
-p.js_on_event('tap', CustomJS(args=dict(source=source), code="""
-    var indices = source.selected.indices;
-    if (indices.length > 0) {
-        var link = source.data['link'][indices[0]];
-        window.open(link);
-    }
-"""))
+p.add_tools(TapTool())
 
 # TODO: change this with actual semantic search - the embedding distance basically
 phrase_flags = np.zeros((len(all_titles),))
@@ -162,9 +139,17 @@ for i in range(len(all_titles)):
 # p.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1], size=size_value,
 #          palette=np.flip(OrRd[8]), alpha=alpha_value)
 
-
-p.circle('x', 'y', size=3, source=source_1, alpha=0.3, color='blue')
-p.circle('x', 'y', size=3, source=source_2, alpha=0.3, color='red')
+type_to_color = {'reddit': 'green', 'paper': 'red', 'article': 'blue'}
+for source_type, color in type_to_color.items():
+    curr_source = ColumnDataSource(sources_df[sources_df["data_source"] == source_type])
+    p.circle('x', 'y', size=3, source=curr_source, alpha=0.3, color=color, legend_label=source_type)
+    p.js_on_event('tap', CustomJS(args=dict(source=curr_source), code="""
+        var indices = source.selected.indices;
+        if (indices.length > 0) {
+            var link = source.data['link'][indices[0]];
+            window.open(link);
+        }
+    """))
 
 st.bokeh_chart(p)
 
