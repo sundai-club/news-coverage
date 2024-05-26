@@ -74,10 +74,10 @@ def main():
     query = 'AI Agents'
     directory = './documents/'
     
-    # #generate json data
-    # generate_reddit_json(query)
-    # generate_article_json(query)
-    # generate_arxiv_json(query)
+    #generate json data
+    generate_reddit_json(query)
+    generate_article_json(query)
+    generate_arxiv_json(query)
 
     
     #create embeddings
