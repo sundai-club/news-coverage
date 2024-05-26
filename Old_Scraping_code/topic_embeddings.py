@@ -1,9 +1,14 @@
 import os
 import json
 from sklearn.feature_extraction.text import TfidfVectorizer
-from Old_Scraping_code.reddit_api import generate_reddit_json
-from Old_Scraping_code.mediastack import generate_article_json
-from Old_Scraping_code.arxiv_api import generate_arxiv_json
+import numpy as np
+from reddit_api import generate_reddit_json
+from mediastack import generate_article_json
+from arxiv_api import generate_arxiv_json
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from sentence_transformers import SentenceTransformer
 
 
 def read_json_files(directory):
@@ -21,7 +26,7 @@ def process_articles(articles):
     for article in articles:
         title = article.get('title', '')
         source = article.get('source', '')
-        text = article.get('text', '')
+        text = preprocess_text(article.get('text', ''))
         link = article.get('link', '')
 
         # Combine title, source, and text for embedding
@@ -38,9 +43,14 @@ def process_articles(articles):
 def generate_tfidf_embeddings(texts):
     vectorizer = TfidfVectorizer()
     tfidf_matrix = vectorizer.fit_transform(texts)
-    return tfidf_matrix.toarray(), vectorizer.get_feature_names_out()
+    return tfidf_matrix.toarray()
 
-def save_embeddings(metadata, embeddings, feature_names, output_file):
+def generate_sentence_embeddings(texts):
+    model = SentenceTransformer('distilbert-base-nli-mean-tokens')
+    embeddings = model.encode(texts)
+    return embeddings
+
+def save_embeddings(metadata, embeddings, output_file):
     result = []
     for i, meta in enumerate(metadata):
         result.append({
@@ -51,23 +61,34 @@ def save_embeddings(metadata, embeddings, feature_names, output_file):
         })
     
     with open(output_file, 'w') as file:
-        json.dump({'embeddings': result, 'feature_names': feature_names.tolist()}, file)
+        json.dump({'embeddings': result}, file)
 
-def create_embeddings(query):
+# Preprocess the text
+def preprocess_text(text):
+    tokens = word_tokenize(text.lower())
+    tokens = [word for word in tokens if word.isalnum()]
+    tokens = [word for word in tokens if word not in stopwords.words('english')]
+    return ' '.join(tokens)
+
+def main():
+    query = 'AI Agents'
     directory = './documents/'
     
-    #generate json data
-    generate_reddit_json(query)
-    generate_article_json(query)
-    generate_arxiv_json(query)
+    # #generate json data
+    # generate_reddit_json(query)
+    # generate_article_json(query)
+    # generate_arxiv_json(query)
 
     
     #create embeddings
-    output_file = '../streamlit-app/embeddings_1.json'
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    output_file = directory + 'embeddings.json'
     articles = read_json_files(directory)
     texts, metadata = process_articles(articles)
-    embeddings, feature_names = generate_tfidf_embeddings(texts)
-    save_embeddings(metadata, embeddings, feature_names, output_file)
+    # embeddings = generate_tfidf_embeddings(texts)
+    embeddings = generate_sentence_embeddings(texts)
+    save_embeddings(metadata, embeddings, output_file)
 
 if __name__ == "__main__":
-    create_embeddings('beekeeping')
+    main()
