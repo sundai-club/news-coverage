@@ -30,3 +30,6 @@ env/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+Old_Scraping_code/mediastack.py
+Old_Scraping_code/reddit_api.py

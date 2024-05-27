@@ -1,0 +1,352 @@
+[
+    {
+        "title": "The Global Impact of AI-Artificial Intelligence: Recent Advances and Future Directions, A Review",
+        "authors": [
+            "Chandregowda Pachegowda"
+        ],
+        "text": "Artificial intelligence (AI) is an emerging technology that has the potential\nto transform many aspects of society, including the economy, healthcare, and\ntransportation. This article synthesizes recent research literature on the\nglobal impact of AI, exploring its potential benefits and risks. The article\nhighlights the implications of AI, including its impact on economic, ethical,\nsocial, security & privacy, and job displacement aspects. It discusses the\nethical concerns surrounding AI development, including issues of bias,\nsecurity, and privacy violations. To ensure the responsible development and\ndeployment of AI, collaboration between government, industry, and academia is\nessential. The article concludes by emphasizing the importance of public\nengagement and education to promote awareness and understanding of AI's impact\non society at large.",
+        "link": "http://arxiv.org/abs/2401.12223v1",
+        "type": "paper"
+    },
+    {
+        "title": "AI Governance and Ethics Framework for Sustainable AI and Sustainability",
+        "authors": [
+            "Mahendra Samarawickrama"
+        ],
+        "text": "AI is transforming the existing technology landscape at a rapid phase\nenabling data-informed decision making and autonomous decision making. Unlike\nany other technology, because of the decision-making ability of AI, ethics and\ngovernance became a key concern. There are many emerging AI risks for humanity,\nsuch as autonomous weapons, automation-spurred job loss, socio-economic\ninequality, bias caused by data and algorithms, privacy violations and\ndeepfakes. Social diversity, equity and inclusion are considered key success\nfactors of AI to mitigate risks, create values and drive social justice.\nSustainability became a broad and complex topic entangled with AI. Many\norganizations (government, corporate, not-for-profits, charities and NGOs) have\ndiversified strategies driving AI for business optimization and\nsocial-and-environmental justice. Partnerships and collaborations become\nimportant more than ever for equity and inclusion of diversified and\ndistributed people, data and capabilities. Therefore, in our journey towards an\nAI-enabled sustainable future, we need to address AI ethics and governance as a\npriority. These AI ethics and governance should be underpinned by human ethics.",
+        "link": "http://arxiv.org/abs/2210.08984v1",
+        "type": "paper"
+    },
+    {
+        "title": "The Burst Market: the Next Leap for Humanity",
+        "authors": [
+            "Vincent Yuansang Zha"
+        ],
+        "text": "Contemporary society grapples with a critical challenge in knowledge sharing:\nthe scarcity of rapid, yet specific advice from relevant individuals. This\nsituation underscores a deficiency in the existing labor market, hereafter\nreferred to as the Conventional Market (CM), which struggles to support \"Burst\nJobs\" - brief conversational tasks. This paper identifies high transaction\ncosts, owing to technological limitations, as the primary reason for this\ninefficiency, causing huge job opportunity losses and human intelligence\nunderutilization. In response, this study introduces the concept of an online\nBurst Market (BM), an innovative platform where individuals can instantaneously\noffer advice for a fee through video or audio conversations lasting as briefly\nas a few seconds or minutes. This paper examines the BM's potential to\nrevolutionize job creation, alleviate poverty, address aging society problem,\ncounteract AI-led unemployment, maximize human values with \"Lifelong Working\",\nand redefine the essence of job and the global economy.",
+        "link": "http://arxiv.org/abs/2112.06646v7",
+        "type": "paper"
+    },
+    {
+        "title": "The Singularity May Never Be Near",
+        "authors": [
+            "Toby Walsh"
+        ],
+        "text": "There is both much optimism and pessimism around artificial intelligence (AI)\ntoday. The optimists are investing millions of dollars, and even in some cases\nbillions of dollars into AI. The pessimists, on the other hand, predict that AI\nwill end many things: jobs, warfare, and even the human race. Both the\noptimists and the pessimists often appeal to the idea of a technological\nsingularity, a point in time where machine intelligence starts to run away, and\na new, more intelligent species starts to inhabit the earth. If the optimists\nare right, this will be a moment that fundamentally changes our economy and our\nsociety. If the pessimists are right, this will be a moment that also\nfundamentally changes our economy and our society. It is therefore very\nworthwhile spending some time deciding if either of them might be right.",
+        "link": "http://arxiv.org/abs/1602.06462v1",
+        "type": "paper"
+    },
+    {
+        "title": "The recessionary pressures of generative AI: A threat to wellbeing",
+        "authors": [
+            "Jo-An Occhipinti",
+            "Ante Prodan",
+            "William Hynes",
+            "Roy Green",
+            "Sharan Burrow",
+            "Harris A Eyre",
+            "Adam Skinner",
+            "Goran Ujdur",
+            "John Buchanan",
+            "Ian B Hickie",
+            "Mark Heffernan",
+            "Christine Song",
+            "Marcel Tanner"
+        ],
+        "text": "Generative Artificial Intelligence (AI) stands as a transformative force that\npresents a paradox; it offers unprecedented opportunities for productivity\ngrowth while potentially posing significant threats to economic stability and\nsocietal wellbeing. Many consider generative AI as akin to previous\ntechnological advancements, using historical precedent to argue that fears of\nwidespread job displacement are unfounded, while others contend that generative\nAI`s unique capacity to undertake non-routine cognitive tasks sets it apart\nfrom other forms of automation capital and presents a threat to the quality and\navailability of work that underpin stable societies. This paper explores the\nconditions under which both may be true. We posit the existence of an\nAI-capital-to-labour ratio threshold beyond which a self-reinforcing cycle of\nrecessionary pressures could be triggered, exacerbating social disparities,\nreducing social cohesion, heightening tensions, and requiring sustained\ngovernment intervention to maintain stability. To prevent this, the paper\nunderscores the urgent need for proactive policy responses, making\nrecommendations to reduce these risks through robust regulatory frameworks and\na new social contract characterised by progressive social and economic\npolicies. This approach aims to ensure a sustainable, inclusive, and resilient\neconomic future where human contribution to the economy is retained and\nintegrated with generative AI to enhance the Mental Wealth of nations.",
+        "link": "http://arxiv.org/abs/2403.17405v1",
+        "type": "paper"
+    },
+    {
+        "title": "Practical Skills Demand Forecasting via Representation Learning of Temporal Dynamics",
+        "authors": [
+            "Maysa M. Garcia de Macedo",
+            "Wyatt Clarke",
+            "Eli Lucherini",
+            "Tyler Baldwin",
+            "Dilermando Queiroz Neto",
+            "Rogerio de Paula",
+            "Subhro Das"
+        ],
+        "text": "Rapid technological innovation threatens to leave much of the global\nworkforce behind. Today's economy juxtaposes white-hot demand for skilled labor\nagainst stagnant employment prospects for workers unprepared to participate in\na digital economy. It is a moment of peril and opportunity for every country,\nwith outcomes measured in long-term capital allocation and the life\nsatisfaction of billions of workers. To meet the moment, governments and\nmarkets must find ways to quicken the rate at which the supply of skills reacts\nto changes in demand. More fully and quickly understanding labor market\nintelligence is one route. In this work, we explore the utility of time series\nforecasts to enhance the value of skill demand data gathered from online job\nadvertisements. This paper presents a pipeline which makes one-shot multi-step\nforecasts into the future using a decade of monthly skill demand observations\nbased on a set of recurrent neural network methods. We compare the performance\nof a multivariate model versus a univariate one, analyze how correlation\nbetween skills can influence multivariate model results, and present\npredictions of demand for a selection of skills practiced by workers in the\ninformation technology industry.",
+        "link": "http://arxiv.org/abs/2205.09508v1",
+        "type": "paper"
+    },
+    {
+        "title": "The Future of Office and Administrative Support Occupations in the Era of Artificial Intelligence: A Bibliometric Analysis",
+        "authors": [
+            "Priyadarshini R. Pennathur",
+            "Valerie Boksa",
+            "Arunkumar Pennathur",
+            "Andrew Kusiak",
+            "Beth Livingston"
+        ],
+        "text": "The U.S. Bureau of Labor Statistics projects that by the year 2029, the\nUnited States will lose a million jobs in the office and administrative support\noccupations because technology, automation, and artificial intelligence (AI)\nhave the potential to substitute or replace the office and administrative\nfunctions performed by office workers. Despite the potential impact AI will\nhave on office work and the important role office workers play in the American\neconomy, we have limited knowledge of the state of the art research in office\nwork at the intersection of emerging artificial intelligence technologies. In\nthis study, we conducted a bibliometric analysis of the scholarly literature at\nthe intersection of office work and artificial intelligence. We extracted\nliterature sources from Compendex and Scopus databases and used VOSviewer for\nvisualizing and quantifying our bibliometric analyses. Our findings from\nkeywords analysis indicate that office automation, humans, human-computer\ninteraction, and artificial intelligence occurred more frequently in the\nscholarly literature and had high link strengths. Keyword clusters from\nco-occurrence analysis indicate that intelligent buildings, robotics, and the\ninternet of things are emerging topics in the office work domain. The two\nclusters related to ergonomics, worker characteristics, human performance, and\nsafety indicate the types of human factors concerns that are more widely\nstudied in office work settings. In summary, our findings on the\nstate-of-the-art research in office work indicate that more studies have been\nconducted on smart buildings, robotics, and technology development for office\nwork, compared to studies on office workers and their professional development.",
+        "link": "http://arxiv.org/abs/2405.03808v1",
+        "type": "paper"
+    },
+    {
+        "title": "Exposure of occupations to technologies of the fourth industrial revolution",
+        "authors": [
+            "Benjamin Meindl",
+            "Morgan R. Frank",
+            "Joana Mendon\u00e7a"
+        ],
+        "text": "The fourth industrial revolution (4IR) is likely to have a substantial impact\non the economy. Companies need to build up capabilities to implement new\ntechnologies, and automation may make some occupations obsolete. However,\nwhere, when, and how the change will happen remain to be determined. Robust\nempirical indicators of technological progress linked to occupations can help\nto illuminate this change. With this aim, we provide such an indicator based on\npatent data. Using natural language processing, we calculate patent exposure\nscores for more than 900 occupations, which represent the technological\nprogress related to them. To provide a lens on the impact of the 4IR, we\ndifferentiate between traditional and 4IR patent exposure. Our method differs\nfrom previous approaches in that it both accounts for the diversity of\ntask-level patent exposures within an occupation and reflects work activities\nmore accurately. We find that exposure to 4IR patents differs from traditional\npatent exposure. Manual tasks, and accordingly occupations such as construction\nand production, are exposed mainly to traditional (non-4IR) patents but have\nlow exposure to 4IR patents. The analysis suggests that 4IR technologies may\nhave a negative impact on job growth; this impact appears 10 to 20 years after\npatent filing. Further, we compared the 4IR exposure to other automation and AI\nexposure scores. Whereas many measures refer to theoretical automation\npotential, our patent-based indicator reflects actual technology diffusion. Our\nwork not only allows analyses of the impact of 4IR technologies as a whole, but\nalso provides exposure scores for more than 300 technology fields, such as AI\nand smart office technologies. Finally, the work provides a general mapping of\npatents to tasks and occupations, which enables future researchers to construct\nindividual exposure measures.",
+        "link": "http://arxiv.org/abs/2110.13317v1",
+        "type": "paper"
+    },
+    {
+        "title": "Brief for the Canada House of Commons Study on the Implications of Artificial Intelligence Technologies for the Canadian Labor Force: Generative Artificial Intelligence Shatters Models of AI and Labor",
+        "authors": [
+            "Morgan R. Frank"
+        ],
+        "text": "Exciting advances in generative artificial intelligence (AI) have sparked\nconcern for jobs, education, productivity, and the future of work. As with past\ntechnologies, generative AI may not lead to mass unemployment. But, unlike past\ntechnologies, generative AI is creative, cognitive, and potentially ubiquitous\nwhich makes the usual assumptions of automation predictions ill-suited for\ntoday. Existing projections suggest that generative AI will impact workers in\noccupations that were previously considered immune to automation. As AI's full\nset of capabilities and applications emerge, policy makers should promote\nworkers' career adaptability. This goal requires improved data on job\nseparations and unemployment by locality and job titles in order to identify\nearly-indicators for the workers facing labor disruption. Further, prudent\npolicy should incentivize education programs to accommodate learning with AI as\na tool while preparing students for the demands of the future of work.",
+        "link": "http://arxiv.org/abs/2311.03595v1",
+        "type": "paper"
+    },
+    {
+        "title": "High-skilled Human Workers in Non-Routine Jobs are Susceptible to AI Automation but Wage Benefits Differ between Occupations",
+        "authors": [
+            "Pelin Ozgul",
+            "Marie-Christine Fregin",
+            "Michael Stops",
+            "Simon Janssen",
+            "Mark Levels"
+        ],
+        "text": "Artificial Intelligence (AI) will change human work by taking over specific\njob tasks, but there is a debate which tasks are susceptible to automation, and\nwhether AI will augment or replace workers and affect wages. By combining data\non job tasks with a measure of AI susceptibility, we show that more highly\nskilled workers are more susceptible to AI automation, and that analytical\nnon-routine tasks are at risk to be impacted by AI. Moreover, we observe that\nwage growth premiums for the lowest and the highest required skill level appear\nunrelated to AI susceptibility and that workers in occupations with many\nroutine tasks saw higher wage growth if their work was more strongly\nsusceptible to AI. Our findings imply that AI has the potential to affect human\nworkers differently than canonical economic theories about the impact of\ntechnology on work these theories predict.",
+        "link": "http://arxiv.org/abs/2404.06472v1",
+        "type": "paper"
+    },
+    {
+        "title": "Skills or Degree? The Rise of Skill-Based Hiring for AI and Green Jobs",
+        "authors": [
+            "Eugenia Gonzalez Ehlinger",
+            "Fabian Stephany"
+        ],
+        "text": "For emerging professions, such as jobs in the field of Artificial\nIntelligence (AI) or sustainability (green), labour supply does not meet\nindustry demand. In this scenario of labour shortages, our work aims to\nunderstand whether employers have started focusing on individual skills rather\nthan on formal qualifications in their recruiting. By analysing a large time\nseries dataset of around one million online job vacancies between 2019 and 2022\nfrom the UK and drawing on diverse literature on technological change and\nlabour market signalling, we provide evidence that employers have started\nso-called \"skill-based hiring\" for AI and green roles, as more flexible hiring\npractices allow them to increase the available talent pool. In our observation\nperiod the demand for AI roles grew twice as much as average labour demand. At\nthe same time, the mention of university education for AI roles declined by\n23%, while AI roles advertise five times as many skills as job postings on\naverage. Our regression analysis also shows that university degrees no longer\nshow an educational premium for AI roles, while for green positions the\neducational premium persists. In contrast, AI skills have a wage premium of\n16%, similar to having a PhD (17%). Our work recommends making use of\nalternative skill building formats such as apprenticeships, on-the-job\ntraining, MOOCs, vocational education and training, micro-certificates, and\nonline bootcamps to use human capital to its full potential and to tackle\ntalent shortages.",
+        "link": "http://arxiv.org/abs/2312.11942v1",
+        "type": "paper"
+    },
+    {
+        "title": "AI Ethics Needs Good Data",
+        "authors": [
+            "Angela Daly",
+            "S Kate Devitt",
+            "Monique Mann"
+        ],
+        "text": "In this chapter we argue that discourses on AI must transcend the language of\n'ethics' and engage with power and political economy in order to constitute\n'Good Data'. In particular, we must move beyond the depoliticised language of\n'ethics' currently deployed (Wagner 2018) in determining whether AI is 'good'\ngiven the limitations of ethics as a frame through which AI issues can be\nviewed. In order to circumvent these limits, we use instead the language and\nconceptualisation of 'Good Data', as a more expansive term to elucidate the\nvalues, rights and interests at stake when it comes to AI's development and\ndeployment, as well as that of other digital technologies. Good Data\nconsiderations move beyond recurring themes of data protection/privacy and the\nFAT (fairness, transparency and accountability) movement to include explicit\npolitical economy critiques of power. Instead of yet more ethics principles\n(that tend to say the same or similar things anyway), we offer four 'pillars'\non which Good Data AI can be built: community, rights, usability and politics.\nOverall we view AI's 'goodness' as an explicly political (economy) question of\npower and one which is always related to the degree which AI is created and\nused to increase the wellbeing of society and especially to increase the power\nof the most marginalized and disenfranchised. We offer recommendations and\nremedies towards implementing 'better' approaches towards AI. Our strategies\nenable a different (but complementary) kind of evaluation of AI as part of the\nbroader socio-technical systems in which AI is built and deployed.",
+        "link": "http://arxiv.org/abs/2102.07333v1",
+        "type": "paper"
+    },
+    {
+        "title": "Exploiting the Margin: How Capitalism Fuels AI at the Expense of Minoritized Groups",
+        "authors": [
+            "Nelson Col\u00f3n Vargas"
+        ],
+        "text": "This paper explores the intricate relationship between capitalism, racial\ninjustice, and artificial intelligence (AI), arguing that AI acts as a\ncontemporary vehicle for age-old forms of exploitation. By linking historical\npatterns of racial and economic oppression with current AI practices, this\nstudy illustrates how modern technology perpetuates and deepens societal\ninequalities. It specifically examines how AI is implicated in the exploitation\nof marginalized communities through underpaid labor in the gig economy, the\nperpetuation of biases in algorithmic decision-making, and the reinforcement of\nsystemic barriers that prevent these groups from benefiting equitably from\ntechnological advances. Furthermore, the paper discusses the role of AI in\nextending and intensifying the social, economic, and psychological burdens\nfaced by these communities, highlighting the problematic use of AI in\nsurveillance, law enforcement, and mental health contexts. The analysis\nconcludes with a call for transformative changes in how AI is developed and\ndeployed. Advocating for a reevaluation of the values driving AI innovation,\nthe paper promotes an approach that integrates social justice and equity into\nthe core of technological design and policy. This shift is crucial for ensuring\nthat AI serves as a tool for societal improvement, fostering empowerment and\nhealing rather than deepening existing divides.",
+        "link": "http://arxiv.org/abs/2403.06332v2",
+        "type": "paper"
+    },
+    {
+        "title": "Perceptions of the Fourth Industrial Revolution and Artificial Intelligence Impact on Society",
+        "authors": [
+            "Daniel Agbaji",
+            "Brady Lund",
+            "Nishith Reddy Mannuru"
+        ],
+        "text": "The Fourth Industrial Revolution, particularly Artificial Intelligence (AI),\nhas had a profound impact on society, raising concerns about its implications\nand ethical considerations. The emergence of text generative AI tools like\nChatGPT has further intensified concerns regarding ethics, security, privacy,\nand copyright. This study aims to examine the perceptions of individuals in\ndifferent information flow categorizations toward AI. The results reveal key\nthemes in participant-supplied definitions of AI and the fourth industrial\nrevolution, emphasizing the replication of human intelligence, machine\nlearning, automation, and the integration of digital technologies. Participants\nexpressed concerns about job replacement, privacy invasion, and inaccurate\ninformation provided by AI. However, they also recognized the benefits of AI,\nsuch as solving complex problems and increasing convenience. Views on\ngovernment involvement in shaping the fourth industrial revolution varied, with\nsome advocating for strict regulations and others favoring support and\ndevelopment. The anticipated changes brought by the fourth industrial\nrevolution include automation, potential job impacts, increased social\ndisconnect, and reliance on technology. Understanding these perceptions is\ncrucial for effectively managing the challenges and opportunities associated\nwith AI in the evolving digital landscape.",
+        "link": "http://arxiv.org/abs/2308.02030v1",
+        "type": "paper"
+    },
+    {
+        "title": "Better Future through AI: Avoiding Pitfalls and Guiding AI Towards its Full Potential",
+        "authors": [
+            "Risto Miikkulainen",
+            "Bret Greenstein",
+            "Babak Hodjat",
+            "Jerry Smith"
+        ],
+        "text": "Artificial Intelligence (AI) technology is rapidly changing many areas of\nsociety. While there is tremendous potential in this transition, there are\nseveral pitfalls as well. Using the history of computing and the world-wide web\nas a guide, in this article we identify those pitfalls and actions that lead AI\ndevelopment to its full potential. If done right, AI will be instrumental in\nachieving the goals we set for economy, society, and the world in general.",
+        "link": "http://arxiv.org/abs/1905.13178v1",
+        "type": "paper"
+    },
+    {
+        "title": "MOBILITY21: Strategic Investments for Transportation Infrastructure & Technology",
+        "authors": [
+            "Rahul Mangharam",
+            "Megan Reyerson",
+            "Steve Viscelli",
+            "Hamsa Balakrishanan",
+            "Alexandre Bayen",
+            "Surabh Amin",
+            "Leslie Richards",
+            "Leo Bagley",
+            "George Pappas"
+        ],
+        "text": "America's transportation infrastructure is the backbone of our economy. A\nstrong infrastructure means a strong America - an America that competes\nglobally, supports local and regional economic development, and creates jobs.\nStrategic investments in our transportation infrastructure are vital to our\nnational security, economic growth, transportation safety and our technology\nleadership. This document outlines critical needs for our transportation\ninfrastructure, identifies new technology drivers and proposes strategic\ninvestments for safe and efficient air, ground, rail and marine mobility of\npeople and goods.",
+        "link": "http://arxiv.org/abs/1705.01923v1",
+        "type": "paper"
+    },
+    {
+        "title": "A first thermodynamic interpretation of the technology transfer activities",
+        "authors": [
+            "S. Ripandelli",
+            "U. Lucia"
+        ],
+        "text": "In the last years new interdisciplinary approaches to economics and social\nscience have been developed. A Thermodynamic approach to socio-economics has\nbrought to a new interdisciplinary scientific field called econophysics. Why\nthermodynamic? Thermodynamic is a statistical theory for large atomic system\nunder constraints of energy[1] and the economy can be considered a large system\ngoverned by complex rules. The present job proposes a new application, starting\nfrom econophysic, passing throughout the thermodynamic laws to interpret and to\ndescribed the Technology Transfer (TT) activities. Using the definition of\neconomy (i.e. economy[dictionary def.] = the process or system by which goods\nand services are produced, sold, and bought in a country or region) the TT can\nbe considered an important sub-domain of the economy and a transversal new area\nof the scientific research. The TT is the process of transferring knowledge,\nthat uses the results from the research to produce innovation and to ensure\nthat scientific and technological developments could become accessible to a\nwider range of users. Starting from important Universities (MIT, Stanford,\nOxford, etc) nowadays the TT is assuming a central role. It is called the third\nmission, together with education and research. The importance to provide new\ntheories and tools to describe the TT activities and their behavior, has been\nretained fundamental to support the social rapid evolution that is involving\nthe TT offices. The presented work uses the thermodynamic theories applying\nthem to Technology Transfer and starting from the concept of entropy, exergy\nand anergy. The output analysis should become an help to make decision to\nimprove the TT activities and a better resources employment.",
+        "link": "http://arxiv.org/abs/1610.08003v1",
+        "type": "paper"
+    },
+    {
+        "title": "Machina Economicus: A New Paradigm for Prosumers in the Energy Internet of Smart Cities",
+        "authors": [
+            "Luyang Hou",
+            "Jun Yan",
+            "Yuankai Wu",
+            "Chun Wang",
+            "Tie Qiu"
+        ],
+        "text": "Energy Internet (EI) is emerging as new share economy platform for flexible\nlocal energy supplies in smart cities. Empowered by the Internet-of-Things\n(IoT) and Artificial Intelligence (AI), EI aims to unlock peer-to-peer energy\ntrading and sharing among prosumers, who can adeptly switch roles between\nproviders and consumers in localized energy markets with rooftop photovoltaic\npanels, vehicle-to-everything technologies, packetized energy management, etc.\nThe integration of prosumers in EI, however, will encounter many challenges in\nmodelling, analyzing, and designing an efficient, economic, and social-optimal\nplatform for energy sharing, calling for advanced AI/IoT-based solutions to\nresource optimization, information exchange, and interaction protocols in the\ncontext of the share economy. In this study, we aim to introduce a recently\nemerged paradigm, Machina Economicus, to investigate the economic rationality\nin modelling, analysis, and optimization of AI/IoT-based EI prosumer behaviors.\nThe new paradigm, built upon the theory of machine learning and mechanism\ndesign, will offer new angles to investigate the selfishness of AI through a\ngame-theoretic perspective, revealing potential competition and collaborations\nresulting from the self-adaptive learning and decision-making capacity. This\nstudy will focus on how the introduction of AI will reshape prosumer behaviors\non the EI, and how this paradigm will reveal new research questions and\ndirections when AI meets the share economy. With an extensive case analysis in\nthe literature, we will also shed light on potential solutions for advancements\nof AI in future smart cities.",
+        "link": "http://arxiv.org/abs/2403.14660v1",
+        "type": "paper"
+    },
+    {
+        "title": "Designing Human-AI Systems: Anthropomorphism and Framing Bias on Human-AI Collaboration",
+        "authors": [
+            "Samuel Aleksander S\u00e1nchez Olszewski"
+        ],
+        "text": "AI is redefining how humans interact with technology, leading to a synergetic\ncollaboration between the two. Nevertheless, the effects of human cognition on\nthis collaboration remain unclear. This study investigates the implications of\ntwo cognitive biases, anthropomorphism and framing effect, on human-AI\ncollaboration within a hiring setting. Subjects were asked to select job\ncandidates with the help of an AI-powered recommendation tool. The tool was\nmanipulated to have either human-like or robot-like characteristics and\npresented its recommendations in either positive or negative frames. The\nresults revealed that the framing of AI's recommendations had no significant\ninfluence on subjects' decisions. In contrast, anthropomorphism significantly\naffected subjects' agreement with AI recommendations. Contrary to expectations,\nsubjects were less likely to agree with the AI if it had human-like\ncharacteristics. These findings demonstrate that cognitive biases can impact\nhuman-AI collaboration and highlight the need for tailored approaches to AI\nproduct design, rather than a single, universal solution.",
+        "link": "http://arxiv.org/abs/2404.00634v1",
+        "type": "paper"
+    },
+    {
+        "title": "The Threats of Artificial Intelligence Scale (TAI). Development, Measurement and Test Over Three Application Domains",
+        "authors": [
+            "Kimon Kieslich",
+            "Marco L\u00fcnich",
+            "Frank Marcinkowski"
+        ],
+        "text": "In recent years Artificial Intelligence (AI) has gained much popularity, with\nthe scientific community as well as with the public. AI is often ascribed many\npositive impacts for different social domains such as medicine and the economy.\nOn the other side, there is also growing concern about its precarious impact on\nsociety and individuals. Several opinion polls frequently query the public fear\nof autonomous robots and artificial intelligence (FARAI), a phenomenon coming\nalso into scholarly focus. As potential threat perceptions arguably vary with\nregard to the reach and consequences of AI functionalities and the domain of\napplication, research still lacks necessary precision of a respective\nmeasurement that allows for wide-spread research applicability. We propose a\nfine-grained scale to measure threat perceptions of AI that accounts for four\nfunctional classes of AI systems and is applicable to various domains of AI\napplications. Using a standardized questionnaire in a survey study (N=891), we\nevaluate the scale over three distinct AI domains (loan origination, job\nrecruitment and medical treatment). The data support the dimensional structure\nof the proposed Threats of AI (TAI) scale as well as the internal consistency\nand factoral validity of the indicators. Implications of the results and the\nempirical application of the scale are discussed in detail. Recommendations for\nfurther empirical use of the TAI scale are provided.",
+        "link": "http://arxiv.org/abs/2006.07211v1",
+        "type": "paper"
+    },
+    {
+        "title": "Artificial Intelligence and work: a critical review of recent research from the social sciences",
+        "authors": [
+            "Jean-Philippe Deranty",
+            "Thomas Corbin"
+        ],
+        "text": "This review seeks to present a comprehensive picture of recent discussions in\nthe social sciences of the anticipated impact of AI on the world of work.\nIssues covered include technological unemployment, algorithmic management,\nplatform work an the politics of AI work. The review identifies the major\ndisciplinary and methodological perspectives on AI's impact on work, and the\nobstacles they face in making predictions. Two parameters influencing the\ndevelopment and deployment of AI in the economy are highlighted, the capitalist\nimperative and nationalistic pressures.",
+        "link": "http://arxiv.org/abs/2204.00419v1",
+        "type": "paper"
+    },
+    {
+        "title": "Towards Sustainable Artificial Intelligence: An Overview of Environmental Protection Uses and Issues",
+        "authors": [
+            "Arnault Pachot",
+            "C\u00e9line Patissier"
+        ],
+        "text": "Artificial Intelligence (AI) is used to create more sustainable production\nmethods and model climate change, making it a valuable tool in the fight\nagainst environmental degradation. This paper describes the paradox of an\nenergy-consuming technology serving the ecological challenges of tomorrow. The\nstudy provides an overview of the sectors that use AI-based solutions for\nenvironmental protection. It draws on numerous examples from AI for Green\nplayers to present use cases and concrete examples. In the second part of the\nstudy, the negative impacts of AI on the environment and the emerging\ntechnological solutions to support Green AI are examined. It is also shown that\nthe research on less energy-consuming AI is motivated more by cost and energy\nautonomy constraints than by environmental considerations. This leads to a\nrebound effect that favors an increase in the complexity of models. Finally,\nthe need to integrate environmental indicators into algorithms is discussed.\nThe environmental dimension is part of the broader ethical problem of AI, and\naddressing it is crucial for ensuring the sustainability of AI in the long\nterm.",
+        "link": "http://arxiv.org/abs/2212.11738v1",
+        "type": "paper"
+    },
+    {
+        "title": "Artificial intelligence and the transformation of higher education institutions",
+        "authors": [
+            "Evangelos Katsamakas",
+            "Oleg V. Pavlov",
+            "Ryan Saklad"
+        ],
+        "text": "Artificial intelligence (AI) advances and the rapid adoption of generative AI\ntools like ChatGPT present new opportunities and challenges for higher\neducation. While substantial literature discusses AI in higher education, there\nis a lack of a systemic approach that captures a holistic view of the AI\ntransformation of higher education institutions (HEIs). To fill this gap, this\narticle, taking a complex systems approach, develops a causal loop diagram\n(CLD) to map the causal feedback mechanisms of AI transformation in a typical\nHEI. Our model accounts for the forces that drive the AI transformation and the\nconsequences of the AI transformation on value creation in a typical HEI. The\narticle identifies and analyzes several reinforcing and balancing feedback\nloops, showing how, motivated by AI technology advances, the HEI invests in AI\nto improve student learning, research, and administration. The HEI must take\nmeasures to deal with academic integrity problems and adapt to changes in\navailable jobs due to AI, emphasizing AI-complementary skills for its students.\nHowever, HEIs face a competitive threat and several policy traps that may lead\nto decline. HEI leaders need to become systems thinkers to manage the\ncomplexity of the AI transformation and benefit from the AI feedback loops\nwhile avoiding the associated pitfalls. We also discuss long-term scenarios,\nthe notion of HEIs influencing the direction of AI, and directions for future\nresearch on AI transformation.",
+        "link": "http://arxiv.org/abs/2402.08143v1",
+        "type": "paper"
+    },
+    {
+        "title": "A Perspective on K-12 AI Education",
+        "authors": [
+            "Nathan Wang",
+            "Paul Tonko",
+            "Nikil Ragav",
+            "Michael Chungyoun",
+            "Jonathan Plucker"
+        ],
+        "text": "Artificial intelligence (AI), which enables machines to learn to perform a\ntask by training on diverse datasets, is one of the most revolutionary\ndevelopments in scientific history. Although AI and especially deep learning is\nrelatively new, it has already had transformative impact on medicine, biology,\ntransportation, entertainment, and beyond. As AI changes our daily lives at an\nincreasingly fast pace, we are challenged with preparing our society for an\nAI-driven future. To this end, a critical step is to ensure an AI-ready\nworkforce through education. Advocates of beginning instruction of AI basics at\nthe K-12 level typically note benefits to the workforce, economy, and national\nsecurity. In this complementary perspective, we discuss why learning AI is\nbeneficial for motivating students and promoting creative thinking, and how to\ndevelop a module-based approach that optimizes learning outcomes. We hope to\nexcite and engage more members of the education community to join the effort to\nadvance K-12 AI education in the USA and worldwide.",
+        "link": "http://arxiv.org/abs/2206.03217v2",
+        "type": "paper"
+    },
+    {
+        "title": "Collaborative Design for Job-Seekers with Autism: A Conceptual Framework for Future Research",
+        "authors": [
+            "Sungsoo Ray Hong",
+            "Marcos Zampieri",
+            "Brittany N. Hand",
+            "Vivian Motti",
+            "Dongjun Chung",
+            "Ozlem Uzuner"
+        ],
+        "text": "The success of employment is highly related to a job seeker's capability of\ncommunicating and collaborating with others. While leveraging one's network\nduring the job-seeking process is intuitive to the neurotypical, this can be\nchallenging for people with autism. Recent empirical findings have started to\nshow how facilitating collaboration between people with autism and their social\nsurroundings through new design can improve their chances of employment. This\nwork aims to provide actionable guidelines and conceptual frameworks that\nfuture researchers and practitioners can apply to improve collaborative design\nfor job-seekers with autism. Built upon the literature on past technological\ninterventions built for supporting job-seekers with autism, we define three\nmajor research challenges of (1) communication support, (2) employment\nstage-wise support, and (3) group work support. For each challenge, we review\nthe current state-of-the-art practices and possible future solutions. We then\nsuggest future designs that can provide breakthroughs from the\ninterdisciplinary lens of human-AI collaboration, health services, group work,\naccessibility computing, and natural language processing.",
+        "link": "http://arxiv.org/abs/2405.06078v1",
+        "type": "paper"
+    },
+    {
+        "title": "Bias Amplification in Artificial Intelligence Systems",
+        "authors": [
+            "Kirsten Lloyd"
+        ],
+        "text": "As Artificial Intelligence (AI) technologies proliferate, concern has\ncentered around the long-term dangers of job loss or threats of machines\ncausing harm to humans. All of this concern, however, detracts from the more\npertinent and already existing threats posed by AI today: its ability to\namplify bias found in training datasets, and swiftly impact marginalized\npopulations at scale. Government and public sector institutions have a\nresponsibility to citizens to establish a dialogue with technology developers\nand release thoughtful policy around data standards to ensure diverse\nrepresentation in datasets to prevent bias amplification and ensure that AI\nsystems are built with inclusion in mind.",
+        "link": "http://arxiv.org/abs/1809.07842v1",
+        "type": "paper"
+    },
+    {
+        "title": "Artificial Intelligence and the Future of Psychiatry: Insights from a Global Physician Survey",
+        "authors": [
+            "P. Murali Doraiswamy",
+            "Charlotte Blease",
+            "Kaylee Bodner"
+        ],
+        "text": "Futurists have predicted that new technologies, embedded with artificial\nintelligence (AI) and machine learning (ML), will lead to substantial job loss\nin many sectors disrupting many aspects of healthcare. Mental health appears\nripe for such disruption given the global illness burden, stigma, and shortage\nof care providers. Using Sermo, a global networking platform open to verified\nand licensed physicians, we measured the opinions of psychiatrists about the\nlikelihood that future autonomous technology (referred to as AI/ML) would be\nable to fully replace the average psychiatrist in performing 10 key tasks (e.g.\nmental status exam, suicidality assessment, treatment planning) carried out in\nmental health care. Survey respondents were 791 psychiatrists from 22\ncountries. Only 3.8% of respondents felt that AI/ML was likely to replace a\nhuman clinician for providing empathetic care. Documenting (e.g. updating\nmedical records) and synthesizing information to reach a diagnosis were the two\ntasks where a majority predicted that future AI/ML would replace human doctors.\nAbout 1 in 2 doctors believed their jobs could be changed substantially by\nfuture AI/ML. However, female and US-based doctors were more uncertain that the\npossible benefits of AI would outweigh potential risks, versus their male and\nglobal counterparts. To our knowledge, this is the first global survey to seek\nthe opinions of physicians on the impact of autonomous AI/ML on the future of\npsychiatry. Our findings provide compelling insights into how physicians think\nabout intelligent technologies which may better help us integrate such tools\nand reskill doctors, as needed, to enhance mental health care.",
+        "link": "http://arxiv.org/abs/1907.12386v1",
+        "type": "paper"
+    },
+    {
+        "title": "Artificial Intelligence Governance and Ethics: Global Perspectives",
+        "authors": [
+            "Angela Daly",
+            "Thilo Hagendorff",
+            "Li Hui",
+            "Monique Mann",
+            "Vidushi Marda",
+            "Ben Wagner",
+            "Wei Wang",
+            "Saskia Witteborn"
+        ],
+        "text": "Artificial intelligence (AI) is a technology which is increasingly being\nutilised in society and the economy worldwide, and its implementation is\nplanned to become more prevalent in coming years. AI is increasingly being\nembedded in our lives, supplementing our pervasive use of digital technologies.\nBut this is being accompanied by disquiet over problematic and dangerous\nimplementations of AI, or indeed, even AI itself deciding to do dangerous and\nproblematic actions, especially in fields such as the military, medicine and\ncriminal justice. These developments have led to concerns about whether and how\nAI systems adhere, and will adhere to ethical standards. These concerns have\nstimulated a global conversation on AI ethics, and have resulted in various\nactors from different countries and sectors issuing ethics and governance\ninitiatives and guidelines for AI. Such developments form the basis for our\nresearch in this report, combining our international and interdisciplinary\nexpertise to give an insight into what is happening in Australia, China,\nEurope, India and the US.",
+        "link": "http://arxiv.org/abs/1907.03848v1",
+        "type": "paper"
+    },
+    {
+        "title": "Brain Intelligence: Go Beyond Artificial Intelligence",
+        "authors": [
+            "Huimin Lu",
+            "Yujie Li",
+            "Min Chen",
+            "Hyoungseop Kim",
+            "Seiichi Serikawa"
+        ],
+        "text": "Artificial intelligence (AI) is an important technology that supports daily\nsocial life and economic activities. It contributes greatly to the sustainable\ngrowth of Japan's economy and solves various social problems. In recent years,\nAI has attracted attention as a key for growth in developed countries such as\nEurope and the United States and developing countries such as China and India.\nThe attention has been focused mainly on developing new artificial intelligence\ninformation communication technology (ICT) and robot technology (RT). Although\nrecently developed AI technology certainly excels in extracting certain\npatterns, there are many limitations. Most ICT models are overly dependent on\nbig data, lack a self-idea function, and are complicated. In this paper, rather\nthan merely developing next-generation artificial intelligence technology, we\naim to develop a new concept of general-purpose intelligence cognition\ntechnology called Beyond AI. Specifically, we plan to develop an intelligent\nlearning model called Brain Intelligence (BI) that generates new ideas about\nevents without having experienced them by using artificial life with an imagine\nfunction. We will also conduct demonstrations of the developed BI intelligence\nlearning model on automatic driving, precision medical care, and industrial\nrobots.",
+        "link": "http://arxiv.org/abs/1706.01040v1",
+        "type": "paper"
+    },
+    {
+        "title": "Designing Individualized Policy and Technology Interventions to Improve Gig Work Conditions",
+        "authors": [
+            "Jane Hsieh",
+            "Oluwatobi Adisa",
+            "Sachi Bafna",
+            "Haiyi Zhu"
+        ],
+        "text": "The gig economy is characterized by short-term contract work completed by\nindependent workers who are paid to perform \"gigs\", and who have control over\nwhen, whether and how they conduct work. Gig economy platforms (e.g., Uber,\nLyft, Instacart) offer workers increased job opportunities, lower barriers to\nentry, and improved flexibility. However, growing evidence suggests that worker\nwell-being and gig work conditions have become significant societal issues. In\ndesigning public-facing policies and technologies for improving gig work\nconditions, inherent tradeoffs exist between offering individual flexibility\nand when attempting to meet all community needs. In platform-based gig work,\ncontractors pursue the flexibility of short-term tasks, but policymakers resist\nsegmenting the population when designing policies to support their work. As\nplatforms offer an ever-increasing variety of services, we argue that\npolicymakers and platform designers must provide more targeted and personalized\npolicies, benefits, and protections for platform-based workers, so that they\ncan lead more successful and sustainable gig work careers. We present in this\npaper relevant legal and scholarly evidence from the United States to support\nthis position, and make recommendations for future innovations in policy and\ntechnology.",
+        "link": "http://arxiv.org/abs/2306.12972v1",
+        "type": "paper"
+    }
+]

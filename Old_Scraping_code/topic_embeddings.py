@@ -46,7 +46,8 @@ def generate_tfidf_embeddings(texts):
     return tfidf_matrix.toarray()
 
 def generate_sentence_embeddings(texts):
-    model = SentenceTransformer('distilbert-base-nli-mean-tokens')
+    # model = SentenceTransformer('distilbert-base-nli-mean-tokens')
+    model = SentenceTransformer('all-mpnet-base-v2')
     embeddings = model.encode(texts)
     return embeddings
 
@@ -71,24 +72,26 @@ def preprocess_text(text):
     return ' '.join(tokens)
 
 def main():
-    query = 'AI Agents'
+    #query = 'how will generative artificial intelligence AI change future of work jobs the economy'
+    query = "Economy Technology Jobs AI"
     directory = './documents/'
     
     #generate json data
-    generate_reddit_json(query)
-    generate_article_json(query)
+    # generate_reddit_json(query)
+    # generate_article_json(query)
     generate_arxiv_json(query)
 
-    
     #create embeddings
+    '''
     nltk.download('punkt')
     nltk.download('stopwords')
-    output_file = directory + 'embeddings.json'
+    output_file = directory + 'embeddings_mpnet_2.json'
     articles = read_json_files(directory)
     texts, metadata = process_articles(articles)
     # embeddings = generate_tfidf_embeddings(texts)
     embeddings = generate_sentence_embeddings(texts)
     save_embeddings(metadata, embeddings, output_file)
+    '''
 
 if __name__ == "__main__":
     main()
