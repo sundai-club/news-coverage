@@ -13,7 +13,9 @@ user_agent = 'journalresearch/0.1 by Economy-Jellyfish-87'
 
 # Initialize the Reddit instance
 reddit = praw.Reddit(
-
+    client_id="",
+    client_secret="",
+    user_agent="" #username
 )
 
 def search_reddit_posts(query, limit=10):

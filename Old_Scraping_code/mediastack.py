@@ -49,7 +49,7 @@ def print_articles(articles):
         print('-' * 80)
         
 def generate_article_json(query):
-
+    api_key = ''
     keywords = query  # Example keywords
     articles = get_articles(api_key, keywords)
     formatted_articles = format_articles(articles)
