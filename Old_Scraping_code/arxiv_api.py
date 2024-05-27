@@ -3,10 +3,11 @@ import json
 
 def get_arxiv_articles(query, max_results=30):
     print("called")
+    print("arxiv query", query)
     search = arxiv.Search(
         query=query,
         max_results=max_results,
-        sort_by=arxiv.SortCriterion.SubmittedDate
+        sort_by=arxiv.SortCriterion.Relevance
     )
     
     articles = []
@@ -30,5 +31,5 @@ def generate_arxiv_json(query):
     json_output = json.dumps(articles, indent=4)
     
     # Save the JSON output to a file
-    with open('../streamlit-app/documents/papers.json', 'w') as json_file:
+    with open('../streamlit-app/documents/fow/papers.json', 'w') as json_file:
         json_file.write(json_output)

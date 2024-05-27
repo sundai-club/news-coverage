@@ -8,7 +8,8 @@ load_dotenv()
 
 
 def get_articles(api_key, keywords, languages='en', sort='published_desc', limit=25):
-    url = 'http://api.mediastack.com/v1/news?access_key=' + api_key + "&keywords="+keywords+"&sort=published_desc"
+    print("mediastack query", keywords)
+    url = 'http://api.mediastack.com/v1/news?access_key=' + api_key + "&keywords="+keywords+"&languages=en&categories=technology,business" #&sort=popularity
     params = {
         'keywords': keywords,
         'languages': languages,
@@ -48,7 +49,7 @@ def print_articles(articles):
         print('-' * 80)
         
 def generate_article_json(query):
-    api_key = os.getenv('MEDIASTACK_API_KEY')
+
     keywords = query  # Example keywords
     articles = get_articles(api_key, keywords)
     formatted_articles = format_articles(articles)
@@ -57,5 +58,5 @@ def generate_article_json(query):
     json_output = json.dumps(formatted_articles, indent=4)
 
     # Save the JSON output to a file
-    with open('../streamlit-app/documents/articles.json', 'w') as json_file:
+    with open('../streamlit-app/documents/fow/articles.json', 'w') as json_file:
         json_file.write(json_output)

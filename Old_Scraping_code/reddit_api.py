@@ -13,9 +13,7 @@ user_agent = 'journalresearch/0.1 by Economy-Jellyfish-87'
 
 # Initialize the Reddit instance
 reddit = praw.Reddit(
-    client_id=client_id,
-    client_secret=client_secret,
-    user_agent=user_agent
+
 )
 
 def search_reddit_posts(query, limit=10):
@@ -53,10 +51,10 @@ def save_posts_to_json(data, filename):
 
 def generate_reddit_json(query, limit=25):
     posts = search_reddit_posts(query, limit)
-    save_posts_to_json(posts, '../streamlit-app/documents/reddit.json')
+    save_posts_to_json(posts, '../streamlit-app/documents/fow/reddit.json')
 
 if __name__ == "__main__":
     # subreddit_name = 'learnpython'  # Example subreddit
-    query = 'beekeeping'  # Example query
+    query = 'AI future of work'  # Example query
     # limit = 5  # Number of posts to retrieve
     generate_reddit_json(query)
