@@ -3,8 +3,8 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 from bokeh.plotting import ColumnDataSource, figure, output_notebook, show
-from bokeh.models import TapTool, CustomJS
-from bokeh.palettes import OrRd
+from bokeh.models import TapTool, CustomJS, HoverTool
+from bokeh.palettes import OrRd, Greens, Reds
 import pickle
 from scipy import stats
 import umap
@@ -72,23 +72,26 @@ with st.sidebar:
 
 
 def get_embeddings_from_file():
-    embeddings_json = read_json("embeddings.json")
 
     all_titles = []
     all_arxivid = []
     all_links = []
     embeddings_all = []
+    
+    inputs = ["embeddings_AIAgents.json", "embeddings_AIAssistedHealthcare.json", "embeddings_AIDrivenPortfolioManagement.json", "embeddings_AIPublicPolicies.json"]
+    
+    for input in inputs:
+        embeddings_json = read_json(input)
+        for i in range(0, len(embeddings_json['embeddings'])):
+            title = embeddings_json['embeddings'][i]['title']
+            source = embeddings_json['embeddings'][i]['type']
+            link = embeddings_json['embeddings'][i]['link']
+            embedding_i = embeddings_json['embeddings'][i]['embedding']
 
-    for i in range(0, len(embeddings_json['embeddings'])):
-        title = embeddings_json['embeddings'][i]['title']
-        source = embeddings_json['embeddings'][i]['type']
-        link = embeddings_json['embeddings'][i]['link']
-        embedding_i = embeddings_json['embeddings'][i]['embedding']
-
-        all_titles.append(title)
-        all_arxivid.append(source)
-        all_links.append(link)
-        embeddings_all.append(embedding_i)
+            all_titles.append(title)
+            all_arxivid.append(source)
+            all_links.append(link)
+            embeddings_all.append(embedding_i)
 
     # TODO: make sure the UMAP is ran on all the embeddings at the end
     umap_reducer = umap.UMAP(n_components=2, random_state=42)
@@ -118,7 +121,7 @@ Click to open @link <br> <br>
 
 phrase = st.session_state.phrase
 
-p = figure(width=700, height=583, tooltips=TOOLTIPS, x_range=(0, 15), y_range=(2.5, 15),
+p = figure(width=700, height=583, x_range=(0, 15), y_range=(2.5, 15),
            title="UMAP projection of embeddings for the given embeddings")
 
 # Add TapTool to enable clicking on dots
@@ -135,18 +138,18 @@ for i in range(len(all_titles)):
         phrase_flags[i] = 1
 
 # TODO: create a hexbin manually with the needed description and number of points...
-
-p.hexbin(final_2d_embeddings[:, 0], final_2d_embeddings[:, 1], size=0.5,
-         palette=np.flip(OrRd[9]), alpha=alpha_value)
+# p.hexbin(final_2d_embeddings[:, 0], final_2d_embeddings[:, 1], size=0.5,
+#          palette=np.flip(OrRd[9]), alpha=alpha_value)
 
 # TODO: add a summarization to the HEXBIN items so that when hovering a bin can see a summary of the items within
 # p.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1], size=size_value,
 #          palette=np.flip(OrRd[8]), alpha=alpha_value)
+circle_renderers = []
 
-type_to_color = {'reddit': 'green', 'paper': 'red', 'article': 'blue'}
+type_to_color = {'paper': 'green', 'article': 'red', 'reddit': 'blue'}
 for source_type, color in type_to_color.items():
     curr_source = ColumnDataSource(sources_df[sources_df["data_source"] == source_type])
-    p.circle('x', 'y', size=3, source=curr_source, alpha=0.3, color=color, legend_label=source_type)
+    circle_renderer = p.circle('x', 'y', size=3, source=curr_source, alpha=0.3, color=color, legend_label=source_type)
     p.js_on_event('tap', CustomJS(args=dict(source=curr_source), code="""
         var indices = source.selected.indices;
         if (indices.length > 0) {
@@ -154,6 +157,16 @@ for source_type, color in type_to_color.items():
             window.open(link);
         }
     """))
+    circle_renderers.append(circle_renderer)
+
+    if source_type == 'paper':
+        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=0.25,
+                 palette=np.flip(Greens[9]), alpha=alpha_value)
+    if source_type == 'article':
+        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=0.25,
+                 palette=np.flip(Reds[9]), alpha=alpha_value)
+hover_tool = HoverTool(tooltips=TOOLTIPS, renderers=circle_renderers)
+p.add_tools(hover_tool)
 
 st.bokeh_chart(p)
 
