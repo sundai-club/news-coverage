@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from bokeh.plotting import ColumnDataSource, figure, output_notebook, show
 from bokeh.models import TapTool, CustomJS
-from bokeh.palettes import OrRd
+from bokeh.palettes import OrRd, Greens, Reds
 import pickle
 from scipy import stats
 import umap
@@ -135,15 +135,14 @@ for i in range(len(all_titles)):
         phrase_flags[i] = 1
 
 # TODO: create a hexbin manually with the needed description and number of points...
-
-p.hexbin(final_2d_embeddings[:, 0], final_2d_embeddings[:, 1], size=0.5,
-         palette=np.flip(OrRd[9]), alpha=alpha_value)
+# p.hexbin(final_2d_embeddings[:, 0], final_2d_embeddings[:, 1], size=0.5,
+#          palette=np.flip(OrRd[9]), alpha=alpha_value)
 
 # TODO: add a summarization to the HEXBIN items so that when hovering a bin can see a summary of the items within
 # p.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1], size=size_value,
 #          palette=np.flip(OrRd[8]), alpha=alpha_value)
 
-type_to_color = {'reddit': 'green', 'paper': 'red', 'article': 'blue'}
+type_to_color = {'paper': 'red', 'article': 'green', 'reddit': 'blue'}
 for source_type, color in type_to_color.items():
     curr_source = ColumnDataSource(sources_df[sources_df["data_source"] == source_type])
     p.circle('x', 'y', size=3, source=curr_source, alpha=0.3, color=color, legend_label=source_type)
@@ -154,6 +153,13 @@ for source_type, color in type_to_color.items():
             window.open(link);
         }
     """))
+
+    if source_type == 'paper':
+        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=0.25,
+                 palette=np.flip(Greens[9]), alpha=alpha_value)
+    if source_type == 'article':
+        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=0.25,
+                 palette=np.flip(Reds[9]), alpha=alpha_value)
 
 st.bokeh_chart(p)
 
