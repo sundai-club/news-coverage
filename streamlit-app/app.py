@@ -142,7 +142,7 @@ for i in range(len(all_titles)):
 # p.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1], size=size_value,
 #          palette=np.flip(OrRd[8]), alpha=alpha_value)
 
-type_to_color = {'paper': 'red', 'article': 'green', 'reddit': 'blue'}
+type_to_color = {'paper': 'green', 'article': 'red', 'reddit': 'blue'}
 for source_type, color in type_to_color.items():
     curr_source = ColumnDataSource(sources_df[sources_df["data_source"] == source_type])
     p.circle('x', 'y', size=3, source=curr_source, alpha=0.3, color=color, legend_label=source_type)
