@@ -33,3 +33,6 @@ Thumbs.db
 
 Old_Scraping_code/mediastack.py
 Old_Scraping_code/reddit_api.py
+
+__pycache__/
+.DS_Store
