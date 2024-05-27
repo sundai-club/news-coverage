@@ -72,23 +72,26 @@ with st.sidebar:
 
 
 def get_embeddings_from_file():
-    embeddings_json = read_json("embeddings.json")
 
     all_titles = []
     all_arxivid = []
     all_links = []
     embeddings_all = []
+    
+    inputs = ["embeddings_AIAgents.json", "embeddings_AIAssistedHealthcare.json", "embeddings_AIDrivenPortfolioManagement.json", "embeddings_AIPublicPolicies.json"]
+    
+    for input in inputs:
+        embeddings_json = read_json(input)
+        for i in range(0, len(embeddings_json['embeddings'])):
+            title = embeddings_json['embeddings'][i]['title']
+            source = embeddings_json['embeddings'][i]['type']
+            link = embeddings_json['embeddings'][i]['link']
+            embedding_i = embeddings_json['embeddings'][i]['embedding']
 
-    for i in range(0, len(embeddings_json['embeddings'])):
-        title = embeddings_json['embeddings'][i]['title']
-        source = embeddings_json['embeddings'][i]['type']
-        link = embeddings_json['embeddings'][i]['link']
-        embedding_i = embeddings_json['embeddings'][i]['embedding']
-
-        all_titles.append(title)
-        all_arxivid.append(source)
-        all_links.append(link)
-        embeddings_all.append(embedding_i)
+            all_titles.append(title)
+            all_arxivid.append(source)
+            all_links.append(link)
+            embeddings_all.append(embedding_i)
 
     # TODO: make sure the UMAP is ran on all the embeddings at the end
     umap_reducer = umap.UMAP(n_components=2, random_state=42)
