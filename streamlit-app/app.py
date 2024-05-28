@@ -9,6 +9,26 @@ import pickle
 from scipy import stats
 import umap
 import json
+import sendgrid
+from sendgrid.helpers.mail import *
+
+
+def send_email(name, role, requestor_email, request_focus):
+    sg = sendgrid.SendGridAPIClient("TBD-ON-DEPLOYED-VM")
+    from_email = Email("sundaiclub@gmail.com")
+    to_email = To("sundaiclub@gmail.com")
+    subject = "AI-NEWS-HOUND: New Visualization Request"
+    email_text = f"""
+            New Request Submitted:
+            Name: {name}
+            Role: {role}
+            Email: {requestor_email}
+            Research Focus Request: {request_focus}
+            """
+    content = Content("text/plain", email_text)
+    mail = Mail(from_email, to_email, subject, content)
+    mail.add_to(To("nader_k@mit.edu"))
+    sg.client.mail.send.post(request_body=mail.get())
 
 
 # Function to read the JSON file
@@ -18,8 +38,14 @@ def read_json(file_path):
         return json.loads(content)
 
 
-st.title("Embedding explorer")
-st.markdown("Interpreting the UMAP plot")
+st.markdown("""
+<h2 style='text-align: center; color: black;'>
+Discover Your <span style='color: green; '>Next Big Scientific News Story</span>
+</h2>
+<p style='text-align: justify; font-size: 19px;'>
+Uncover underrepresented research topics with potential for impactful news stories. <br> we help journalists and researchers identify areas of significant scientific interest that lack media coverage. <br> Navigate the visualization below: <strong style='color: green;'>green areas</strong> highlight research topics that are currently hot in the academic world but have not yet been extensively covered in the news.
+</p>
+""", unsafe_allow_html=True)
 
 
 def density_estimation(m1, m2, xmin=0, ymin=0, xmax=15, ymax=15):
@@ -60,15 +86,40 @@ with st.sidebar:
     st.markdown(button_html, unsafe_allow_html=True)
 
     st.markdown('#')
-    st.markdown(
-        'Query items containing specific phrases in the dataset and show it as a heatmap. Enter the phrase of interest, then change the size and opacity of the heatmap as desired to find the high-density regions. Hover over blue points to see the details of individual papers.')
-    st.markdown(
-        '`Note`: (i) if you enter a query that is not in the corpus of abstracts, it will return an error. just enter a different query in that case. (ii) there are some empty tooltips when you hover, these correspond to the underlying hexbins, and can be ignored.')
-
-    search_query = st.text_input("Search query", key="phrase", value="bee")
+    # st.markdown(
+    #     'Query items containing specific phrases in the dataset and show it as a heatmap. Enter the phrase of interest, then change the size and opacity of the heatmap as desired to find the high-density regions. Hover over blue points to see the details of individual papers.')
+    # st.markdown(
+    #     '`Note`: (i) if you enter a query that is not in the corpus of abstracts, it will return an error. just enter a different query in that case. (ii) there are some empty tooltips when you hover, these correspond to the underlying hexbins, and can be ignored.')
+    #
+    # search_query = st.text_input("Search query", key="phrase", value="bee")
 
     alpha_value = st.slider("Pick the hexbin opacity", 0.0, 1.0, 0.5)
-    size_value = st.slider("Pick the hexbin gridsize", 0.5, 5.0, 1.0)
+    size_value = st.slider("Pick the hexbin gridsize", 0.1, 2.0, 0.25)
+
+    st.markdown("""
+    <h2 style='text-align: center; color: black;'>Request a Customized Visualization</h2>
+    <p style='text-align: center;'>Provide details about your research field of interest, and we can create a tailored visualization solution.</p>
+    """, unsafe_allow_html=True)
+
+    # Form creation
+    with st.form(key='request_form'):
+        name = st.text_input('Name')
+        role = st.text_input('Role')
+        email = st.text_input('Email')
+        request_focus = st.text_area('Research topics to visualize',
+                                     help='what Research Area would you like us to navigate using our visualization')
+
+        # Form submission button
+        submit_button = st.form_submit_button(label='Submit Request')
+
+    if submit_button:
+        if name and role and email and request_focus:
+            # Assume sending to an email or processing the data here
+            st.success("Thank you! Your request has been submitted, we will contact you shortly.")
+            send_email(name, role, email, request_focus)
+            # Here you could add code to send the data to an email or a database
+        else:
+            st.error("Please fill out all fields to submit your request.")
 
 
 def get_embeddings_from_file():
@@ -77,9 +128,9 @@ def get_embeddings_from_file():
     all_arxivid = []
     all_links = []
     embeddings_all = []
-    
+
     inputs = ["embeddings_AIAgents.json", "embeddings_AIAssistedHealthcare.json", "embeddings_AIDrivenPortfolioManagement.json", "embeddings_AIPublicPolicies.json"]
-    
+
     for input in inputs:
         embeddings_json = read_json(input)
         for i in range(0, len(embeddings_json['embeddings'])):
@@ -119,23 +170,23 @@ Click to open @link <br> <br>
 </div>
 """
 
-phrase = st.session_state.phrase
+# phrase = st.session_state.phrase
 
 p = figure(width=700, height=583, x_range=(0, 15), y_range=(2.5, 15),
-           title="UMAP projection of embeddings for the given embeddings")
+           title="Map of embeddings for resources on AI Agents")
 
 # Add TapTool to enable clicking on dots
 taptool = p.select(type=TapTool)
 
 # Add JavaScript callback to open link on click
 p.add_tools(TapTool())
-
-# TODO: change this with actual semantic search - the embedding distance basically
-phrase_flags = np.zeros((len(all_titles),))
-
-for i in range(len(all_titles)):
-    if phrase.lower() in all_titles[i].lower():
-        phrase_flags[i] = 1
+#
+# # TODO: change this with actual semantic search - the embedding distance basically
+# phrase_flags = np.zeros((len(all_titles),))
+#
+# for i in range(len(all_titles)):
+#     if phrase.lower() in all_titles[i].lower():
+#         phrase_flags[i] = 1
 
 # TODO: create a hexbin manually with the needed description and number of points...
 # p.hexbin(final_2d_embeddings[:, 0], final_2d_embeddings[:, 1], size=0.5,
@@ -149,7 +200,7 @@ circle_renderers = []
 type_to_color = {'paper': 'green', 'article': 'red', 'reddit': 'blue'}
 for source_type, color in type_to_color.items():
     curr_source = ColumnDataSource(sources_df[sources_df["data_source"] == source_type])
-    circle_renderer = p.circle('x', 'y', size=3, source=curr_source, alpha=0.3, color=color, legend_label=source_type)
+    circle_renderer = p.circle('x', 'y', size=5, source=curr_source, alpha=0.3, color=color, legend_label=source_type)
     p.js_on_event('tap', CustomJS(args=dict(source=curr_source), code="""
         var indices = source.selected.indices;
         if (indices.length > 0) {
@@ -160,10 +211,10 @@ for source_type, color in type_to_color.items():
     circle_renderers.append(circle_renderer)
 
     if source_type == 'paper':
-        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=0.25,
+        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=size_value,
                  palette=np.flip(Greens[9]), alpha=alpha_value)
     if source_type == 'article':
-        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=0.25,
+        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=size_value,
                  palette=np.flip(Reds[9]), alpha=alpha_value)
 hover_tool = HoverTool(tooltips=TOOLTIPS, renderers=circle_renderers)
 p.add_tools(hover_tool)
