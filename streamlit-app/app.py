@@ -40,7 +40,7 @@ def read_json(file_path):
 
 st.markdown("""
 <h2 style='text-align: center; color: black;'>
-Discover Your <span style='color: green; '>Next Big Scientific News Story</span>
+<span style='color: green; '> AI </span> to uncover the next <span style='color: green; '> big thing in AI </span>  
 </h2>
 <p style='text-align: justify; font-size: 19px;'>
 Uncover underrepresented research topics with potential for impactful news stories. <br> we help journalists and researchers identify areas of significant scientific interest that lack media coverage. <br> Navigate the visualization below: <strong style='color: green;'>green areas</strong> highlight research topics that are currently hot in the academic world but have not yet been extensively covered in the news.
@@ -129,7 +129,21 @@ def get_embeddings_from_file():
     all_links = []
     embeddings_all = []
 
-    inputs = ["embeddings_AIAgents.json", "embeddings_AIAssistedHealthcare.json", "embeddings_AIDrivenPortfolioManagement.json", "embeddings_AIPublicPolicies.json"]
+    options = ["AI Agents", "AI Assisted Healthcare", "AI Driven Portfolio Management", "AI Public Policies", "View_all_topics_combined"]
+    selection = st.selectbox("Select a research category to view:", options)
+
+    # Mapping selection to corresponding JSON file
+    input_files = {
+        "AI Agents": "embeddings_AIAgents.json",
+        "AI Assisted Healthcare": "embeddings_AIAssistedHealthcare.json",
+        "AI Driven Portfolio Management": "embeddings_AIDrivenPortfolioManagement.json",
+        "AI Public Policies": "embeddings_AIPublicPolicies.json"
+    }
+
+    if selection == "View_all_topics_combined":
+        inputs = ["embeddings_AIAgents.json", "embeddings_AIAssistedHealthcare.json", "embeddings_AIDrivenPortfolioManagement.json", "embeddings_AIPublicPolicies.json"]
+    else:
+        inputs = [input_files[selection]]
 
     for input in inputs:
         embeddings_json = read_json(input)
