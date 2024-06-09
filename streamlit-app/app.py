@@ -97,8 +97,9 @@ with st.sidebar:
     size_value = st.slider("Pick the hexbin gridsize", 0.1, 2.0, 0.25)
 
     st.markdown("""
-    <h2 style='text-align: center; color: black;'>Request a Customized Visualization</h2>
-    <p style='text-align: center;'>Provide details about your research field of interest, and we can create a tailored visualization solution.</p>
+    <h2 style='text-align: center; color: black;'>We need your Feedback!</h2>
+    <p style='text-align: center;'>Let us know what you think and how can we improve.</p>
+    <p style="text-align: center;">Check the open source code: <a href="https://github.com/sundai-club/news-coverage" target="_blank">https://github.com/sundai-club/news-coverage</a></p>
     """, unsafe_allow_html=True)
 
     # Form creation
@@ -106,7 +107,7 @@ with st.sidebar:
         name = st.text_input('Name')
         role = st.text_input('Role')
         email = st.text_input('Email')
-        request_focus = st.text_area('Research topics to visualize',
+        request_focus = st.text_area('Feedback and suggested use cases',
                                      help='what Research Area would you like us to navigate using our visualization')
 
         # Form submission button
