@@ -12,6 +12,10 @@ import json
 import sendgrid
 from sendgrid.helpers.mail import *
 
+from sklearn.cluster import KMeans
+from bokeh.palettes import Category20
+
+
 
 def send_email(name, role, requestor_email, request_focus):
     sg = sendgrid.SendGridAPIClient("TBD-ON-DEPLOYED-VM")
@@ -86,15 +90,14 @@ with st.sidebar:
     st.markdown(button_html, unsafe_allow_html=True)
 
     st.markdown('#')
-    # st.markdown(
-    #     'Query items containing specific phrases in the dataset and show it as a heatmap. Enter the phrase of interest, then change the size and opacity of the heatmap as desired to find the high-density regions. Hover over blue points to see the details of individual papers.')
-    # st.markdown(
-    #     '`Note`: (i) if you enter a query that is not in the corpus of abstracts, it will return an error. just enter a different query in that case. (ii) there are some empty tooltips when you hover, these correspond to the underlying hexbins, and can be ignored.')
-    #
-    # search_query = st.text_input("Search query", key="phrase", value="bee")
 
     alpha_value = st.slider("Pick the hexbin opacity", 0.0, 1.0, 0.5)
     size_value = st.slider("Pick the hexbin gridsize", 0.1, 2.0, 0.25)
+    
+    # Slider to select the number of clusters
+    num_clusters = st.slider("Select the number of clusters", 2, 10, 3)
+    colors = Category20[num_clusters]
+
 
     st.markdown("""
     <h2 style='text-align: center; color: black;'>We need your Feedback!</h2>
@@ -115,16 +118,13 @@ with st.sidebar:
 
     if submit_button:
         if name and role and email and request_focus:
-            # Assume sending to an email or processing the data here
             st.success("Thank you! Your request has been submitted, we will contact you shortly.")
             send_email(name, role, email, request_focus)
-            # Here you could add code to send the data to an email or a database
         else:
             st.error("Please fill out all fields to submit your request.")
 
 
 def get_embeddings_from_file():
-
     all_titles = []
     all_arxivid = []
     all_links = []
@@ -133,7 +133,6 @@ def get_embeddings_from_file():
     options = ["AI Agents", "AI Assisted Healthcare", "AI Driven Portfolio Management", "AI Public Policies", "View_all_topics_combined"]
     selection = st.selectbox("Select a research category to view:", options)
 
-    # Mapping selection to corresponding JSON file
     input_files = {
         "AI Agents": "embeddings_AIAgents.json",
         "AI Assisted Healthcare": "embeddings_AIAssistedHealthcare.json",
@@ -148,7 +147,7 @@ def get_embeddings_from_file():
 
     for input in inputs:
         embeddings_json = read_json(input)
-        for i in range(0, len(embeddings_json['embeddings'])):
+        for i in range(len(embeddings_json['embeddings'])):
             title = embeddings_json['embeddings'][i]['title']
             source = embeddings_json['embeddings'][i]['type']
             link = embeddings_json['embeddings'][i]['link']
@@ -159,7 +158,6 @@ def get_embeddings_from_file():
             all_links.append(link)
             embeddings_all.append(embedding_i)
 
-    # TODO: make sure the UMAP is ran on all the embeddings at the end
     umap_reducer = umap.UMAP(n_components=2, random_state=42)
     final_2d_embeddings = umap_reducer.fit_transform(embeddings_all)
 
@@ -177,6 +175,21 @@ def get_embeddings_from_file():
 sources_df, all_titles, final_2d_embeddings = get_embeddings_from_file()
 source = ColumnDataSource(sources_df)
 
+# Use the number of clusters from the slider
+kmeans = KMeans(n_clusters=num_clusters, random_state=42)
+sources_df['cluster'] = kmeans.fit_predict(sources_df[['x', 'y']])
+centroids = sources_df.groupby('cluster')[['x', 'y']].mean()
+
+# Calculate radius for each cluster
+def calculate_radius(cluster_df, centroid):
+    return np.max(np.sqrt((cluster_df['x'] - centroid['x'])**2 + (cluster_df['y'] - centroid['y'])**2))
+
+cluster_radii = {}
+for cluster, centroid in centroids.iterrows():
+    cluster_df = sources_df[sources_df['cluster'] == cluster]
+    radius = calculate_radius(cluster_df, centroid)
+    cluster_radii[cluster] = radius
+
 TOOLTIPS = """
 <div style="width:300px;">
 ($x, $y) <br>
@@ -184,8 +197,6 @@ TOOLTIPS = """
 Click to open @link <br> <br>
 </div>
 """
-
-# phrase = st.session_state.phrase
 
 p = figure(width=700, height=583, x_range=(0, 15), y_range=(2.5, 15),
            title="Map of embeddings for resources on AI Agents")
@@ -195,24 +206,20 @@ taptool = p.select(type=TapTool)
 
 # Add JavaScript callback to open link on click
 p.add_tools(TapTool())
-#
-# # TODO: change this with actual semantic search - the embedding distance basically
-# phrase_flags = np.zeros((len(all_titles),))
-#
-# for i in range(len(all_titles)):
-#     if phrase.lower() in all_titles[i].lower():
-#         phrase_flags[i] = 1
 
-# TODO: create a hexbin manually with the needed description and number of points...
-# p.hexbin(final_2d_embeddings[:, 0], final_2d_embeddings[:, 1], size=0.5,
-#          palette=np.flip(OrRd[9]), alpha=alpha_value)
-
-# TODO: add a summarization to the HEXBIN items so that when hovering a bin can see a summary of the items within
-# p.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1], size=size_value,
-#          palette=np.flip(OrRd[8]), alpha=alpha_value)
 circle_renderers = []
 
 type_to_color = {'paper': 'green', 'article': 'red', 'reddit': 'blue'}
+cluster_to_color = {i: colors[i] for i in range(num_clusters)}
+
+
+# Draw cluster circles
+for cluster, centroid in centroids.iterrows():
+    radius = cluster_radii[cluster]
+    color = cluster_to_color.get(cluster, 'black')  # Use black as default if cluster exceeds colors
+    p.circle(x=centroid['x'], y=centroid['y'], radius=radius, fill_alpha=0.1, line_color=color, legend_label=f'Cluster {cluster}')
+
+
 for source_type, color in type_to_color.items():
     curr_source = ColumnDataSource(sources_df[sources_df["data_source"] == source_type])
     circle_renderer = p.circle('x', 'y', size=5, source=curr_source, alpha=0.3, color=color, legend_label=source_type)
@@ -231,18 +238,8 @@ for source_type, color in type_to_color.items():
     if source_type == 'article':
         p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=size_value,
                  palette=np.flip(Reds[9]), alpha=alpha_value)
+
 hover_tool = HoverTool(tooltips=TOOLTIPS, renderers=circle_renderers)
 p.add_tools(hover_tool)
 
 st.bokeh_chart(p)
-
-# fig = plt.figure(figsize=(10.5, 9 * 0.8328))
-
-# plt.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1],
-#            gridsize=int(10 * size_value), cmap='viridis', alpha=alpha_value, extent=(-1, 16, 1.5, 16), mincnt=1)
-# plt.title("UMAP localization of heatmap keyword: " + phrase)
-# plt.axis([0, 15, 2.5, 15])
-# clbr = plt.colorbar()
-# clbr.set_label('# papers')
-# plt.axis('off')
-# st.pyplot(fig)
