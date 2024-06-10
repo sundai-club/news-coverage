@@ -85,6 +85,7 @@ with st.sidebar:
 
 sources_df, all_titles, final_2d_embeddings = get_embeddings_from_file(selection)
 # source = ColumnDataSource(sources_df)
+add_scores(sources_df, final_2d_embeddings)
 
 TOOLTIPS_DOTS = """
 <div style="width:300px;">
@@ -144,31 +145,10 @@ for source_type, color in type_to_color.items():
 
     circle_renderers.append(circle_renderer)
 
-    if source_type == 'paper':
-        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=size_value,
-                 palette=np.flip(Greens[9]), alpha=alpha_value)
-    if source_type == 'article':
-        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=size_value,
-                 palette=np.flip(Reds[9]), alpha=alpha_value)
-
-    # (r, bins) = p.hexbin(sources_df['x'], sources_df['y'], size=size_value, palette=np.flip(Greens[9]), alpha=alpha_value, hover_color="pink", hover_alpha=0.4)
-    #
-    # p.js_on_event('tap', CustomJS(args=dict(source=curr_source), code="""
-    #         var indices = source.selected.indices;
-    #         if (indices.length > 0) {
-    #             var link = source.data['link'][indices[0]];
-    #             window.open(link);
-    #         }
-    #     """))
-    #
-    # hex_titles = []
-    # for b in bins.q:
-    #     # todo: color from gray to gold according to score...
-    #     # todo: fucking dynamic title for hex
-    #     r.glyph.fill_color = Greens[9][8]
-    #     hex_titles.append("nice title...")
-    #
-    # r.data_source.data['title'] = hex_titles
+    # todo: get top 5 papers and reduce overlap of circles
+    # todo: make it actually useable....
+    max_score_index = sources_df['score'].idxmin()
+    p.circle(x=[sources_df['x'][max_score_index]], y=[sources_df['y'][max_score_index]], size=20, color='gold')
 
     # hex_info_source = ColumnDataSource(data=dict(q=bins.q, r=bins.r, c=bins.counts, title=titles))
     #
