@@ -13,6 +13,8 @@ from utils.read_embeddings import get_embeddings_from_file
 from utils.score_calc import add_scores
 
 
+draw_hexbins = False
+
 st.set_page_config(page_title="AI News Hound", page_icon="🐶", layout="wide")
 st.markdown("""
 <h2 style='text-align: center; color: black;'>
@@ -61,11 +63,16 @@ with st.sidebar:
 
     alpha_value = 0.2
     # st.slider("Pick the hexbin opacity", 0.0, 1.0, 0.25)
-    size_value = st.slider("Pick the hexbin gridsize", 0.1, 2.0, 0.25)
+    if draw_hexbins:
+        size_value = st.slider("Pick the hexbin gridsize", 0.1, 2.0, 0.25)
     
     # Slider to select the number of clusters
-    num_clusters = st.slider("Select the number of clusters", 2, 10, 3)
+    num_clusters = st.slider("Select the number of clusters", 2, 10, 5)
     colors = Category20[num_clusters]
+    
+    
+    show_clusters = st.sidebar.checkbox("Show Cluster Circles", value=True)
+
 
 
     st.markdown("""
@@ -110,6 +117,16 @@ for cluster, centroid in centroids.iterrows():
     radius = calculate_radius(cluster_df, centroid)
     cluster_radii[cluster] = radius
 
+cluster_counts = sources_df['cluster'].value_counts().sort_index()
+centroids['count'] = cluster_counts.values
+centroids['radius'] = [cluster_radii[i] for i in centroids.index]
+centroid_source = ColumnDataSource(data=dict(
+    x=centroids['x'],
+    y=centroids['y'],
+    count=centroids['count'],
+    radius=centroids['radius']
+))
+
 
 
 TOOLTIPS_DOTS = """
@@ -121,10 +138,21 @@ Click to open @link <br> <br>
 </div>
 """
 
+# Calculate the range of your points - so that figure can be centered
+x_min, x_max = sources_df['x'].min(), sources_df['x'].max()
+y_min, y_max = sources_df['y'].min(), sources_df['y'].max()
+# Add some padding to the ranges
+x_padding = (x_max - x_min) * 0.1
+y_padding = (y_max - y_min) * 0.1
+x_range = (x_min - x_padding, x_max + x_padding)
+y_range = (y_min - y_padding, y_max + y_padding)
+
+# p = figure(width=700, height=583, x_range=x_range, y_range=y_range, title="Map of embeddings for resources on AI Agents")
+
 p = figure(width=700, height=583, x_range=(0, 15), y_range=(2.5, 15),
            title="Map of embeddings for resources on AI Agents")
 p.axis.visible = False
-p.grid.visible = False
+p.grid.visible = True
 
 # Add TapTool to enable clicking on dots
 taptool = p.select(type=TapTool)
@@ -136,13 +164,6 @@ circle_renderers = []
 
 type_to_color = {'paper': 'green', 'article': 'red', 'reddit': 'blue'}
 cluster_to_color = {i: colors[i] for i in range(num_clusters)}
-
-
-# Draw cluster circles
-for cluster, centroid in centroids.iterrows():
-    radius = cluster_radii[cluster]
-    color = cluster_to_color.get(cluster, 'black')  # Use black as default if cluster exceeds colors
-    p.circle(x=centroid['x'], y=centroid['y'], radius=radius, fill_alpha=0.1, line_color=color)
 
 
 for source_type, color in type_to_color.items():
@@ -165,12 +186,13 @@ for source_type, color in type_to_color.items():
 
     circle_renderers.append(circle_renderer)
 
-    if source_type == 'paper':
-        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=size_value,
-                 palette=np.flip(Greens[9]), alpha=alpha_value)
-    if source_type == 'article':
-        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=size_value,
-                 palette=np.flip(Reds[9]), alpha=alpha_value)
+    if draw_hexbins:
+        if source_type == 'paper':
+            p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=size_value,
+                    palette=np.flip(Greens[9]), alpha=alpha_value)
+        if source_type == 'article':
+            p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=size_value,
+                    palette=np.flip(Reds[9]), alpha=alpha_value)
 
     # (r, bins) = p.hexbin(sources_df['x'], sources_df['y'], size=size_value, palette=np.flip(Greens[9]), alpha=alpha_value, hover_color="pink", hover_alpha=0.4)
     #
@@ -218,9 +240,24 @@ for source_type, color in type_to_color.items():
     #              palette=np.flip(Reds[9]), alpha=alpha_value)
     #
 
+
+
+# Draw cluster circles
+if show_clusters:
+
+    for cluster, centroid in centroids.iterrows():
+        radius = cluster_radii[cluster]
+        color = cluster_to_color.get(cluster, 'black')  # Use black as default if cluster exceeds colors
+        p.circle(x=centroid['x'], y=centroid['y'], radius=radius, fill_alpha=0.1, line_color=color)
+    # hover = HoverTool(tooltips=[("article count", "@count"), ("(x,y)", "(@x, @y)"), ("radius", "@radius")])
+    hover = HoverTool(tooltips=[("article count", "@count"), ("circle radius", "@radius")])
+    p.circle(x='x', y='y', radius='radius', source=centroid_source, fill_alpha=0.1, line_color='black')
+    p.add_tools(hover)
+    
 hover_tool = HoverTool(tooltips=TOOLTIPS_DOTS, renderers=circle_renderers)
-hover = HoverTool(tooltips=[("count", "@c"), ("(q,r)", "(@q, @r)"), ("title", "@title")])
-p.add_tools(hover)
+if draw_hexbins:
+    hover = HoverTool(tooltips=[("count", "@c"), ("(q,r)", "(@q, @r)"), ("title", "@title")])
+
 p.add_tools(hover_tool)
 p.legend.location = "top_left"
 
