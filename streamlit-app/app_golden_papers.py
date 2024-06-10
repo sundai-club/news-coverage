@@ -3,20 +3,14 @@ import numpy as np
 from bokeh.plotting import ColumnDataSource, figure, output_notebook, show
 from bokeh.models import TapTool, CustomJS, HoverTool
 from bokeh.palettes import OrRd, Greens, Reds
-
-
-from sklearn.cluster import KMeans
-from bokeh.palettes import Category20
-
 from utils.send_email import send_email
 from utils.read_embeddings import get_embeddings_from_file
 from utils.score_calc import add_scores
 
-
 st.set_page_config(page_title="AI News Hound", page_icon="🐶", layout="wide")
 st.markdown("""
 <h2 style='text-align: center; color: black;'>
-<span style='color: green; '> AI </span> to uncover the next <span style='color: grn; '> big thing in AI </span>  
+<span style='color: green; '> AI </span> eeto uncover the next <span style='color: grn; '> big thing in AI </span>  
 </h2>
 <p style='text-align: justify; font-size: 19px;'>
 Uncover underrepresented research topics with potential for impactful news stories. <br> we help journalists and researchers identify areas of significant scientific interest that lack media coverage. <br> Navigate the visualization below: <strong style='color: green;'>green areas</strong> highlight research topics that are currently hot in the academic world but have not yet been extensively covered in the news.
@@ -62,11 +56,6 @@ with st.sidebar:
     alpha_value = 0.2
     # st.slider("Pick the hexbin opacity", 0.0, 1.0, 0.25)
     size_value = st.slider("Pick the hexbin gridsize", 0.1, 2.0, 0.25)
-    
-    # Slider to select the number of clusters
-    num_clusters = st.slider("Select the number of clusters", 2, 10, 3)
-    colors = Category20[num_clusters]
-
 
     st.markdown("""
     <h2 style='text-align: center; color: black;'>We need your Feedback!</h2>
@@ -87,39 +76,26 @@ with st.sidebar:
 
     if submit_button:
         if name and role and email and request_focus:
+            # Assume sending to an email or processing the data here
             st.success("Thank you! Your request has been submitted, we will contact you shortly.")
             send_email(name, role, email, request_focus)
+            # Here you could add code to send the data to an email or a database
         else:
             st.error("Please fill out all fields to submit your request.")
 
 sources_df, all_titles, final_2d_embeddings = get_embeddings_from_file(selection)
 # source = ColumnDataSource(sources_df)
-
-# Use the number of clusters from the slider
-kmeans = KMeans(n_clusters=num_clusters, random_state=42)
-sources_df['cluster'] = kmeans.fit_predict(sources_df[['x', 'y']])
-centroids = sources_df.groupby('cluster')[['x', 'y']].mean()
-
-# Calculate radius for each cluster
-def calculate_radius(cluster_df, centroid):
-    return np.max(np.sqrt((cluster_df['x'] - centroid['x'])**2 + (cluster_df['y'] - centroid['y'])**2))
-
-cluster_radii = {}
-for cluster, centroid in centroids.iterrows():
-    cluster_df = sources_df[sources_df['cluster'] == cluster]
-    radius = calculate_radius(cluster_df, centroid)
-    cluster_radii[cluster] = radius
-
-
+add_scores(sources_df, final_2d_embeddings)
 
 TOOLTIPS_DOTS = """
-
 <div style="width:300px;">
 ($x, $y) <br>
 @title <br>
 Click to open @link <br> <br>
 </div>
 """
+
+# phrase = st.session_state.phrase
 
 p = figure(width=700, height=583, x_range=(0, 15), y_range=(2.5, 15),
            title="Map of embeddings for resources on AI Agents")
@@ -131,20 +107,24 @@ taptool = p.select(type=TapTool)
 
 # Add JavaScript callback to open link on click
 p.add_tools(TapTool())
+#
+# # TODO: change this with actual semantic search - the embedding distance basically
+# phrase_flags = np.zeros((len(all_titles),))
+#
+# for i in range(len(all_titles)):
+#     if phrase.lower() in all_titles[i].lower():
+#         phrase_flags[i] = 1
 
+# TODO: create a hexbin manually with the needed description and number of points...
+# p.hexbin(final_2d_embeddings[:, 0], final_2d_embeddings[:, 1], size=0.5,
+#          palette=np.flip(OrRd[9]), alpha=alpha_value)
+
+# TODO: add a summarization to the HEXBIN items so that when hovering a bin can see a summary of the items within
+# p.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1], size=size_value,
+#          palette=np.flip(OrRd[8]), alpha=alpha_value)
 circle_renderers = []
 
 type_to_color = {'paper': 'green', 'article': 'red', 'reddit': 'blue'}
-cluster_to_color = {i: colors[i] for i in range(num_clusters)}
-
-
-# Draw cluster circles
-for cluster, centroid in centroids.iterrows():
-    radius = cluster_radii[cluster]
-    color = cluster_to_color.get(cluster, 'black')  # Use black as default if cluster exceeds colors
-    p.circle(x=centroid['x'], y=centroid['y'], radius=radius, fill_alpha=0.1, line_color=color)
-
-
 for source_type, color in type_to_color.items():
     curr_source = ColumnDataSource(sources_df[sources_df["data_source"] == source_type])
 
@@ -165,31 +145,10 @@ for source_type, color in type_to_color.items():
 
     circle_renderers.append(circle_renderer)
 
-    if source_type == 'paper':
-        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=size_value,
-                 palette=np.flip(Greens[9]), alpha=alpha_value)
-    if source_type == 'article':
-        p.hexbin(sources_df[sources_df["data_source"] == source_type]['x'], sources_df[sources_df["data_source"] == source_type]['y'], size=size_value,
-                 palette=np.flip(Reds[9]), alpha=alpha_value)
-
-    # (r, bins) = p.hexbin(sources_df['x'], sources_df['y'], size=size_value, palette=np.flip(Greens[9]), alpha=alpha_value, hover_color="pink", hover_alpha=0.4)
-    #
-    # p.js_on_event('tap', CustomJS(args=dict(source=curr_source), code="""
-    #         var indices = source.selected.indices;
-    #         if (indices.length > 0) {
-    #             var link = source.data['link'][indices[0]];
-    #             window.open(link);
-    #         }
-    #     """))
-    #
-    # hex_titles = []
-    # for b in bins.q:
-    #     # todo: color from gray to gold according to score...
-    #     # todo: fucking dynamic title for hex
-    #     r.glyph.fill_color = Greens[9][8]
-    #     hex_titles.append("nice title...")
-    #
-    # r.data_source.data['title'] = hex_titles
+    # todo: get top 5 papers and reduce overlap of circles
+    # todo: make it actually useable....
+    max_score_index = sources_df['score'].idxmin()
+    p.circle(x=[sources_df['x'][max_score_index]], y=[sources_df['y'][max_score_index]], size=20, color='gold')
 
     # hex_info_source = ColumnDataSource(data=dict(q=bins.q, r=bins.r, c=bins.counts, title=titles))
     #
@@ -225,3 +184,14 @@ p.add_tools(hover_tool)
 p.legend.location = "top_left"
 
 st.bokeh_chart(p)
+
+# fig = plt.figure(figsize=(10.5, 9 * 0.8328))
+
+# plt.hexbin(embedding[phrase_flags == 1, 0], embedding[phrase_flags == 1, 1],
+#            gridsize=int(10 * size_value), cmap='viridis', alpha=alpha_value, extent=(-1, 16, 1.5, 16), mincnt=1)
+# plt.title("UMAP localization of heatmap keyword: " + phrase)
+# plt.axis([0, 15, 2.5, 15])
+# clbr = plt.colorbar()
+# clbr.set_label('# papers')
+# plt.axis('off')
+# st.pyplot(fig)
