@@ -10,7 +10,7 @@ from utils.score_calc import add_scores
 st.set_page_config(page_title="AI News Hound", page_icon="🐶", layout="wide")
 st.markdown("""
 <h2 style='text-align: center; color: black;'>
-<span style='color: green; '> AI </span> eeto uncover the next <span style='color: grn; '> big thing in AI </span>  
+<span style='color: green; '> AI </span> to uncover the next <span style='color: grn; '> big thing in AI </span>  
 </h2>
 <p style='text-align: justify; font-size: 19px;'>
 Uncover underrepresented research topics with potential for impactful news stories. <br> we help journalists and researchers identify areas of significant scientific interest that lack media coverage. <br> Navigate the visualization below: <strong style='color: green;'>green areas</strong> highlight research topics that are currently hot in the academic world but have not yet been extensively covered in the news.
