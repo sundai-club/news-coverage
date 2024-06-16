@@ -4,7 +4,6 @@ from bokeh.plotting import ColumnDataSource, figure, output_notebook, show
 from bokeh.models import TapTool, CustomJS, HoverTool
 from bokeh.palettes import OrRd, Greens, Reds
 
-
 from sklearn.cluster import KMeans
 from bokeh.palettes import Category20
 
@@ -12,19 +11,40 @@ from utils.send_email import send_email
 from utils.read_embeddings import get_embeddings_from_file
 from utils.score_calc import add_scores
 
-
 draw_hexbins = False
 
 st.set_page_config(page_title="AI News Hound", page_icon="🐶", layout="wide")
+
 st.markdown("""
-<h2 style='text-align: center; color: black;'>
-<span style='color: green; '> AI </span> to uncover the next <span style='color: grn; '> big thing in AI </span>  
-</h2>
-<p style='text-align: justify; font-size: 19px;'>
-Uncover underrepresented research topics with potential for impactful news stories. <br> we help journalists and researchers identify areas of significant scientific interest that lack media coverage. <br> Navigate the visualization below: <strong style='color: green;'>green areas</strong> highlight research topics that are currently hot in the academic world but have not yet been extensively covered in the news.
-</p>
+    <style>
+    .centered-title {
+        text-align: center;
+        font-size: 5em;
+        font-weight: bold;
+    }
+    </style>
+    <div class="centered-title">AI News - Hound</div>
 """, unsafe_allow_html=True)
 
+col1, col2 = st.columns([2, 5])
+
+with col1:
+    st.markdown("#")
+    st.image("ai-news-hound-img.webp")
+with col2:
+    st.markdown("""
+    <h2 style='text-align: center; color: black;'>
+    Finding the needle in the <span style='color: green; '> AI-haystack </span>  
+    </h2>
+    <p style='text-align: justify; font-size: 18px;'>
+    Journalists! Discover overlooked AI research gems! - Research papers authored by highly cited research scientists, widely debated on Reddit, yet receiving minimal media attention. <br>
+    <br> 
+    How to use AI-News Hound? <br>
+    Find the AI research papers <span style='background-color: rgba(0, 128, 0, 0.5); color: white; padding: 6px 6px; margin: 0 5px; display: inline-block;'></span>
+    in the greener areas and navigate through related reddit posts and media articles
+    Let’s start!
+    </p>
+    """, unsafe_allow_html=True)
 
 with st.sidebar:
     button_html = """
@@ -59,21 +79,29 @@ with st.sidebar:
     options = ["AI Agents", "AI Assisted Healthcare", "AI Driven Portfolio Management", "AI Public Policies",
                "View_all_topics_combined"]
 
-    selection = st.selectbox("Select a research category to view:", options)
+    st.markdown("**Select a research category to view:**")
+
+    selection = st.selectbox("", options)
+
+    st.markdown("#")
 
     alpha_value = 0.2
     # st.slider("Pick the hexbin opacity", 0.0, 1.0, 0.25)
     if draw_hexbins:
         size_value = st.slider("Pick the hexbin gridsize", 0.1, 2.0, 0.25)
-    
+
     # Slider to select the number of clusters
-    num_clusters = st.slider("Select the number of clusters", 2, 10, 5)
+
+    st.markdown("**How specific do you want your research area?**\n\n"
+                "**5** is the most general\n\n"
+                "**20** is the most highly specific")
+
+    num_clusters = st.slider("", 5, 20, 10)
+
+
     colors = Category20[num_clusters]
-    
-    
-    show_clusters = st.sidebar.checkbox("Show Cluster Circles", value=True)
 
-
+    # show_clusters = st.sidebar.checkbox("Show Cluster Circles", value=True)
 
     st.markdown("""
     <h2 style='text-align: center; color: black;'>We need your Feedback!</h2>
@@ -107,15 +135,40 @@ kmeans = KMeans(n_clusters=num_clusters, random_state=42)
 sources_df['cluster'] = kmeans.fit_predict(sources_df[['x', 'y']])
 centroids = sources_df.groupby('cluster')[['x', 'y']].mean()
 
+
 # Calculate radius for each cluster
 def calculate_radius(cluster_df, centroid):
-    return np.max(np.sqrt((cluster_df['x'] - centroid['x'])**2 + (cluster_df['y'] - centroid['y'])**2))
+    return np.max(np.sqrt((cluster_df['x'] - centroid['x']) ** 2 + (cluster_df['y'] - centroid['y']) ** 2))
+
 
 cluster_radii = {}
+scores = []
 for cluster, centroid in centroids.iterrows():
     cluster_df = sources_df[sources_df['cluster'] == cluster]
+    # here can calculate the score for each cluster
+    curr_cluster_score = 0
+    is_paper_in_cluster = False
+    is_reddit_in_cluster = False
+    for item_source in cluster_df['data_source']:
+        if item_source == 'paper' or item_source == 'reddit':
+            curr_cluster_score += 1
+
+            if item_source == 'paper':
+                is_paper_in_cluster = True
+            else:
+                is_reddit_in_cluster = True
+        else:
+            curr_cluster_score -= 1
+
+    curr_cluster_score = curr_cluster_score / len(cluster_df)
+
+    # heavily penalize clusters that don't have both papers AND reddit posts
+    if not is_paper_in_cluster or not is_reddit_in_cluster:
+        curr_cluster_score -= 0.2
+
     radius = calculate_radius(cluster_df, centroid)
     cluster_radii[cluster] = radius
+    scores.append(curr_cluster_score)
 
 cluster_counts = sources_df['cluster'].value_counts().sort_index()
 centroids['count'] = cluster_counts.values
@@ -126,8 +179,6 @@ centroid_source = ColumnDataSource(data=dict(
     count=centroids['count'],
     radius=centroids['radius']
 ))
-
-
 
 TOOLTIPS_DOTS = """
 
@@ -150,7 +201,7 @@ y_range = (y_min - y_padding, y_max + y_padding)
 # p = figure(width=700, height=583, x_range=x_range, y_range=y_range, title="Map of embeddings for resources on AI Agents")
 
 p = figure(width=700, height=583, x_range=(0, 15), y_range=(2.5, 15),
-           title="Map of embeddings for resources on AI Agents")
+           title="The greener the circle, the more likely it is to uncover an AI research topic gem")
 p.axis.visible = False
 p.grid.visible = True
 
@@ -165,16 +216,18 @@ circle_renderers = []
 type_to_color = {'paper': 'green', 'article': 'red', 'reddit': 'blue'}
 cluster_to_color = {i: colors[i] for i in range(num_clusters)}
 
-
 for source_type, color in type_to_color.items():
     curr_source = ColumnDataSource(sources_df[sources_df["data_source"] == source_type])
 
     if color == 'green':
-        circle_renderer = p.square('x', 'y', size=5, source=curr_source, alpha=0.3, color=color, legend_label=source_type)
+        circle_renderer = p.square('x', 'y', size=5, source=curr_source, alpha=0.3, color=color,
+                                   legend_label=source_type)
     elif color == 'red':
-        circle_renderer = p.circle('x', 'y', size=5, source=curr_source, alpha=0.3, color=color, legend_label=source_type)
+        circle_renderer = p.circle('x', 'y', size=5, source=curr_source, alpha=0.3, color=color,
+                                   legend_label=source_type)
     else:
-        circle_renderer = p.triangle('x', 'y', size=5, source=curr_source, alpha=0.3, color=color, legend_label=source_type)
+        circle_renderer = p.triangle('x', 'y', size=5, source=curr_source, alpha=0.3, color=color,
+                                     legend_label=source_type)
 
     p.js_on_event('tap', CustomJS(args=dict(source=curr_source), code="""
         var indices = source.selected.indices;
@@ -240,20 +293,34 @@ for source_type, color in type_to_color.items():
     #              palette=np.flip(Reds[9]), alpha=alpha_value)
     #
 
-
-
 # Draw cluster circles
-if show_clusters:
+if True:
 
     for cluster, centroid in centroids.iterrows():
         radius = cluster_radii[cluster]
+        curr_score = scores[cluster]
         color = cluster_to_color.get(cluster, 'black')  # Use black as default if cluster exceeds colors
-        p.circle(x=centroid['x'], y=centroid['y'], radius=radius, fill_alpha=0.1, line_color=color)
+        if curr_score >= 0.5:
+            # curr_score_alpha = curr_score / 3
+            # make the colors close to green dramatic - more heavy shades
+
+            fill_color = "green"
+
+            if curr_score >= 0.9:
+                curr_score_alpha = 0.5
+                fill_color = "Green"
+            else:
+                curr_score_alpha = 0.15 * (1 - np.exp(-10 * (curr_score - 0.5)))
+
+            render = p.circle(x=centroid['x'], y=centroid['y'], radius=radius, fill_alpha=curr_score_alpha, fill_color=fill_color, line_color=None)
+            render.data_source.data['potential_score'] = [curr_score]
+            render.data_source.data['radius'] = [radius]
+            render.data_source.data['count'] = [centroids.loc[cluster, 'count']]
     # hover = HoverTool(tooltips=[("article count", "@count"), ("(x,y)", "(@x, @y)"), ("radius", "@radius")])
-    hover = HoverTool(tooltips=[("article count", "@count"), ("circle radius", "@radius")])
-    p.circle(x='x', y='y', radius='radius', source=centroid_source, fill_alpha=0.1, line_color='black')
+    hover = HoverTool(tooltips=[("article count", "@count"), ("circle radius", "@radius"), ("Potential score", "@potential_score")])
+    # p.circle(x='x', y='y', radius='radius', source=centroid_source, fill_alpha=0.1, line_color='black')
     p.add_tools(hover)
-    
+
 hover_tool = HoverTool(tooltips=TOOLTIPS_DOTS, renderers=circle_renderers)
 if draw_hexbins:
     hover = HoverTool(tooltips=[("count", "@c"), ("(q,r)", "(@q, @r)"), ("title", "@title")])
