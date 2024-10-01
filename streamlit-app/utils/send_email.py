@@ -1,9 +1,10 @@
 import sendgrid
 from sendgrid.helpers.mail import *
+import os
 
 
 def send_email(name, role, requestor_email, request_focus):
-    sg = sendgrid.SendGridAPIClient("TBD-ON-DEPLOYED-VM")
+    sg = sendgrid.SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
     from_email = Email("sundaiclub@gmail.com")
     to_email = To("sundaiclub@gmail.com")
     subject = "AI-NEWS-HOUND: New Visualization Request"
